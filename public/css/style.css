@@ -1,0 +1,248 @@
+/* 重置 */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "微軟正黑體", sans-serif;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover {
+  font-weight: bolder;
+}
+img,
+iframe {
+  width: 100%;
+}
+ul,
+ol {
+  list-style: none;
+}
+input,
+button,
+textarea {
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+}
+.bg-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+/* 英文對齊 */
+[lang-size="en"] p {
+  text-align: left;
+}
+/* 文字段落左右對齊 */
+p:not(.price) {
+  text-align: justify;
+}
+
+/* 外距 */
+/* 5px */
+.mb-03125 {
+  margin-bottom: 0.3125rem;
+}
+/* 10px */
+.my-0625 {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+/* 30px */
+.mt-1875 {
+  margin-top: 1.875rem;
+}
+/* 100px */
+.mt-625 {
+  margin-top: 6.25rem;
+}
+
+/* 內距 */
+/* 5px */
+.py-03125 {
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+}
+/* 30px */
+.py-1875 {
+  padding-top: 1.875rem;
+  padding-bottom: 1.875rem;
+}
+/* 20px */
+.p-125 {
+  padding: 1.25rem;
+}
+
+/* 色彩 */
+
+/* 搜尋輸入框啟用後的外觀設定 */
+.search-form .search-input:focus {
+  outline: none;
+}
+.search-btn:hover {
+  background-color: #d4d4d44d !important;
+}
+
+/* 商品列表 */
+#hot-product .card ul,
+#new-product .card ul,
+#products .card ul {
+  bottom: -60px;
+  transition: 0.3s;
+}
+#hot-product .card:hover ul,
+#new-product .card:hover ul,
+#products .card:hover ul {
+  bottom: 0;
+}
+#hot-product .card ul li:hover,
+#new-product .card ul li:hover,
+#products .card ul li:hover {
+  background-color: #d3d3d32f;
+}
+#hot-product .card-text span:nth-of-type(1)::before,
+#hot-product .card-text span:nth-of-type(3)::before,
+#new-product .card-text span:nth-of-type(1)::before,
+#new-product .card-text span:nth-of-type(3)::before,
+#products .card-text span:nth-of-type(1)::before,
+#products .card-text span:nth-of-type(3)::before {
+  content: "NT$ ";
+}
+#hot-product .card-text span:nth-of-type(1)::after,
+#hot-product .card-text span:nth-of-type(3)::after,
+#new-product .card-text span:nth-of-type(1)::after,
+#new-product .card-text span:nth-of-type(3)::after,
+#products .card-text span:nth-of-type(1)::after,
+#products .card-text span:nth-of-type(3)::after {
+  content: " 元";
+}
+
+/* 只有首頁顯示通知訊息 */
+body .notify:not(#home .notify) {
+  display: none;
+}
+
+/* 聯絡表單textarea設為不能改變寬高並固定高度 */
+#for-message {
+  resize: none;
+  height: 150px;
+}
+
+/* 首頁banner輪播圖 */
+.f-carousel {
+  margin-bottom: 0 !important;
+  position: relative;
+}
+.f-carousel__dots {
+  bottom: 1px !important;
+}
+
+/* 購物車列表頭樣式 */
+#cart-list-form th:not(th:last-of-type):not(th:first-of-type) {
+  border-right: 1px solid #d3d3d389;
+}
+
+/* 結帳區塊 */
+.check-out {
+  backdrop-filter: blur(5rem);
+}
+
+/* m-menu 選單 */
+#m-menu li:last-of-type {
+  border-bottom: none !important;
+}
+
+/* 促銷頁輪播圖 */
+#promotion .f-carousel__slide {
+  width: 100%;
+}
+/* #promotion .f-carousel {
+  --f-carousel-spacing: 8px;
+  --f-carousel-slide-width: calc((100% - 16px) / 2);
+} */
+#product-sales .card {
+  height: 500px; /* 卡片高度 因為內容長短會改變卡片高度 導致卡片高度不一 */
+  margin: 10px;
+}
+#product-sales .card-img-top {
+  height: 250px; /* 固定圖片高度 */
+  object-fit: contain;
+  padding: 10px;
+  background: #f8f9fa;
+}
+#product-sales .card-body {
+  flex: 1;
+  padding: 1rem;
+  overflow: hidden; /* 多餘內容影藏 */
+}
+#product-sales .f-carousel__dots {
+  display: none;
+}
+#product-sales .f-button.is-next {
+  border-radius: 50%;
+  background-color: lightgray;
+  margin-right: 1rem;
+}
+#product-sales .f-button.is-prev {
+  border-radius: 50%;
+  background-color: lightgray;
+  margin-left: 1rem;
+}
+
+/* news頁面布局 */
+#news-page .d-flex {
+  display: flex;
+}
+#news-page .flex-wrap {
+  flex-wrap: wrap;
+}
+#news-page .flex-nowrap {
+  flex-wrap: nowrap;
+}
+#news-page .flex-w-25{
+  flex: 0 0 23%;
+  width: 23%;
+  margin-bottom: 2rem;  
+  margin-top: 1rem;
+  margin: 0.5rem;
+}
+#news-page.news-box {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+#news-page .card-img-wrapper {
+  width: 100%;
+  height: 200px;  
+  overflow: hidden;  /* 超出部分隱藏 */
+  position: relative;
+}
+/* 卡片圖片樣式 */
+#news-page .card-img-top {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;  /* 圖片自適應覆蓋 */
+  object-position: center;  /* 圖片居中顯示 */
+}
+#news-page .card {
+  padding: 0;  /* 移除卡片的內邊距 */
+}
+#news-page .card-body a {
+  color:black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#news-page .card-body a:hover {
+  color:rgb(103, 114, 182);
+  text-decoration: none;
+}
+
+.is-current .f-carousel__dot {
+  padding-left: 8px;
+  padding-right: 8px;
+}

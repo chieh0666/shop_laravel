@@ -1,0 +1,116 @@
+<header class="mb-03125">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-center">
+      <!-- mobile logo -->
+      <div class="col-1 d-block d-lg-none my-2">
+        <h1 class="m-0">
+          <a href="/" title="回首頁">
+            <img src="./images/logo_tab.png" alt="YUJ">
+            <span class="d-none">YUJ網頁設計</span>
+          </a>
+        </h1>
+      </div>
+    </div>
+    <div class="d-flex align-items-center justify-content-between">
+      <!-- logo -->
+      <div class="col-1 d-lg-block d-none m-2">
+        <h1 class="m-0">
+          <a href="/" title="回首頁">
+            <img src="./images/logo_tab.png" alt="YUJ">
+            <span class="d-none">YUJ網頁設計</span>
+          </a>
+        </h1>
+      </div>
+      <!-- mobile menu button -->
+      <div class="col-1 mx-1 d-block d-lg-none">
+        <button class="fs-1 btn" type="button" data-bs-toggle="collapse" data-bs-target="#m-menu" aria-expanded="false" aria-controls="m-menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+      <!-- search form -->
+      <div class="search-form border border-secondary-subtle rounded-pill w-50 h-auto ps-2 overflow-hidden">
+        <form action="#" method="get">
+          <div class="d-flex align-items-center justify-content-between">
+            <label for="for-search">
+              <span class="d-none">搜尋</span>
+            </label>
+            <input type="search" class="w-100 p-2 search-input" name="" id="" placeholder="搜尋" title="請輸入關鍵字">
+            <button class="search-btn bg-light border-start border-secondary-subtle py-2 px-3" type="submit" title="搜尋按鈕">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+      <!-- user、cart button -->
+      <div class="d-flex me-2 px-2 align-items-center justify-content-center fs-4">
+        <div>
+          <a href="/user/auth/signin" title="前往會員登入">
+            <i class="bi bi-person-circle"></i>
+            <span class="d-none d-md-inline-block">登入</span>
+          </a>
+        </div>
+        <span class="mx-3">|</span>
+        <div>
+          <a class="position-relative" href="./cart-list.html" title="前往我的購物車">
+            <i class="bi bi-cart fs-2"></i>
+            <span class="position-absolute top-0 start-100 translate-middle rounded-pill badge bg-danger mt-2 p-1">
+              99+
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- nav -->
+    <nav class="py-1 d-lg-block d-none">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="./products.html" title="前往所有商品">所有商品</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./new-product.html" title="前往最新商品">最新商品</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./promotion.html" title="前往促銷活動">促銷活動</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./news.html" title="前往最新消息">最新消息</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about.html" title="前往關於我們">關於我們</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./contact-us.html" title="前往聯絡我們">聯絡我們</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- mobile、tablet menu -->
+    <div class="collapse" id="m-menu">
+      <div class="card card-body border-0">
+        <ul class="nav flex-column text-center align-items-center">
+          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+            <a class="nav-link" href="./products.html" title="前往所有商品">所有商品</a>
+          </li>
+          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+            <a class="nav-link" href="./new-product.html" title="前往最新商品">最新商品</a>
+          </li>
+          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+            <a class="nav-link" href="./promotion.html" title="前往促銷活動">促銷活動</a>
+          </li>
+          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+            <a class="nav-link" href="./news.html" title="前往最新消息">最新消息</a>
+          </li>
+          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+            <a class="nav-link" href="./about.html" title="前往關於我們">關於我們</a>
+          </li>
+          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+            <a class="nav-link" href="./contact-us.html" title="前往聯絡我們">聯絡我們</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 廣告或重要事項通知時顯示 -->
+  <div class="notify text-center text-danger py-03125 fs-5">
+    <span>公告訊息</span>
+  </div>
+</header>

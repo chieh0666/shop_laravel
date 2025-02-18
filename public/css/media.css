@@ -1,0 +1,88 @@
+/* news頁面響應式布局 */
+#news-page .flex-w-25 {
+  flex: 0 0 calc(100% - 1rem);  /* 一列一個卡片 */
+  width: calc(100% - 1rem);
+  margin: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  /* 促銷頁面輪播圖 */
+  #promotion .f-carousel__slide {
+    width: calc(100% / 2);
+  }
+  #product-sales .f-carousel__slide {
+    width: calc(100% / 2);
+  }
+  /* news頁面響應式布局 */
+  #news-page .flex-w-25 {
+    flex: 0 0 calc(50% - 1rem);  /* 一列兩個卡片 */
+    width: calc(50% - 1rem);
+  }
+}
+
+@media (max-width:991px) {
+  #cart-list-form thead {
+    display: none;
+  }
+
+  #cart-list-form table,
+  /* #cart-list-form tr, */
+  #cart-list-form td {
+    display: block;
+    border: 0;
+  }
+
+  #cart-list-form tr {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    border-bottom: 1px solid #d3d3d3;
+  }
+
+  /* #cart-list-form tr:last-of-type {
+    border: none;
+  } */
+
+  #cart-list-form tr td:nth-of-type(1) {
+    flex: 0 0 5%;
+  }
+
+  #cart-list-form tr td:nth-of-type(2) {
+    flex: 0 0 60%;
+  }
+
+  #cart-list-form tr td:nth-of-type(3) {
+    flex: 0 0 45%;
+  }
+
+  #cart-list-form tr td:nth-of-type(4) {
+    flex: 0 0 30%;
+  }
+
+  #cart-list-form tr td:nth-of-type(5) {
+    flex: 0 0 25%;
+  }
+
+  #cart-list-form tr td:nth-of-type(6) {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  /* 促銷頁面商品輪播圖 */
+  #product-sales .f-carousel__slide {
+    width: calc(100% / 2);
+  }
+  
+  .f-carousel__nav {
+    display: none;
+  }
+}
+
+@media(min-width: 1200px) {
+  /* news頁面響應式布局 */
+  #news-page .flex-w-25 {
+    flex: 0 0 calc(25% - 1rem);  /* 一列四個卡片 */
+    width: calc(25% - 1rem);
+  }
+}
