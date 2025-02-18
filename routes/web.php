@@ -30,3 +30,7 @@ Route::group(['prefix' => 'user'], function(){
         );
     });
 });
+
+Route::group(['prefix' => 'merchandise'], function(){
+    
+});

@@ -10,24 +10,20 @@
 </div>
 <!-- signin form -->
 <div class="mt-1875">
-  <div class="col-12 d-flex justify-content-center align-items-center">
-    <form action="#" method="POST" novalidate>
-      <div class="input-group has-validation mb-3">
-        <div class="form-floating is-invalid">
-          <input type="text" class="form-control is-invalid" name="account" id="account" placeholder="請輸入電子郵件地址" required>
-          <label for="account">電子郵件地址</label>
-        </div>
-        <div class="invalid-feedback">
-          沒有註冊資料。
+  <div class="col-lg-4 col-12 mx-auto">
+    <form action="/user/auth/signin" method="POST" novalidate>
+      @csrf
+      @include('component.user-auth-errors')
+      <div class="input-group mb-3">
+        <div class="form-floating">
+          <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="請輸入電子郵件地址" required>
+          <label for="email">電子郵件地址</label>
         </div>
       </div>
-      <div class="input-group has-validation mb-3">
-        <div class="form-floating is-invalid">
-          <input type="text" class="form-control is-invalid" name="password" id="password" placeholder="請輸入密碼" required>
+      <div class="input-group mb-3">
+        <div class="form-floating">
+          <input type="password" class="form-control" name="password" id="password" value="{{ old('password') }}" placeholder="請輸入密碼" required>
           <label for="password">密碼</label>
-        </div>
-        <div class="invalid-feedback">
-          密碼錯誤，必須8-20個字元長度。
         </div>
       </div>
       <div class="form-check mb-3">

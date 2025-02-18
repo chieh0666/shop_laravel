@@ -48,4 +48,31 @@ class UserAuthController extends Controller
             return redirect('/user/auth/signin');
         }
     }
+
+    public function SigninProcess()
+    {
+        $input = request()->all();
+        
+        if(empty($input['email'])) {
+            return redirect('/user/auth/signin')->witherrors(['請輸入電子郵件地址'])->withInput();
+        } else if (empty($input['password'])) {
+            return redirect('/user/auth/signin')->witherrors(['請輸入密碼'])->withInput();
+        } else {
+            $user = User::where('email', $input['email'])->first();
+            if (empty($user)) {
+                return redirect('/user/auth/signin')->witherrors(['此電子郵件地址尚未註冊'])->withInput();
+            } else if (!Hash::check($input['password'], $user->password)) {
+                return redirect('/user/auth/signin')->witherrors(['密碼錯誤'])->withInput();
+            } else {
+                session()->put('user', $user);
+                return redirect('/');
+            }
+        }
+    }
+
+    public function SignOut()
+    {
+        session()->forget('user');
+        return redirect('/');
+    }
 }

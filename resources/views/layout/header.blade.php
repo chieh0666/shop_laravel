@@ -1,4 +1,18 @@
 <header class="mb-03125">
+  @if(session()->has('user'))
+  <div class="py-03125">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-end">
+        <a class="p-1" href="/manage" title="前往會員主頁">
+          <span class="text-dark">商店管理</span>
+        </a>
+        <a class="p-1" href="/user/auth/signout" title="前往會員主頁">
+          <span class="text-dark">登出</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  @endif
   <div class="container">
     <div class="d-flex align-items-center justify-content-center">
       <!-- mobile logo -->
@@ -44,10 +58,17 @@
       <!-- user、cart button -->
       <div class="d-flex me-2 px-2 align-items-center justify-content-center fs-4">
         <div>
+          @if(session()->has('user'))
+          <a href="#" title="前往會員主頁">
+            <i class="bi bi-person-circle"></i>
+            <span class="d-none d-md-inline-block">{{ session()->get('user')->nickname ? session()->get('user')->nickname : session()->get('user')->first_name }}</span>
+          </a>
+          @else
           <a href="/user/auth/signin" title="前往會員登入">
             <i class="bi bi-person-circle"></i>
             <span class="d-none d-md-inline-block">登入</span>
           </a>
+          @endif
         </div>
         <span class="mx-3">|</span>
         <div>
