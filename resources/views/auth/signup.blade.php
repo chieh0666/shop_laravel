@@ -14,20 +14,20 @@
     @csrf
     @include('component.user-auth-errors')
     <div class="row justify-content-center">
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-md-0 mb-3">
+      <div class="col-lg-3 col-md-6 mb-3">
         <label for="last_name" class="form-label">姓氏</label>
         <input type="text" class="form-control" name="last_name" id="last_name" placeholder="請輸入姓氏" value="{{ old('last_name') }}" required>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-md-0 mb-3">
+      <div class="col-lg-3 col-md-6 col-12 mb-3">
         <label for="first_name" class="form-label">名字</label>
         <input type="text" class="form-control" name="first_name" id="first_name" placeholder="請輸入名字" value="{{ old('first_name') }}" required>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-md-0 mb-3">
-        <label for="nickname" class="form-label">暱稱</label>
+      <div class="col-lg-3 col-md-6 col-12 mb-3">
+        <label for="nickname" class="form-label">暱稱(選填)</label>
         <input type="text" class="form-control" name="nickname" id="nickname" placeholder="請輸入暱稱" value="{{ old('nickname') }}" required>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-md-0 mb-3">
-        <label for="gender" class="form-label d-block">性別</label>
+      <div class="col-lg-3 col-md-6 col-12 mb-3">
+        <label for="gender" class="form-label d-block">性別(選填)</label>
           <input type="radio" class="btn-check" name="gender" id="male" value="M" required>
           <label class="btn btn-outline-primary" for="male">男性</label>
           <input type="radio" class="btn-check" name="gender" id="female" value="F" required>
@@ -35,18 +35,18 @@
           <input type="radio" class="btn-check" name="gender" id="other" value="O" required>
           <label class="btn btn-outline-secondary" for="other">其他</label>
       </div>
-      <div class="col-lg-6 col-12 mb-lg-0 mb-md-0 mb-3">
+      <div class="col-lg-6 col-12 mb-3">
         <label for="email" class="form-label">電子郵件地址</label>
         <input type="email" class="form-control" name="email" id="email" placeholder="請輸入電子郵件地址" value="{{ old('email') }}" required>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-md-0 mb-3">
+      <div class="col-lg-3 col-md-6 col-12 mb-3">
         <label for="password" class="form-label">設定密碼</label>
         <input type="password" class="form-control" name="password" id="password" placeholder="請輸入密碼" required>
         <span id="password" class="form-text">
           必須8-20個字元長度。
         </span>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-md-0 mb-3">
+      <div class="col-lg-3 col-md-6 col-12 mb-3">
         <label for="password_confirm" class="form-label">確認密碼</label>
         <input type="password" class="form-control" name="password_confirm" id="password_confirm" placeholder="請確認密碼" required>
       </div>
