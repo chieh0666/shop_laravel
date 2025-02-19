@@ -13,7 +13,7 @@
   <div class="col-lg-4 col-12 mx-auto">
     <form action="/user/auth/signin" method="POST" novalidate>
       @csrf
-      @include('component.user-auth-errors')
+      @include('component.errors')
       <div class="input-group mb-3">
         <div class="form-floating">
           <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="請輸入電子郵件地址" required>

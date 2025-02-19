@@ -12,7 +12,7 @@
 <div class="mt-1875">
   <form action="/user/auth/signup" method="POST" novalidate>
     @csrf
-    @include('component.user-auth-errors')
+    @include('component.errors')
     <div class="row justify-content-center">
       <div class="col-lg-3 col-md-6 mb-3">
         <label for="last_name" class="form-label">姓氏</label>

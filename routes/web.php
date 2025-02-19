@@ -48,4 +48,30 @@ Route::group(['prefix' => 'merchandise'], function(){
         '{merchandise_id}/edit',
         'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess'
     );
+    Route::delete(
+        '{merchandise_id}/delete',
+        'App\Http\Controllers\MerchandiseController@MerchandiseDeleteProcess'
+    );
+});
+Route::group(['prefix' => 'category'], function(){
+    Route::get(
+        'manage',
+        'App\Http\Controllers\CategoryController@CategoryManagePage'
+    );
+    Route::get(
+        'create',
+        'App\Http\Controllers\CategoryController@CategoryCreateProcess'
+    );
+    Route::get(
+        '{merchandise_id}/edit',
+        'App\Http\Controllers\CategoryController@MerchandiseEditPage'
+    );
+    Route::post(
+        '{merchandise_id}/edit',
+        'App\Http\Controllers\CategoryController@MerchandiseEditProcess'
+    );
+    Route::delete(
+        '{merchandise_id}/delete',
+        'App\Http\Controllers\CategoryController@MerchandiseDeleteProcess'
+    );
 });

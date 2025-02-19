@@ -4,6 +4,8 @@
 
 @section('content')
 
+@include('component.success')
+
 <h1 class="mt-4 border-bottom border-3">{{ $page_title }}</h1>
 
 <form action="/merchandise/{{ $merchandise->id }}/edit" method="POST" enctype="multipart/form-data">
@@ -11,7 +13,7 @@
   <div class="form-group row mb-2">
       <label for="category_id" class="col-sm-2 col-form-label">類別</label>
       <div class="col-sm-10">
-          <select class="form-control" id="category_id" name="category_id">
+          <select class="form-select" id="category_id" name="category_id">
               @foreach($categories as $category)
               <option value="{{ $category->id }}" @if($category->id == 1 or $category->id == $merchandise->category_id) selected @endif>{{ $category->name }}</option>
               @endforeach
@@ -21,7 +23,7 @@
   <div class="form-group row mb-2">
       <label for="status" class="col-sm-2 col-form-label">狀態</label>
       <div class="col-sm-10">
-          <select class="form-control" id="status" name="status">
+          <select class="form-select" id="status" name="status">
               <option value="C" @if(old('status', $merchandise->status) == 'c') selected @endif>建立中</option>
               <option value="S" @if(old('status', $merchandise->status) == 'S') selected @endif>可販售</option>
           </select>

@@ -19,6 +19,7 @@
                 <div class="sidebar-heading border-bottom bg-light">二手商鋪管理</div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/merchandise/manage">商品管理</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/category/manage">類別管理</a>
                 </div>
             </div>
             <!-- Page content wrapper-->
@@ -26,7 +27,12 @@
                 <!-- Top navigation-->
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <div class="container-fluid">
-                        <button class="btn btn-outline-dark" id="sidebarToggle"><i class="bi bi-list"></i></button>
+                        <button class="btn btn-outline-dark fs-5" id="sidebarToggle"><i class="bi bi-list"></i></button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="/">回首頁<i class="bi bi-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
                 <!-- Page content-->

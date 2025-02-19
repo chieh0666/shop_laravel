@@ -64,7 +64,7 @@ class MerchandiseController extends Controller
         }
     }
 
-    public function MerchandiseEditProcess($merchandise_id)
+    public function MerchandiseEditProcess($merchandise_id, Request $request)
     {
         $input = request()->all();
         
@@ -82,6 +82,12 @@ class MerchandiseController extends Controller
 
         Merchandise::where('id', $merchandise_id)->update($input);
 
-        return redirect('/merchandise/' . $merchandise_id . '/edit');
+        return redirect('/merchandise/' . $merchandise_id . '/edit')->with('success', '更新成功');
+    }
+
+    public function MerchandiseDeleteProcess($merchandise_id)
+    {
+        Merchandise::destroy($merchandise_id);
+        return redirect('/merchandise/manage')->with('success', '刪除成功');;
     }
 }
