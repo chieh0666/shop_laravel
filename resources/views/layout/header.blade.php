@@ -3,7 +3,7 @@
   <div class="py-03125">
     <div class="container">
       <div class="d-flex align-items-center justify-content-end">
-        <a class="p-1" href="/manage" title="前往會員主頁">
+        <a class="p-1" href="/merchandise/manage" title="前往管理主頁">
           <span class="text-dark">商店管理</span>
         </a>
         <a class="p-1" href="/user/auth/signout" title="前往會員主頁">

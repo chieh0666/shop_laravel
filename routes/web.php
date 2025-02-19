@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function(){
-            return view('layout.home');
+            return view('home');
         })->name('home');
 
 Route::group(['prefix' => 'user'], function(){
@@ -32,5 +32,20 @@ Route::group(['prefix' => 'user'], function(){
 });
 
 Route::group(['prefix' => 'merchandise'], function(){
-    
+    Route::get(
+        'manage',
+        'App\Http\Controllers\MerchandiseController@MerchandiseManagePage'
+    );
+    Route::get(
+        'create',
+        'App\Http\Controllers\MerchandiseController@MerchandiseCreateProcess'
+    );
+    Route::get(
+        '{merchandise_id}/edit',
+        'App\Http\Controllers\MerchandiseController@MerchandiseEditPage'
+    );
+    Route::post(
+        '{merchandise_id}/edit',
+        'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess'
+    );
 });
