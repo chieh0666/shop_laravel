@@ -2,9 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function(){
-            return view('home');
-        })->name('home');
+Route::get('/',
+    'App\Http\Controllers\HomeController@MerchandiseList')->name('home');
 
 Route::group(['prefix' => 'user'], function(){
     Route::group(['prefix' => 'auth'], function(){
