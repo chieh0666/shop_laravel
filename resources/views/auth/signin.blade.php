@@ -39,6 +39,15 @@
       <div>
         <a href="/user/auth/signup" class="text-916953">建立帳戶</a>
       </div>
+      <div class="position-relative">
+        <hr/>
+        <span class="position-absolute top-50 start-50 translate-middle px-2 bg-white">其他登入方式</span>
+      </div>
+      <div class="text-center">
+        <a class="btn" href="/google/auth" role="button">
+          <i class="bi bi-google text-secondary fs-3"></i>
+        </a>
+      </div>
     </form>
   </div>
 </div>

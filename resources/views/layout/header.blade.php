@@ -19,7 +19,7 @@
       <div class="col-1 d-block d-lg-none my-2">
         <h1 class="m-0">
           <a href="/" title="回首頁">
-            <img src="./images/logo_tab.png" alt="YUJ">
+            <img src="/images/logo_tab.png" alt="YUJ">
             <span class="d-none">YUJ網頁設計</span>
           </a>
         </h1>
@@ -30,7 +30,7 @@
       <div class="col-1 d-lg-block d-none m-2">
         <h1 class="m-0">
           <a href="/" title="回首頁">
-            <img src="./images/logo_tab.png" alt="YUJ">
+            <img src="/images/logo_tab.png" alt="YUJ">
             <span class="d-none">YUJ網頁設計</span>
           </a>
         </h1>
@@ -72,7 +72,7 @@
         </div>
         <span class="mx-3">|</span>
         <div>
-          <a class="position-relative" href="./cart-list.html" title="前往我的購物車">
+          <a class="position-relative" href="/cart-list.html" title="前往我的購物車">
             <i class="bi bi-cart fs-2"></i>
             <span class="position-absolute top-0 start-100 translate-middle rounded-pill badge bg-danger mt-2 p-1">
               99+
@@ -85,22 +85,22 @@
     <nav class="py-1 d-lg-block d-none">
       <ul class="nav justify-content-center">
         <li class="nav-item">
-          <a class="nav-link" href="./products.html" title="前往所有商品">所有商品</a>
+          <a class="nav-link" href="/products.html" title="前往所有商品">所有商品</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./new-product.html" title="前往最新商品">最新商品</a>
+          <a class="nav-link" href="/new-product.html" title="前往最新商品">最新商品</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./promotion.html" title="前往促銷活動">促銷活動</a>
+          <a class="nav-link" href="/promotion.html" title="前往促銷活動">促銷活動</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./news.html" title="前往最新消息">最新消息</a>
+          <a class="nav-link" href="/news.html" title="前往最新消息">最新消息</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./about.html" title="前往關於我們">關於我們</a>
+          <a class="nav-link" href="/about.html" title="前往關於我們">關於我們</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./contact-us.html" title="前往聯絡我們">聯絡我們</a>
+          <a class="nav-link" href="/contact-us.html" title="前往聯絡我們">聯絡我們</a>
         </li>
       </ul>
     </nav>
@@ -109,22 +109,22 @@
       <div class="card card-body border-0">
         <ul class="nav flex-column text-center align-items-center">
           <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="./products.html" title="前往所有商品">所有商品</a>
+            <a class="nav-link" href="/products.html" title="前往所有商品">所有商品</a>
           </li>
           <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="./new-product.html" title="前往最新商品">最新商品</a>
+            <a class="nav-link" href="/new-product.html" title="前往最新商品">最新商品</a>
           </li>
           <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="./promotion.html" title="前往促銷活動">促銷活動</a>
+            <a class="nav-link" href="/promotion.html" title="前往促銷活動">促銷活動</a>
           </li>
           <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="./news.html" title="前往最新消息">最新消息</a>
+            <a class="nav-link" href="/news.html" title="前往最新消息">最新消息</a>
           </li>
           <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="./about.html" title="前往關於我們">關於我們</a>
+            <a class="nav-link" href="/about.html" title="前往關於我們">關於我們</a>
           </li>
           <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="./contact-us.html" title="前往聯絡我們">聯絡我們</a>
+            <a class="nav-link" href="/contact-us.html" title="前往聯絡我們">聯絡我們</a>
           </li>
         </ul>
       </div>

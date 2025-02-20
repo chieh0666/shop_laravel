@@ -21,10 +21,39 @@ class CategoryController extends Controller
     public function CategoryCreateProcess()
     {
         $default_data = [
-            'parent_id' => '5',
-            'name' => 'Nintendo Switch',
+            'parent_id' => '0',
+            'name' => '新類別',
         ];
-        Category::create($default_data);
-        return redirect('/category/manage');
+        $category = Category::create($default_data);
+
+        return redirect('/category/' . $category->id . '/edit');
+    }
+
+    public function CategoryEditPage($category_id)
+    {
+        $thisCategory = Category::where('id',$category_id)->first();
+
+        if(is_null($thisCategory)){
+            return redirect('/category/manage')->with('error', '類別不存在');
+        }
+
+        $binding = [
+            'title' => '-編輯類別',
+            'page_title' => '編輯類別',
+            'thisCategory' => $thisCategory,
+            'categories' => Category::all(),
+        ];
+        return view('category.edit', $binding);
+    }
+
+    public function CategoryEditProcess($category_id)
+    {
+        $thisCategory = Category::where('id', $category_id)->fiest();
+
+        if (is_null($thisCategory)) {
+            return redirect('/category/manage')->with('error', '類別不存在');
+        }
+
+
     }
 }

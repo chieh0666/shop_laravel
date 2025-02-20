@@ -62,15 +62,21 @@ Route::group(['prefix' => 'category'], function(){
         'App\Http\Controllers\CategoryController@CategoryCreateProcess'
     );
     Route::get(
-        '{merchandise_id}/edit',
-        'App\Http\Controllers\CategoryController@MerchandiseEditPage'
+        '{category_id}/edit',
+        'App\Http\Controllers\CategoryController@CategoryEditPage'
     );
     Route::post(
-        '{merchandise_id}/edit',
-        'App\Http\Controllers\CategoryController@MerchandiseEditProcess'
+        '{category_id}/edit',
+        'App\Http\Controllers\CategoryController@CategoryEditProcess'
     );
     Route::delete(
         '{merchandise_id}/delete',
         'App\Http\Controllers\CategoryController@MerchandiseDeleteProcess'
     );
 });
+
+// google auth 登入
+Route::get('/google/auth',
+    'App\Http\Controllers\SocialiteController@redirectToProvider');
+Route::get('/google/auth/callback',
+    'App\Http\Controllers\SocialiteController@handleProviderCallback');

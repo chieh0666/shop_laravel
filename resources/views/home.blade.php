@@ -42,6 +42,23 @@
             <div class="px-2 py-1"><i class="bi bi-caret-right"></i></div>
           </div>
         </div>
+        <div class="text-start">
+          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-1-ls bg-opacity-75 rounded-3 mt-5">
+            <a href="#">12345</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
+          </div>
+          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-2-ls bg-opacity-75 rounded-3 mt-5">
+            <a href="#">12345gfdgfd</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
+          </div>
+          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-3-ls bg-opacity-75 rounded-3 mt-5">
+            <a href="#">12345gfdg</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
+          </div>
+          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-4-ls bg-opacity-75 rounded-3 mt-5">
+            <a href="#">12345fgfrrr</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
+          </div>
+          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-5-ls bg-opacity-75 rounded-3 mt-5">
+            <a href="#">1234grfgfg5</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
+          </div>
+        </div>
       </ul>
     </div>
     <div class="col-lg-9 col-md-12 shadow">
@@ -50,23 +67,6 @@
         <div class="f-carousel__slide"><img src="./images/banner1.jpg" alt="行銷圖"></div>
         <div class="f-carousel__slide"><img src="./images/banner2.jpg" alt="行銷圖"></div>
         <div class="f-carousel__slide"><img src="./images/banner3.jpg" alt="行銷圖"></div>
-      </div>
-      <div class="text-start">
-        <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-1 d-none cat-1-ls bg-opacity-75 rounded-3 mt-5">
-          <a href="#">12345</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-        </div>
-        <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-1 d-none cat-2-ls bg-opacity-75 rounded-3 mt-5">
-          <a href="#">12345gfdgfd</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-        </div>
-        <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-1 d-none cat-3-ls bg-opacity-75 rounded-3 mt-5">
-          <a href="#">12345gfdg</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-        </div>
-        <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-1 d-none cat-4-ls bg-opacity-75 rounded-3 mt-5">
-          <a href="#">12345fgfrrr</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-        </div>
-        <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-1 d-none cat-5-ls bg-opacity-75 rounded-3 mt-5">
-          <a href="#">1234grfgfg5</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-        </div>
       </div>
     </div>
   </div>
