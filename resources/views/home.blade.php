@@ -12,53 +12,25 @@
           <i class="bi bi-bookmarks"></i>
           商品分類
         </span>
-        <div class="list-group-item-action fs-6 cat-1">
+
+        @foreach($categories as $category)
+        @if($category->id > 1 && $category->parent_id == 0)
+        <div class="list-group-item-action fs-6 cat-{{ $category->id }}">
           <div class="d-flex align-items-center justify-content-between">
-            <div class="px-4 py-1"><a href="#">種類一</a></div>
+            <div class="px-4 py-1"><a href="#">{{ $category->name }}</a></div>
             <div class="px-2 py-1"><i class="bi bi-caret-right"></i></div>
           </div>
         </div>
-        <div class="list-group-item-action fs-6 cat-2">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="px-4 py-1"><a href="#">種類二</a></div>
-            <div class="px-2 py-1"><i class="bi bi-caret-right"></i></div>
-          </div>
+        @endif
+        <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-{{ $category->id }}-ls bg-opacity-75 rounded-3 mt-5">
+        @foreach($categories as $subcategory)
+        @if($subcategory->parent_id == $category->id)
+        <a href="#">{{ $subcategory->name }}</a><span class="px-1">/</span>
+        @endif
+        @endforeach
         </div>
-        <div class="list-group-item-action fs-6 cat-3">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="px-4 py-1"><a href="#">種類三</a></div>
-            <div class="px-2 py-1"><i class="bi bi-caret-right"></i></div>
-          </div>
-        </div>
-        <div class="list-group-item-action fs-6 cat-4">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="px-4 py-1"><a href="#">種類四</a></div>
-            <div class="px-2 py-1"><i class="bi bi-caret-right"></i></div>
-          </div>
-        </div>
-        <div class="list-group-item-action fs-6 cat-5">
-          <div class="d-flex align-items-center justify-content-between">
-            <div class="px-4 py-1"><a href="#">種類五</a></div>
-            <div class="px-2 py-1"><i class="bi bi-caret-right"></i></div>
-          </div>
-        </div>
-        <div class="text-start">
-          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-1-ls bg-opacity-75 rounded-3 mt-5">
-            <a href="#">12345</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-          </div>
-          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-2-ls bg-opacity-75 rounded-3 mt-5">
-            <a href="#">12345gfdgfd</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-          </div>
-          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-3-ls bg-opacity-75 rounded-3 mt-5">
-            <a href="#">12345gfdg</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-          </div>
-          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-4-ls bg-opacity-75 rounded-3 mt-5">
-            <a href="#">12345fgfrrr</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-          </div>
-          <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-5-ls bg-opacity-75 rounded-3 mt-5">
-            <a href="#">1234grfgfg5</a><span class="px-1">/</span><a href="#">645456</a><span class="px-1">/</span><a href="#">56465464</a><span class="px-1">/</span><a href="#">86486</a><span class="px-1">/</span><a href="#">4684</a><span class="px-1">/</span>
-          </div>
-        </div>
+        @endforeach
+
       </ul>
     </div>
     <div class="col-lg-9 col-md-12 shadow">
