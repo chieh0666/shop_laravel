@@ -52,6 +52,7 @@ Route::group(['prefix' => 'merchandise'], function(){
         'App\Http\Controllers\MerchandiseController@MerchandiseDeleteProcess'
     );
 });
+
 Route::group(['prefix' => 'category'], function(){
     Route::get(
         'manage',
@@ -70,8 +71,8 @@ Route::group(['prefix' => 'category'], function(){
         'App\Http\Controllers\CategoryController@CategoryEditProcess'
     );
     Route::delete(
-        '{merchandise_id}/delete',
-        'App\Http\Controllers\CategoryController@MerchandiseDeleteProcess'
+        '{category_id}/delete',
+        'App\Http\Controllers\CategoryController@CategoryDeleteProcess'
     );
 });
 

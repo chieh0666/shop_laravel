@@ -33,10 +33,6 @@ class CategoryController extends Controller
     {
         $thisCategory = Category::where('id',$category_id)->first();
 
-        if(is_null($thisCategory)){
-            return redirect('/category/manage')->with('error', '類別不存在');
-        }
-
         $binding = [
             'title' => '-編輯類別',
             'page_title' => '編輯類別',
@@ -48,12 +44,26 @@ class CategoryController extends Controller
 
     public function CategoryEditProcess($category_id)
     {
-        $thisCategory = Category::where('id', $category_id)->fiest();
-
+        $input = request()->all();
+        $thisCategory = Category::where('id', $category_id)->first();
         if (is_null($thisCategory)) {
             return redirect('/category/manage')->with('error', '類別不存在');
         }
+        if (isset($input['to_parent_id'])) {
+            $input['parent_id'] = $input['to_parent_id'];
+        }
+        $thisCategory->update($input);
+        return redirect('/category/' . $thisCategory->id . '/edit')->with('success', '類別更新成功');
+    }
 
+    public function CategoryDeleteProcess($category_id)
+    {
+        if (is_null(Category::find($category_id))) {
+            return redirect('/category/manage')->with('error', '類別刪除失敗');
 
+        }
+        Category::destroy($category_id);
+
+        return redirect('/category/manage')->with('success', '類別刪除成功');
     }
 }
