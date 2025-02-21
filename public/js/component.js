@@ -1,13 +1,13 @@
 // 首頁預載入js
 $(document).ready(function(){
   $('.search-input').focus(function(){
-    $('.search-form').removeClass('border-secondary-subtle').addClass('border-primary');
-    $('.search-btn').removeClass('border-secondary-subtle').addClass('border-primary');
+    $('.search-form').removeClass('border-secondary-subtle').addClass('border-success');
+    $('.search-btn').removeClass('border-secondary-subtle').addClass('border-success');
   })
 
   $('.search-input').blur(function(){
-    $('.search-form').removeClass('border-primary').addClass('border-secondary-subtle');
-    $('.search-btn').removeClass('border-primary').addClass('border-secondary-subtle');
+    $('.search-form').removeClass('border-success').addClass('border-secondary-subtle');
+    $('.search-btn').removeClass('border-success').addClass('border-secondary-subtle');
   })
 
   /* 首頁商品分類選單 */
@@ -31,4 +31,17 @@ $(document).ready(function(){
       }
     );
   });
+
+  const input = document.getElementById("search-box");
+  const clearBtn = document.querySelector(".clear-btn");
+
+  input.addEventListener("input", () => {
+    clearBtn.style.display = input.value ? "block" : "none";
+  });
+
+  clearBtn.addEventListener("click", () => {
+    input.value = "";
+    clearBtn.style.display = "none";
+  });
+
 });

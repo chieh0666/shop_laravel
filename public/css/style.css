@@ -244,6 +244,7 @@ body .notify:not(#home .notify) {
   text-decoration: none;
 }
 
+/* 輪播圖下面點點 */
 .is-current .f-carousel__dot {
   padding-left: 8px;
   padding-right: 8px;
@@ -254,12 +255,32 @@ body .notify:not(#home .notify) {
   left: calc(0px + 15.625rem);
   backdrop-filter: blur(5rem);
 }
-
 .subcat span:last-of-type {
   display: none;
 }
-
 .subcat span:nth-child(5n)::after { /* 使用 ::after 偽元素添加換行符 */
   content: "\a"; /* \a 是換行符的 Unicode 表示 */
   white-space: pre; /* 保持空白字符 */
+}
+
+/* 搜尋框清除X */
+.search-form {
+  position: relative;
+  display: inline-block;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  appearance: none; /* 隱藏原始樣式 */
+}
+.clear-btn {
+  position: absolute;
+  right: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #999;
+  cursor: pointer;
+  display: none; /* 預設隱藏 */
+}
+.clear-btn:hover {
+  color: #e74c3c;
 }
