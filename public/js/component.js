@@ -11,53 +11,24 @@ $(document).ready(function(){
   })
 
   /* 首頁商品分類選單 */
-  document.querySelectorAll('.cat-item').forEach(item => {
-    // 添加滑鼠進入事件
-    item.addEventListener('mouseenter', function() {
-        const subcat = this.querySelector('.subcat');
-        subcat.removeClass('d-none');
-    });
-    // 添加滑鼠離開事件
-    item.addEventListener('mouseleave', function() {
-        const subcat = this.querySelector('.subcat');
-        subcat.addClass('d-none');
-    });
+  $('.cat-item').each(function(index) {
+    $(this).hover(
+      function() { // 滑鼠進入
+        $('.subcat').eq(index).toggleClass('d-none'); // 顯示對應的.subcat
+      },
+      function() { // 滑鼠離開
+        $('.subcat').eq(index).toggleClass('d-none'); // 隱藏對應的.subcat
+      }
+    );
   });
-
-  // for (let i = 1; i <= 99; i++) {
-  //   $('.cat-' + i).hover(
-  //     function() {
-  //       $('.cat-' + i + '-ls').removeClass('d-none');
-  //     },
-  //     function() {
-  //       $('.cat-' + i + '-ls').addClass('d-none');
-  //     }
-  //   );
-  //   $('.cat-' + i + '-ls').hover(
-  //     function() {
-  //     $('.cat-' + i + '-ls').removeClass('d-none');
-  //   },
-  //     function() {
-  //       $('.cat-' + i + '-ls').addClass('d-none');
-  //     }
-  //   );
-  // }
-  
-  // 首頁banner、促銷頁面輪播圖
-  const container = document.getElementById("mainCarousel");
-  const options = {
-    infinite: true,
-    Autoplay: {
-      timeout: 3000,
-    showProgress: false
-    }
-  };
-  new Carousel(container, options, { Autoplay });
-
+  $('.subcat').each(function(index) {
+    $(this).hover(
+      function() { // 滑鼠進入
+        $('.subcat').eq(index).toggleClass('d-none'); // 顯示對應的.subcat
+      },
+      function() { // 滑鼠離開
+        $('.subcat').eq(index).toggleClass('d-none'); // 隱藏對應的.subcat
+      }
+    );
+  });
 });
-
-const container = document.getElementById("salesCarousel");
-const options = {
-  infinite: false
-};
-new Carousel(container, options);

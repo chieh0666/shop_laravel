@@ -22,8 +22,6 @@
     @include('layout.footer')
     <script src="/assets/js/jquery-3.7.1.min.js"></script>
     <script src="/assets/bootstrap-5.3.3/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/ui-main/dist/carousel/carousel.umd.js"></script>
-    <script src="/assets/js/ui-main/dist/carousel/carousel.autoplay.umd.js"></script>
     <script src="/js/component.js"></script>
 </body>
 </html>

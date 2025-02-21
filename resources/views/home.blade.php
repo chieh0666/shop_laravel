@@ -21,7 +21,6 @@
             <div class="px-2 py-1"><i class="bi bi-caret-right"></i></div>
           </div>
         </div>
-        @endif
         <div class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none bg-opacity-75 rounded-3 mt-5 subcat">
         @foreach($categories as $subcategory)
         @if($subcategory->parent_id == $category->id)
@@ -29,6 +28,7 @@
         @endif
         @endforeach
         </div>
+        @endif
         @endforeach
 
       </ul>
@@ -521,4 +521,5 @@
   </div>
 </article>
 
+@include('component.banner-slide')
 @endsection

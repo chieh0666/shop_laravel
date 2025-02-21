@@ -98,5 +98,6 @@
     </div>
   </div>
 </article>
-
+@include('component.sales-slide')
+@include('component.banner-slide')
 @endsection

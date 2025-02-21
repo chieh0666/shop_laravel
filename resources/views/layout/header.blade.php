@@ -16,10 +16,10 @@
   <div class="container">
     <div class="d-flex align-items-center justify-content-center">
       <!-- mobile logo -->
-      <div class="col-1 d-block d-lg-none my-2">
+      <div class="col-3 d-block d-lg-none my-2 border rounded-1">
         <h1 class="m-0">
           <a href="/" title="回首頁">
-            <img src="/images/logo_tab.png" alt="YUJ">
+            <img src="/images/logo.png" alt="YUJ">
             <span class="d-none">YUJ網頁設計</span>
           </a>
         </h1>
@@ -27,10 +27,10 @@
     </div>
     <div class="d-flex align-items-center justify-content-between">
       <!-- logo -->
-      <div class="col-1 d-lg-block d-none m-2">
+      <div class="col-2 d-lg-block d-none m-2 border rounded-1">
         <h1 class="m-0">
           <a href="/" title="回首頁">
-            <img src="/images/logo_tab.png" alt="YUJ">
+            <img src="/images/logo.png" alt="YUJ">
             <span class="d-none">YUJ網頁設計</span>
           </a>
         </h1>
