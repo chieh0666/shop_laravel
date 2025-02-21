@@ -91,10 +91,6 @@ class MerchandiseController extends Controller
     public function MerchandiseDeleteProcess($merchandise_id)
     {
         Merchandise::destroy($merchandise_id);
-        if (is_null(Merchandise::find($merchandise_id))) {
-            return redirect('/merchandise/manage')->with('error', '商品刪除失敗');
-
-        }
         return redirect('/merchandise/manage')->with('success', '商品刪除成功');;
     }
 

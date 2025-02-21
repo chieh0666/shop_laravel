@@ -284,3 +284,13 @@ input[type="search"]::-webkit-search-cancel-button {
 .clear-btn:hover {
   color: #e74c3c;
 }
+
+/* 前台主頁商品照片 */
+.merchandise-img-box {
+  height: 300px;
+}
+
+/* nav 背景 */
+nav {
+  backdrop-filter: blur(5rem);
+}

@@ -32,6 +32,7 @@ $(document).ready(function(){
     );
   });
 
+  // 搜尋框清除X動作
   const input = document.getElementById("search-box");
   const clearBtn = document.querySelector(".clear-btn");
 

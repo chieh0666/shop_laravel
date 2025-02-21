@@ -16,24 +16,28 @@
         <thead>
             <tr>
                 <td class="col-2">照片</td>
-                <td class="col-6">品名</td>
-                <td class="col-1">狀態</td>
-                <td class="col-1">庫存</td>
+                <td class="col-4 col-md-5">品名</td>
+                <td class="col-1 d-none d-md-table-cell">類別</td>
+                <td class="col-2 col-md-1">狀態</td>
+                <td class="col-2 col-md-1">庫存</td>
                 <td class="col-2">功能</td>
             </tr>
         </thead>
         <tbody>
-            @foreach($merchandises as $merchandise)
+            @forelse($merchandises as $merchandise)
             <tr>
                 <td>
                     @if($merchandise->photo)
-                    <img src="/{{ $merchandise->photo }}" alt="{{ $merchandise->name }}" height="80px">
+                    <img class="img-thumbnail" src="/{{ $merchandise->photo }}" alt="{{ $merchandise->name }}">
                     @else
                     沒有照片
                     @endif
                 </td>
                 <td>
                     {{ $merchandise->name }}
+                </td>
+                <td class=" d-none d-md-table-cell">
+                    {{ $merchandise->category_id }}
                 </td>
                 <td>
                     {{ $merchandise->status }}
@@ -75,7 +79,13 @@
                     </div>
                 </td>
             </tr>
-            @endforeach
+            @empty
+            <tr class="text-center">
+                <td colspan="5">
+                    沒有資料
+                </td>
+            </tr>
+            @endforelse
         </tbody>
     </table>
 </div>

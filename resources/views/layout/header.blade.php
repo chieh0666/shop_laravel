@@ -82,57 +82,57 @@
         </div>
       </div>
     </div>
-    <!-- nav -->
-    <nav class="py-1 d-lg-block d-none">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link" href="/merchandise/list" title="前往所有商品">所有商品</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/merchandise/new" title="前往最新商品">最新商品</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/promotion" title="前往促銷活動">促銷活動</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/news" title="前往最新消息">最新消息</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about" title="前往關於我們">關於我們</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact-us" title="前往聯絡我們">聯絡我們</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- mobile、tablet menu -->
-    <div class="collapse" id="m-menu">
-      <div class="card card-body border-0">
-        <ul class="nav flex-column text-center align-items-center">
-          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="/merchandise/list" title="前往所有商品">所有商品</a>
-          </li>
-          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="/merchandise/new" title="前往最新商品">最新商品</a>
-          </li>
-          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="/promotion" title="前往促銷活動">促銷活動</a>
-          </li>
-          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="/news" title="前往最新消息">最新消息</a>
-          </li>
-          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="/about" title="前往關於我們">關於我們</a>
-          </li>
-          <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-            <a class="nav-link" href="/contact-us" title="前往聯絡我們">聯絡我們</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- 廣告或重要事項通知時顯示 -->
-  <div class="notify text-center text-danger py-03125 fs-5">
-    <span>公告訊息</span>
   </div>
 </header>
+<!-- nav -->
+<nav class="py-1 d-lg-block d-none sticky-top bg-white z-3 bg-opacity-75 shadow-sm">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/merchandise/list" title="前往所有商品">所有商品</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/merchandise/new" title="前往最新商品">最新商品</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/promotion" title="前往促銷活動">促銷活動</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/news" title="前往最新消息">最新消息</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/about" title="前往關於我們">關於我們</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/contact-us" title="前往聯絡我們">聯絡我們</a>
+    </li>
+  </ul>
+</nav>
+<!-- mobile、tablet menu -->
+<div class="collapse" id="m-menu">
+  <div class="card card-body border-0">
+    <ul class="nav flex-column text-center align-items-center">
+      <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+        <a class="nav-link" href="/merchandise/list" title="前往所有商品">所有商品</a>
+      </li>
+      <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+        <a class="nav-link" href="/merchandise/new" title="前往最新商品">最新商品</a>
+      </li>
+      <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+        <a class="nav-link" href="/promotion" title="前往促銷活動">促銷活動</a>
+      </li>
+      <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+        <a class="nav-link" href="/news" title="前往最新消息">最新消息</a>
+      </li>
+      <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+        <a class="nav-link" href="/about" title="前往關於我們">關於我們</a>
+      </li>
+      <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
+        <a class="nav-link" href="/contact-us" title="前往聯絡我們">聯絡我們</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- 廣告或重要事項通知時顯示 -->
+<div class="notify text-center text-danger py-03125 fs-5">
+  <span>公告訊息</span>
+</div>
