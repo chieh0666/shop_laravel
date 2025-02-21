@@ -98,11 +98,20 @@ class MerchandiseController extends Controller
         return redirect('/merchandise/manage')->with('success', '商品刪除成功');;
     }
 
+    // 所有商品
     public function MerchandiseListPage()
     {
-        return view('merchandise.list');
+        $categories = Category::all();
+        $merchandises = Merchandise::all();
+
+        $blinding = [
+            'categories' => $categories,
+            'merchandises' => $merchandises,
+        ];
+        return view('merchandise.list', $blinding);
     }
 
+    // 最新商品
     public function MerchandiseNewPage()
     {
         return view('merchandise.new');

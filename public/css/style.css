@@ -9,6 +9,7 @@ body {
 a {
   text-decoration: none;
   display: inline-block;
+  color: #008B8B !important;
 }
 a:hover {
   font-weight: bolder;
@@ -91,34 +92,34 @@ p:not(.price) {
 /* 商品列表 */
 #hot-product .card ul,
 #new-product .card ul,
-#products .card ul {
+#merchandise .card ul {
   bottom: -60px;
   transition: 0.3s;
 }
 #hot-product .card:hover ul,
 #new-product .card:hover ul,
-#products .card:hover ul {
+#merchandise .card:hover ul {
   bottom: 0;
 }
 #hot-product .card ul li:hover,
 #new-product .card ul li:hover,
-#products .card ul li:hover {
+#merchandise .card ul li:hover {
   background-color: #d3d3d32f;
 }
 #hot-product .card-text span:nth-of-type(1)::before,
 #hot-product .card-text span:nth-of-type(3)::before,
 #new-product .card-text span:nth-of-type(1)::before,
 #new-product .card-text span:nth-of-type(3)::before,
-#products .card-text span:nth-of-type(1)::before,
-#products .card-text span:nth-of-type(3)::before {
+#merchandise .card-text span:nth-of-type(1)::before,
+#merchandise .card-text span:nth-of-type(3)::before {
   content: "NT$ ";
 }
 #hot-product .card-text span:nth-of-type(1)::after,
 #hot-product .card-text span:nth-of-type(3)::after,
 #new-product .card-text span:nth-of-type(1)::after,
 #new-product .card-text span:nth-of-type(3)::after,
-#products .card-text span:nth-of-type(1)::after,
-#products .card-text span:nth-of-type(3)::after {
+#merchandise .card-text span:nth-of-type(1)::after,
+#merchandise .card-text span:nth-of-type(3)::after {
   content: " 元";
 }
 

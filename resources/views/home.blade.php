@@ -287,7 +287,7 @@
     <h2>
       <span class="border-start border-top ps-2 pt-1 border-3">最新商品</span>
     </h2>
-    <span class="fs-5"><a href="#">看更多<i class="bi bi-arrow-right"></i></a></span>
+    <span class="fs-5"><a href="/merchandise/new">看更多<i class="bi bi-arrow-right"></i></a></span>
   </div>
   <div class="row row-cols-2 row-cols-md-3 row-cols-xxl-4 g-2">
     <div class="col">

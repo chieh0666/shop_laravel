@@ -9,82 +9,36 @@
   </h2>
 </div>
 
-<article id="products" class="mt-1875">
+<article id="merchandise" class="mt-1875">
   <div class="row align-items-top justify-content-center">
     <div class="d-none d-xxl-inline-block col-3">
-      <div class="accordion" id="accordionExample">
+      <div class="accordion sticky-top border border-5 border-white" id="merchandiseAccordion">
+
+        <h3 class="fw-bolder py-2"><i class="bi bi-bookmarks"></i>商品分類</h3>
+
+        @foreach($categories as $category)
+        @if($category->id > 1 && $category->parent_id == 0 && $category->where('parent_id', $category->id)->count() > 0)
         <div class="accordion-item">
           <h3 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              種類一
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}" aria-expanded="true" aria-controls="collapse{{ $category->id }}">
+              {{ $category->name }}
             </button>
           </h3>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+          <div id="collapse{{ $category->id }}" class="accordion-collapse collapse show" data-bs-parent="#merchandiseAccordion">
             <div class="accordion-body">
               <ul class="list-group list-group-flush ">
-                <li class="list-group-item list-group-item-action">An item</li>
-                <li class="list-group-item list-group-item-action">A second item</li>
-                <li class="list-group-item list-group-item-action">A third item</li>
-                <li class="list-group-item list-group-item-action">A fourth item</li>
-                <li class="list-group-item list-group-item-action">And a fifth one</li>
+                @foreach($categories as $subcategory)
+                @if($subcategory->parent_id == $category->id)
+                <li class="list-group-item list-group-item-action">{{ $subcategory->name }}</li>
+                @endif
+                @endforeach
               </ul>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              種類二
-            </button>
-          </h3>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <ul class="list-group list-group-flush ">
-                <li class="list-group-item list-group-item-action">An item</li>
-                <li class="list-group-item list-group-item-action">A second item</li>
-                <li class="list-group-item list-group-item-action">A third item</li>
-                <li class="list-group-item list-group-item-action">A fourth item</li>
-                <li class="list-group-item list-group-item-action">And a fifth one</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              種類三
-            </button>
-          </h3>
-          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <ul class="list-group list-group-flush ">
-                <li class="list-group-item list-group-item-action">An item</li>
-                <li class="list-group-item list-group-item-action">A second item</li>
-                <li class="list-group-item list-group-item-action">A third item</li>
-                <li class="list-group-item list-group-item-action">A fourth item</li>
-                <li class="list-group-item list-group-item-action">And a fifth one</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h3 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              種類四
-            </button>
-          </h3>
-          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <ul class="list-group list-group-flush ">
-                <li class="list-group-item list-group-item-action">An item</li>
-                <li class="list-group-item list-group-item-action">A second item</li>
-                <li class="list-group-item list-group-item-action">A third item</li>
-                <li class="list-group-item list-group-item-action">A fourth item</li>
-                <li class="list-group-item list-group-item-action">And a fifth one</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        @endif
+        @endforeach
+        
       </div>
     </div>
     <div  class="col-9 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-2 mt-0">

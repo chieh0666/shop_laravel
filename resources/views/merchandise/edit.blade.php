@@ -56,8 +56,8 @@
   <div class="form-group row mb-2">
       <label for="photo" class="col-sm-2 col-form-label">照片</label>
       <div class="col-sm-10">
-          <input type="file" class="form-control-file" id="photo" name="photo">
-          <img src="/{{ $merchandise->photo }}" alt="{{ $merchandise->name }}" width="100px">
+        <input type="file" class="form-control" id="photo" name="photo">
+        <img class="mt-1" src="/{{ $merchandise->photo }}" alt="{{ $merchandise->name }}" width="200px">
       </div>
   </div>
   <div class="form-group row mb-2">
