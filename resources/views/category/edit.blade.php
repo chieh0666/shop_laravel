@@ -38,7 +38,7 @@
         <div class="col-sm-10 offset-sm-2">
             <span>
                 <input type="checkbox" class="btn-check" id="to_parent_id" name="to_parent_id" value="0" autocomplete="off">
-                <label class="btn btn-outline-success" for="to_parent_id">變更為父分類</label>
+                <label class="btn btn-outline-success" for="to_parent_id"><i class="bi bi-check-lg text-white border border-success rounded-1"></i>&nbsp;變更為父分類</label>
             </span>
             <button type="submit" class="btn btn-primary">儲存並更新</button>
         </div>

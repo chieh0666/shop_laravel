@@ -43,22 +43,16 @@
                 </td>
                 <td>
                     <a href="/merchandise/{{ $merchandise->id }}/edit" class="btn btn-secondary">
-                        <i class="bi bi-pencil"></i>&nbsp;
+                        <i class="bi bi-pencil"></i>
                         <span class="d-none d-xl-inline-block">
-                            管理
+                            &nbsp;管理
                         </span>
                     </a>
-                    {{-- <a href="" class="btn btn-danger mt-lg-0 mt-2 ">
-                        <i class="bi bi-trash"></i>&nbsp;
-                        <span class="d-none d-xl-inline-block">
-                            刪除
-                        </span>
-                    </a> --}}
                     <!-- 商品刪除 -->
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delMerchandise">
-                        <i class="bi bi-trash"></i>&nbsp;
+                        <i class="bi bi-trash"></i>
                         <span class="d-none d-xl-inline-block">
-                            刪除
+                            &nbsp;刪除
                         </span>
                     </button>
                     <!-- 商品刪除確認 -->

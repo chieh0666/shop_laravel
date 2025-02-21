@@ -11,7 +11,7 @@ $(document).ready(function(){
   })
 
   /* 首頁商品分類選單 */
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= 99; i++) {
     $('.cat-' + i).hover(
       function() {
         $('.cat-' + i + '-ls').removeClass('d-none');

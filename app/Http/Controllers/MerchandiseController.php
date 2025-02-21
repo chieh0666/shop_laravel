@@ -97,4 +97,25 @@ class MerchandiseController extends Controller
         }
         return redirect('/merchandise/manage')->with('success', '商品刪除成功');;
     }
+
+    public function MerchandiseListPage()
+    {
+        return view('merchandise.list');
+    }
+
+    public function MerchandiseNewPage()
+    {
+        return view('merchandise.new');
+    }
+
+    // 取得商品資料json
+    public function ReturnMerchandiseData()
+    {
+        $merchandises = Merchandise::get();
+        return response()->json([
+            'status' => 1,
+            'msg' => 'OK',
+            'data' => $merchandises,
+        ]);
+    }
 }

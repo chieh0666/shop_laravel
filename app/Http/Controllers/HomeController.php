@@ -8,7 +8,7 @@ use App\Models\Category;
 
 class HomeController extends Controller
 {
-    public function MerchandiseList()
+    public function CategoriesList()
     {
         $categories = Category::all();
         $blinding = [

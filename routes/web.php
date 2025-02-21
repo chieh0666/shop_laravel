@@ -3,7 +3,23 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',
-    'App\Http\Controllers\HomeController@MerchandiseList')->name('home');
+    'App\Http\Controllers\HomeController@CategoriesList')->name('home');
+
+Route::get('/promotion', function(){
+    return view('promotion');
+});
+
+Route::get('/news', function(){
+    return view('news');
+});
+
+Route::get('/about', function(){
+    return view('about');
+});
+
+Route::get('/contact-us', function(){
+    return view('contact-us');
+});
 
 Route::group(['prefix' => 'user'], function(){
     Route::group(['prefix' => 'auth'], function(){
@@ -50,6 +66,19 @@ Route::group(['prefix' => 'merchandise'], function(){
     Route::delete(
         '{merchandise_id}/delete',
         'App\Http\Controllers\MerchandiseController@MerchandiseDeleteProcess'
+    );
+    Route::get(
+        'list',
+        'App\Http\Controllers\MerchandiseController@MerchandiseListPage'
+    );
+    Route::get(
+        'new',
+        'App\Http\Controllers\MerchandiseController@MerchandiseNewPage'
+    );
+    // 取得商品資料json
+    Route::get(
+        'getdata',
+        'App\Http\Controllers\MerchandiseController@ReturnMerchandiseData'
     );
 });
 
