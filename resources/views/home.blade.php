@@ -14,15 +14,15 @@
         </span>
 
         @foreach($categories as $category)
-        @if($category->id > 1 && $category->parent_id == 0)
-        <div class="list-group-item-action fs-6 cat-{{ $category->id }}">
+        @if($category->id > 1 && $category->parent_id == 0 && $category->where('parent_id', $category->id)->count() > 0)
+        <div class="list-group-item-action fs-6 cat-item">
           <div class="d-flex align-items-center justify-content-between">
             <div class="px-4 py-1"><a href="#">{{ $category->name }}</a></div>
             <div class="px-2 py-1"><i class="bi bi-caret-right"></i></div>
           </div>
         </div>
         @endif
-        <div  class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none cat-{{ $category->id }}-ls bg-opacity-75 rounded-3 mt-5">
+        <div class="bg-white position-absolute top-0 bottom-0 left-0 shadow p-4 z-2 d-none bg-opacity-75 rounded-3 mt-5 subcat">
         @foreach($categories as $subcategory)
         @if($subcategory->parent_id == $category->id)
         <a href="#">{{ $subcategory->name }}</a><span class="px-1">/</span>

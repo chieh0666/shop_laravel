@@ -222,6 +222,7 @@ body .notify:not(#home .notify) {
   overflow: hidden;  /* 超出部分隱藏 */
   position: relative;
 }
+
 /* 卡片圖片樣式 */
 #news-page .card-img-top {
   width: 100%;
@@ -245,4 +246,19 @@ body .notify:not(#home .notify) {
 .is-current .f-carousel__dot {
   padding-left: 8px;
   padding-right: 8px;
+}
+
+/* 設置所有 .subcat 元素的樣式 */
+.subcat {
+  left: calc(0px + 15.625rem);
+  backdrop-filter: blur(5rem);
+}
+
+.subcat span:last-of-type {
+  display: none;
+}
+
+.subcat span:nth-child(5n)::after { /* 使用 ::after 偽元素添加換行符 */
+  content: "\a"; /* \a 是換行符的 Unicode 表示 */
+  white-space: pre; /* 保持空白字符 */
 }

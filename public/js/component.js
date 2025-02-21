@@ -11,40 +11,37 @@ $(document).ready(function(){
   })
 
   /* 首頁商品分類選單 */
-  for (let i = 1; i <= 99; i++) {
-    $('.cat-' + i).hover(
-      function() {
-        $('.cat-' + i + '-ls').removeClass('d-none');
-      },
-      function() {
-        $('.cat-' + i + '-ls').addClass('d-none');
-      }
-    );
-    $('.cat-' + i + '-ls').hover(
-      function() {
-      $('.cat-' + i + '-ls').removeClass('d-none');
-    },
-      function() {
-        $('.cat-' + i + '-ls').addClass('d-none');
-      }
-    );
-    const catLists = document.querySelectorAll('.cat-' + i + '-ls');
-    catLists.forEach(list => {
-      list.style.left = 'calc(0px + 15.625rem)';
-      list.style.backdropFilter = 'blur(5rem)';
-      const spans = list.querySelectorAll('span');
-      const lastSpan = spans[spans.length - 1];
-      if (lastSpan) {
-        lastSpan.style.display = 'none';
-      }
+  document.querySelectorAll('.cat-item').forEach(item => {
+    // 添加滑鼠進入事件
+    item.addEventListener('mouseenter', function() {
+        const subcat = this.querySelector('.subcat');
+        subcat.removeClass('d-none');
     });
-    $('.cat-' + i + '-ls').each(function() {
-      let spans = $(this).find('span');
-      for (let i = 4; i < spans.length; i += 5) {
-        $(spans[i]).after('<br/>');
-      }
+    // 添加滑鼠離開事件
+    item.addEventListener('mouseleave', function() {
+        const subcat = this.querySelector('.subcat');
+        subcat.addClass('d-none');
     });
-  }
+  });
+
+  // for (let i = 1; i <= 99; i++) {
+  //   $('.cat-' + i).hover(
+  //     function() {
+  //       $('.cat-' + i + '-ls').removeClass('d-none');
+  //     },
+  //     function() {
+  //       $('.cat-' + i + '-ls').addClass('d-none');
+  //     }
+  //   );
+  //   $('.cat-' + i + '-ls').hover(
+  //     function() {
+  //     $('.cat-' + i + '-ls').removeClass('d-none');
+  //   },
+  //     function() {
+  //       $('.cat-' + i + '-ls').addClass('d-none');
+  //     }
+  //   );
+  // }
   
   // 首頁banner、促銷頁面輪播圖
   const container = document.getElementById("mainCarousel");
