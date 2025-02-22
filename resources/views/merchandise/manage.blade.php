@@ -9,7 +9,7 @@
 <h1 class="mt-4 border-bottom border-3">{{ $page_title }}</h1>
 
 <div class="my-3">
-    <a class="btn btn-primary" href="/merchandise/create"><i class="bi bi-plus-lg"></i>&nbsp;新增商品</a>
+    <a class="btn btn-primary" href="/merchandise/create"><i class="bi bi-plus-lg me-1"></i>新增商品</a>
 </div>
 <div>
     <table class="table table-striped table-hover">
@@ -47,16 +47,16 @@
                 </td>
                 <td>
                     <a href="/merchandise/{{ $merchandise->id }}/edit" class="btn btn-secondary py-1">
-                        <i class="bi bi-pencil"></i>
+                        <i class="bi bi-pencil me-1"></i>
                         <span class="d-none d-xl-inline-block">
-                            &nbsp;管理
+                            管理
                         </span>
                     </a>
                     <!-- 商品刪除 -->
                     <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delMerchandise">
-                        <i class="bi bi-trash"></i>
+                        <i class="bi bi-trash me-1"></i>
                         <span class="d-none d-xl-inline-block">
-                            &nbsp;刪除
+                            刪除
                         </span>
                     </button>
                     <!-- 商品刪除確認 -->

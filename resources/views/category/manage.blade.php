@@ -9,7 +9,7 @@
 <h1 class="mt-4 border-bottom border-3">{{ $page_title }}</h1>
 
 <div class="my-3">
-    <a class="btn btn-primary" href="/category/create"><i class="bi bi-plus-lg"></i>&nbsp;新增類別</a>
+    <a class="btn btn-primary" href="/category/create"><i class="bi bi-plus-lg me-1"></i>新增類別</a>
 </div>
 
 <div class="row g-1">
@@ -21,16 +21,16 @@
                 <span class="fw-bolder">{{ $category->name }}({{ $category->where('parent_id', $category->id)->count() }})</span>
                 <div>
                     <a href="/category/{{ $category->id }}/edit" class="btn btn-secondary py-1">
-                        <i class="bi bi-pencil"></i>
+                        <i class="bi bi-pencil me-1"></i>
                         <span class="d-none d-xl-inline-block">
-                            &nbsp;管理
+                            管理
                         </span>
                     </a>
                     <!-- 類別刪除 -->
                     <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delCategory{{ $category->id }}">
-                        <i class="bi bi-trash"></i>
+                        <i class="bi bi-trash me-1"></i>
                         <span class="d-none d-xl-inline-block">
-                            &nbsp;刪除
+                            刪除
                         </span>
                     </button>
                     <!-- 類別刪除確認 -->
@@ -59,16 +59,16 @@
                 <i class="bi bi-arrow-return-right">&nbsp;{{ $subcategory->name }}</i>
                 <div>
                     <a href="/category/{{ $subcategory->id }}/edit" class="btn btn-secondary py-1">
-                        <i class="bi bi-pencil"></i>
+                        <i class="bi bi-pencil me-1"></i>
                         <span class="d-none d-xl-inline-block">
-                            &nbsp;管理
+                            管理
                         </span>
                     </a>
                     <!-- 類別刪除 -->
                     <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delCategory{{ $subcategory->id }}">
-                        <i class="bi bi-trash"></i>
+                        <i class="bi bi-trash me-1"></i>
                         <span class="d-none d-xl-inline-block">
-                            &nbsp;刪除
+                            刪除
                         </span>
                     </button>
                     <!-- 類別刪除確認 -->
