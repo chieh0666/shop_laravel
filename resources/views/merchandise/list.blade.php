@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div  class="col-9 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-2 mt-0">
+    <div class="col-9 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-2 mt-0">
 
       @foreach($merchandises as $merchandise)
       <div class="col mt-0">
@@ -78,9 +78,9 @@
           <div class="card-body text-center">
             <h3 class="card-title h4">{{ $merchandise->name }}</h3>
             <p class="price card-text fst-italic">
-              <span class="sale fs-4 p-2">{{ $merchandise->price }}</span>
+              <span class="sale fs-4 px-1">{{ $merchandise->price }}</span>
               <span class="d-lg-none"><br/></span>
-              <span class="text-decoration-line-through p-2">10000</span>
+              <span class="text-decoration-line-through px-1">10000</span>
             </p>
           </div>
         </div>

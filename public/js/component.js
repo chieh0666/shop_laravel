@@ -44,5 +44,5 @@ $(document).ready(function(){
     input.value = "";
     clearBtn.style.display = "none";
   });
-
+  
 });
