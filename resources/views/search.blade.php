@@ -7,7 +7,7 @@
 <!-- search page -->
 <div class="text-center">
   <h2 class="py-1875">
-    <span class="border-start border-top ps-2 pt-1 border-3">
+    <span>
       @if($merchandiseData->count() == 0) <span class="text-secondary">沒有任何結果適用於&nbsp;{{ $searchTerm }}</span>  @else {{ $pageTitle }}{{ $searchTerm }} @endif
     </span>
   </h2>
@@ -35,13 +35,13 @@
             <a class="border-start border-end border-light-subtle col-6 text-center" href="#" title="點擊加入購物車">
               <li class="py-1">
                 <i class="bi bi-plus-lg"></i>
-                <i class="bi bi-cart-fill"></i>
+                <i class="bi bi-cart"></i>
                 <span class="d-none">加入購物車</span>
               </li>
             </a>
             <a class="col text-center" href="/merchandise/{{ $eachData->id }}/detail" title="點擊前往商品詳情">
               <li class="py-1">
-                <i class="bi bi-info-circle-fill"></i>
+                <i class="bi bi-info-circle"></i>
                 <span class="d-none">商品詳情</span>
               </li>
             </a>

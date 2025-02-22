@@ -58,7 +58,7 @@
       </div>
       <!-- user、cart button -->
       <div class="d-flex me-2 px-2 align-items-center justify-content-center fs-4">
-        <div>
+        <div class="mx-3">
           @if(session()->has('user'))
           <a href="#" title="前往會員主頁">
             <i class="bi bi-person-circle"></i>
@@ -71,8 +71,7 @@
           </a>
           @endif
         </div>
-        <span class="mx-3">|</span>
-        <div>
+        <div class="mx-3">
           <a class="position-relative" href="/cart-list.html" title="前往我的購物車">
             <i class="bi bi-cart fs-2"></i>
             <span class="position-absolute top-0 start-100 translate-middle rounded-pill badge bg-danger mt-2 p-1">

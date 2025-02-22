@@ -5,6 +5,13 @@ html {
 body {
   font-family: "微軟正黑體", sans-serif;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 確保 body 至少填滿整個視窗高度 */
+  margin: 0; /* 移除 body 的預設 margin */
+}
+main {
+  flex: 1; /* main 內容區域佔據剩餘空間 */
 }
 a {
   text-decoration: none;
@@ -111,7 +118,9 @@ p:not(.price) {
 #new-product .card-text span:nth-of-type(1)::before,
 #new-product .card-text span:nth-of-type(3)::before,
 #merchandise .card-text span:nth-of-type(1)::before,
-#merchandise .card-text span:nth-of-type(3)::before {
+#merchandise .card-text span:nth-of-type(3)::before,
+#search-page .card-text span:nth-of-type(1)::before,
+#search-page .card-text span:nth-of-type(3)::before {
   content: "NT$ ";
 }
 #hot-product .card-text span:nth-of-type(1)::after,
@@ -119,7 +128,9 @@ p:not(.price) {
 #new-product .card-text span:nth-of-type(1)::after,
 #new-product .card-text span:nth-of-type(3)::after,
 #merchandise .card-text span:nth-of-type(1)::after,
-#merchandise .card-text span:nth-of-type(3)::after {
+#merchandise .card-text span:nth-of-type(3)::after,
+#search-page .card-text span:nth-of-type(1)::after,
+#search-page .card-text span:nth-of-type(3)::after {
   content: " 元";
 }
 
