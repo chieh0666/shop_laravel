@@ -27,7 +27,7 @@ class SearchController extends Controller
 
         $categoryData = Category::all();
 
-        $binding = [
+        $blinding = [
             'title' => $q . '-',
             'pageTitle' => '搜尋關鍵字：',
             'searchTerm' => $q,
@@ -35,6 +35,6 @@ class SearchController extends Controller
             'categoryData' => $categoryData,
         ];
         
-        return view('search', $binding);
+        return view('search', $blinding);
     }
 }

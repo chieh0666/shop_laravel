@@ -310,4 +310,4 @@
   </div>
 </article>
 
-@section
+@endsection

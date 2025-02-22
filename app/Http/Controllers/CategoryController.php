@@ -10,12 +10,12 @@ class CategoryController extends Controller
     public function CategoryManagePage()
     {
         $categories = Category::orderBy('parent_id', 'asc')->get();
-        $binding = [
+        $blinding = [
             'title' => '類別管理-',
             'page_title' => '類別管理',
             'categories' => $categories,
         ];
-        return view('category.manage', $binding);
+        return view('category.manage', $blinding);
     }
 
     public function CategoryCreateProcess()
@@ -33,13 +33,13 @@ class CategoryController extends Controller
     {
         $thisCategory = Category::where('id',$category_id)->first();
 
-        $binding = [
+        $blinding = [
             'title' => '編輯類別-',
             'page_title' => '編輯類別',
             'thisCategory' => $thisCategory,
             'categories' => Category::all(),
         ];
-        return view('category.edit', $binding);
+        return view('category.edit', $blinding);
     }
 
     public function CategoryEditProcess($category_id)

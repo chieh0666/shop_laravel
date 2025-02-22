@@ -11,12 +11,12 @@ class MerchandiseController extends Controller
     public function MerchandiseManagePage()
     {
         $merchandises = Merchandise::orderBy('created_at', 'desc')->get();
-        $binding = [
+        $blinding = [
             'title' => '商品管理-',
             'page_title' => '商品管理',
             'merchandises' => $merchandises,
         ];
-        return view('merchandise.manage', $binding);
+        return view('merchandise.manage', $blinding);
     }
 
     public function MerchandiseCreateProcess()
@@ -141,7 +141,11 @@ class MerchandiseController extends Controller
     // 購物車
     public function CartListPage()
     {
-        return view('merchandise.cart');
+        $blinding = [
+            'title' => '我的購物車-',
+            'pageTitle' => '我的購物車',
+        ];
+        return view('merchandise.cart', $blinding);
     }
 
     // 取得商品資料json
