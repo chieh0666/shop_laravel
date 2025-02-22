@@ -1,11 +1,11 @@
 // 首頁預載入js
 $(document).ready(function(){
-  $('.search-input').focus(function(){
+  $('.search-box').focus(function(){
     $('.search-form').removeClass('border-secondary-subtle').addClass('border-success');
     $('.search-btn').removeClass('border-secondary-subtle').addClass('border-success');
   })
 
-  $('.search-input').blur(function(){
+  $('.search-box').blur(function(){
     $('.search-form').removeClass('border-success').addClass('border-secondary-subtle');
     $('.search-btn').removeClass('border-success').addClass('border-secondary-subtle');
   })
@@ -33,7 +33,7 @@ $(document).ready(function(){
   });
 
   // 搜尋框清除X動作
-  const input = document.getElementById("search-box");
+  const input = document.querySelector(".search-box");
   const clearBtn = document.querySelector(".clear-btn");
 
   input.addEventListener("input", () => {

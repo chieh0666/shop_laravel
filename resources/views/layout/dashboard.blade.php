@@ -21,6 +21,9 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/order/manage">訂單管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/merchandise/manage">商品管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/category/manage">類別管理</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">公告與通知管理</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">文宣管理</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">新聞管理</a>
                 </div>
             </div>
             <!-- Page content wrapper-->

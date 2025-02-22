@@ -43,12 +43,12 @@
       </div>
       <!-- search form -->
       <div class="search-form border border-secondary-subtle rounded-pill w-50 h-auto ps-2 overflow-hidden">
-        <form action="#" method="get">
+        <form action="/search" method="get">
           <div class="d-flex align-items-center justify-content-between">
             <label for="for-search">
               <span class="d-none">搜尋</span>
             </label>
-            <input type="search" class="w-100 p-2 search-input" name="" id="search-box" placeholder="搜尋" title="請輸入關鍵字">
+            <input type="search" class="w-100 p-2 search-box" name="q" id="q" value="{{ $searchTerm ?? '' }}" placeholder="搜尋" title="請輸入關鍵字">
             <i class="bi bi-x-lg clear-btn"></i>
             <button class="search-btn bg-light border-start border-secondary-subtle py-2 px-3" type="submit" title="搜尋按鈕">
               <i class="bi bi-search"></i>

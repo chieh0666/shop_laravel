@@ -82,7 +82,7 @@ p:not(.price) {
 /* 色彩 */
 
 /* 搜尋輸入框啟用後的外觀設定 */
-.search-form .search-input:focus {
+.search-form .search-box:focus {
   outline: none;
 }
 .search-btn:hover {
