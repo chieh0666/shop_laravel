@@ -83,6 +83,10 @@ Route::group(['prefix' => 'merchandise'], function(){
         '{merchandise_id}/detail',
         'App\Http\Controllers\MerchandiseController@MerchandiseDetailPage'
     );
+    Route::get(
+        'cart',
+        'App\Http\Controllers\MerchandiseController@CartListPage'
+    );
     // 取得商品資料json
     Route::get(
         'getdata',

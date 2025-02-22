@@ -132,9 +132,16 @@ class MerchandiseController extends Controller
             'thisMerchandise' => $thisMerchandise,
             'thisMerchandiseOfCat' => $thisMerchandiseOfCat,
             'thisMerchandiseOfRootCat' => $thisMerchandiseOfRootCat,
+            'title' => $thisMerchandise->name . '-'
         ];
 
         return view('merchandise.detail', $blinding);
+    }
+
+    // 購物車
+    public function CartListPage()
+    {
+        return view('merchandise.cart');
     }
 
     // 取得商品資料json
