@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>二手商鋪@yield('title')</title>
+        <title>@yield('title')二手商鋪</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
@@ -18,6 +18,7 @@
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <div class="sidebar-heading border-bottom bg-light">二手商鋪管理</div>
                 <div class="list-group list-group-flush">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/order/manage">訂單管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/merchandise/manage">商品管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/category/manage">類別管理</a>
                 </div>

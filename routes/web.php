@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',
-    'App\Http\Controllers\HomeController@CategoriesList')->name('home');
+    'App\Http\Controllers\HomeController@needForHome')->name('home');
+
+Route::get('/search',
+    'App\Http\Controllers\SearchController@index');
+
 
 Route::get('/promotion', function(){
     return view('promotion');
@@ -74,6 +78,10 @@ Route::group(['prefix' => 'merchandise'], function(){
     Route::get(
         'new',
         'App\Http\Controllers\MerchandiseController@MerchandiseNewPage'
+    );
+    Route::get(
+        '{merchandise_id}/detail',
+        'App\Http\Controllers\MerchandiseController@MerchandiseDetailPage'
     );
     // 取得商品資料json
     Route::get(

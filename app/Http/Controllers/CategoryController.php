@@ -11,7 +11,7 @@ class CategoryController extends Controller
     {
         $categories = Category::orderBy('parent_id', 'asc')->get();
         $binding = [
-            'title' => '-類別管理',
+            'title' => '類別管理-',
             'page_title' => '類別管理',
             'categories' => $categories,
         ];
@@ -34,7 +34,7 @@ class CategoryController extends Controller
         $thisCategory = Category::where('id',$category_id)->first();
 
         $binding = [
-            'title' => '-編輯類別',
+            'title' => '編輯類別-',
             'page_title' => '編輯類別',
             'thisCategory' => $thisCategory,
             'categories' => Category::all(),

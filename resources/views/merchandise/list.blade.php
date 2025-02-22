@@ -1,11 +1,13 @@
 @extends('layout.main')
 
+@section('title', $title)
+
 @section('main-content')
 
 <!-- new product list -->
 <div class="text-center">
   <h2 class="py-1875">
-    <span class="border-start border-top ps-2 pt-1 border-3">所有商品</span>
+    <span class="border-start border-top ps-2 pt-1 border-3">{{ $pageTitle }}</span>
   </h2>
 </div>
 
@@ -18,9 +20,9 @@
 
         @foreach($categories as $category)
         @if($category->id > 1 && $category->parent_id == 0 && $category->where('parent_id', $category->id)->count() > 0)
-        <div class="accordion-item">
+        <div class="accordion-item shadow">
           <h3 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}" aria-expanded="true" aria-controls="collapse{{ $category->id }}">
+            <button class="accordion-button fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ $category->id }}" aria-expanded="true" aria-controls="collapse{{ $category->id }}">
               {{ $category->name }}
             </button>
           </h3>
@@ -67,7 +69,7 @@
                   <span class="d-none">加入購物車</span>
                 </li>
               </a>
-              <a class="col text-center" href="/product-detail.html" title="點擊前往商品詳情">
+              <a class="col text-center" href="/merchandise/{{ $merchandise->id }}/detail" title="點擊前往商品詳情">
                 <li class="py-1">
                   <i class="bi bi-info-circle-fill text-light"></i>
                   <span class="d-none">商品詳情</span>
@@ -78,8 +80,8 @@
           <div class="card-body text-center">
             <h3 class="card-title h4">{{ $merchandise->name }}</h3>
             <p class="price card-text fst-italic">
-              <span class="sale fs-4 px-1">{{ $merchandise->price }}</span>
-              <span class="d-lg-none"><br/></span>
+              <span class="sale fs-4 px-1">{{ number_format($merchandise->price, 2) }}</span>
+              <span class=""><br/></span>
               <span class="text-decoration-line-through px-1">10000</span>
             </p>
           </div>

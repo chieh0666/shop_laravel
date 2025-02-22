@@ -11,7 +11,7 @@ class UserAuthController extends Controller
     public function SignUpPage()
     {
         $blinding = [
-            'title' => '-註冊',
+            'title' => '註冊-',
             'pageTitle' => '建立帳戶'
         ];
         return view('auth.signup', $blinding);
@@ -20,7 +20,7 @@ class UserAuthController extends Controller
     public function SigninPage()
     {
         $blinding = [
-            'title' => '-登入',
+            'title' => '登入-',
             'pageTitle' => '登入帳號'
         ];
         return view('auth.signin', $blinding);

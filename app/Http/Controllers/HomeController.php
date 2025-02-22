@@ -8,11 +8,15 @@ use App\Models\Category;
 
 class HomeController extends Controller
 {
-    public function CategoriesList()
+    public function needForHome()
     {
         $categories = Category::all();
+        $hotMerchandises = Merchandise::limit(5)->get();
+        $newMerchandises = Merchandise::orderBy('created_at', 'desc')->limit(8)->get();
         $blinding = [
             'categories' => $categories,
+            'hotMerchandises' => $hotMerchandises,
+            'newMerchandises'  => $newMerchandises,
         ];
         return view('home', $blinding);
     }

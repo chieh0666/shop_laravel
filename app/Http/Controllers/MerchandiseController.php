@@ -12,7 +12,7 @@ class MerchandiseController extends Controller
     {
         $merchandises = Merchandise::orderBy('created_at', 'desc')->get();
         $binding = [
-            'title' => '-商品管理',
+            'title' => '商品管理-',
             'page_title' => '商品管理',
             'merchandises' => $merchandises,
         ];
@@ -55,7 +55,7 @@ class MerchandiseController extends Controller
             $merchandise = $merchandise->first();
 
             $blinding = [
-                'title' => '-編輯商品',
+                'title' => '編輯商品-',
                 'page_title' => '編輯商品',
                 'merchandise' => $merchandise,
                 'categories' => Category::all(),
@@ -103,6 +103,8 @@ class MerchandiseController extends Controller
         $blinding = [
             'categories' => $categories,
             'merchandises' => $merchandises,
+            'title' => '所有商品-',
+            'pageTitle' => '所有商品',
         ];
         return view('merchandise.list', $blinding);
     }
@@ -110,7 +112,29 @@ class MerchandiseController extends Controller
     // 最新商品
     public function MerchandiseNewPage()
     {
-        return view('merchandise.new');
+        $newMerchandises = Merchandise::OrderBy('created_at', 'desc')->limit(16)->get();
+
+        $blinding = [
+            'newMerchandises' => $newMerchandises,
+            'title' => '最新商品-',
+            'pageTitle' => '最新商品',
+        ];
+        
+        return view('merchandise.new', $blinding);
+    }
+
+    public function MerchandiseDetailPage($merchandise_id){
+
+        $thisMerchandise = Merchandise::where('id', $merchandise_id)->first();
+        $thisMerchandiseOfCat = Category::where('id', $thisMerchandise->category_id)->first();
+        $thisMerchandiseOfRootCat = Category::where('id', $thisMerchandiseOfCat->parent_id)->first();
+        $blinding = [
+            'thisMerchandise' => $thisMerchandise,
+            'thisMerchandiseOfCat' => $thisMerchandiseOfCat,
+            'thisMerchandiseOfRootCat' => $thisMerchandiseOfRootCat,
+        ];
+
+        return view('merchandise.detail', $blinding);
     }
 
     // 取得商品資料json

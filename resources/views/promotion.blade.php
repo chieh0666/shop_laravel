@@ -98,6 +98,10 @@
     </div>
   </div>
 </article>
-@include('component.sales-slide')
-@include('component.banner-slide')
+
+@section('js')
+<script src="/js/banner-slide.js"></script>
+<script src="/js/sales-slide.js"></script>
+@endsection
+
 @endsection
