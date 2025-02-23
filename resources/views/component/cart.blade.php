@@ -54,7 +54,6 @@ $(document).ready(function() {
     .then(response => response.json())
     .then(data => {
       //在此處理如何刷新購物車UI，例如將資料渲染到畫面上。
-        console.log('購物車資料更新:', data.cartItemCount);
         if(data.cartItemCount > 99){
             $('.cartItem span').text("99+");
         }else{
@@ -62,7 +61,7 @@ $(document).ready(function() {
         }
     })
     .catch(error => {
-        console.error('發生錯誤:', error);
+        alert('發生錯誤:', error);
     });
   }
   updateCartUI();//初始化購物車顯示數量。
