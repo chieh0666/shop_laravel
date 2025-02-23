@@ -39,7 +39,7 @@
             <td class="align-middle">
               <a class="d-flex align-items-center" href="./product-detail.html" title="前往商品詳細說明頁">
                 <div class="col-lg-3 col-md-4 me-3">
-                  <img src="./images/product4.jpg" alt="商品圖">
+                  <img src="/images/product4.jpg" alt="商品圖">
                 </div>
                 <h3 class="text-916953 fs-6 text-start">華碩Vivobook 15</h3>
               </a>
@@ -93,7 +93,7 @@
             <td class="align-middle">
               <a class="d-flex align-items-center" href="./product-detail.html" title="前往商品詳細說明頁">
                 <div class="col-lg-3 col-md-4 me-3">
-                  <img src="./images/product2.jpg" alt="商品圖">
+                  <img src="/images/product2.jpg" alt="商品圖">
                 </div>
                 <h3 class="text-916953 fs-6 text-start">華碩Vivobook 15</h3>
               </a>
@@ -147,7 +147,7 @@
             <td class="align-middle">
               <a class="d-flex align-items-center" href="./product-detail.html" title="前往商品詳細說明頁">
                 <div class="col-lg-3 col-md-4 me-3">
-                  <img src="./images/product4.jpg" alt="商品圖">
+                  <img src="/images/product4.jpg" alt="商品圖">
                 </div>
                 <h3 class="text-916953 fs-6 text-start">華碩Vivobook 15</h3>
               </a>
@@ -201,7 +201,7 @@
             <td class="align-middle">
               <a class="d-flex align-items-center" href="./product-detail.html" title="前往商品詳細說明頁">
                 <div class="col-lg-3 col-md-4 me-3">
-                  <img src="./images/product2.jpg" alt="商品圖">
+                  <img src="/images/product2.jpg" alt="商品圖">
                 </div>
                 <h3 class="text-916953 fs-6 text-start">華碩Vivobook 15</h3>
               </a>
@@ -255,7 +255,7 @@
             <td class="align-middle">
               <a class="d-flex align-items-center" href="./product-detail.html" title="前往商品詳細說明頁">
                 <div class="col-lg-3 col-md-4 me-3">
-                  <img src="./images/product2.jpg" alt="商品圖">
+                  <img src="/images/product2.jpg" alt="商品圖">
                 </div>
                 <h3 class="text-916953 fs-6 text-start">華碩Vivobook 15</h3>
               </a>

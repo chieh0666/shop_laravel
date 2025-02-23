@@ -71,11 +71,11 @@
           </a>
           @endif
         </div>
-        <div class="mx-3">
+        <div class="mx-3 cartItem">
           <a class="position-relative" href="/merchandise/cart" title="前往我的購物車">
             <i class="bi bi-cart fs-2"></i>
             <span class="position-absolute top-0 start-100 translate-middle rounded-pill badge bg-danger mt-2 p-1">
-              99+
+              0
             </span>
           </a>
         </div>

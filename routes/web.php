@@ -83,10 +83,6 @@ Route::group(['prefix' => 'merchandise'], function(){
         '{merchandise_id}/detail',
         'App\Http\Controllers\MerchandiseController@MerchandiseDetailPage'
     );
-    Route::get(
-        'cart',
-        'App\Http\Controllers\MerchandiseController@CartListPage'
-    );
     // 取得商品資料json
     Route::get(
         'getdata',
@@ -110,6 +106,21 @@ Route::group(['prefix' => 'category'], function(){
     Route::post(
         '{category_id}/edit',
         'App\Http\Controllers\CategoryController@CategoryEditProcess'
+    );
+    Route::delete(
+        '{category_id}/delete',
+        'App\Http\Controllers\CategoryController@CategoryDeleteProcess'
+    );
+});
+
+Route::group(['prefix' => 'cart'], function(){
+    Route::get(
+        'list',
+        'App\Http\Controllers\CartController@CartListPage'
+    );
+    Route::post(
+        'add',
+        'App\Http\Controllers\CartController@addToCartProcess'
     );
     Route::delete(
         '{category_id}/delete',

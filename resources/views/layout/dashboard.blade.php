@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>@yield('title')二手商鋪</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/images/logo.png" />
         <link rel="stylesheet" href="/assets/fonts/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="/css/admin-style.css" rel="stylesheet" />

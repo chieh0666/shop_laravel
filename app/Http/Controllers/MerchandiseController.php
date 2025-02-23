@@ -138,16 +138,6 @@ class MerchandiseController extends Controller
         return view('merchandise.detail', $blinding);
     }
 
-    // 購物車
-    public function CartListPage()
-    {
-        $blinding = [
-            'title' => '我的購物車-',
-            'pageTitle' => '我的購物車',
-        ];
-        return view('merchandise.cart', $blinding);
-    }
-
     // 取得商品資料json
     public function ReturnMerchandiseData()
     {
