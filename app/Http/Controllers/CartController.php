@@ -43,14 +43,23 @@ class CartController extends Controller
             ]);
         }
 
-        // 取得最新的購物車內容
-        $cartItems = Cart::where('user_id', $userId)
-        ->get();
-
         return response()->json([
             'status' => 1,
             'msg' => '商品已加入購物車！',
-            'cart' => $cartItems,
+            'toCartItemId' => $toCartItemId,
+        ]);
+    }
+
+    public function getCartData()
+    {
+        $userId = session()->get('user')->id;
+
+        $cartItemCount = Cart::where('user_id',  $userId)->sum('quantity');
+
+        return response()->json([
+            'status' => 1,
+            'msg' => '購物車資料',
+            'cartItemCount' => $cartItemCount,
         ]);
     }
 }

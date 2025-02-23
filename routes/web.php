@@ -122,6 +122,10 @@ Route::group(['prefix' => 'cart'], function(){
         'add',
         'App\Http\Controllers\CartController@addToCartProcess'
     );
+    Route::get(
+        'getdata',
+        'App\Http\Controllers\CartController@getCartData'
+    );
     Route::delete(
         '{category_id}/delete',
         'App\Http\Controllers\CategoryController@CategoryDeleteProcess'

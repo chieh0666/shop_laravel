@@ -30,13 +30,15 @@
                 <span class="d-none">加入喜歡清單</span>
               </li>
             </a>
-            <a class="border-start border-end border-secondary border-opacity-75 col-6 text-center" href="#" title="點擊加入購物車">
+
+            <button type="button" class="border-start border-end border-secondary border-opacity-75 col-6 text-center p-0 addToCartBtn" title="點擊加入購物車" data-id="{{ $newMerchandise->id }}">
               <li class="py-1">
                 <i class="bi bi-plus-lg text-light"></i>
                 <i class="bi bi-cart-fill text-light"></i>
                 <span class="d-none">加入購物車</span>
               </li>
-            </a>
+            </button>
+
             <a class="col text-center" href="/merchandise/{{ $newMerchandise->id }}/detail" title="點擊前往商品詳情">
               <li class="py-1">
                 <i class="bi bi-info-circle-fill text-light"></i>
@@ -59,5 +61,9 @@
 
   </div>
 </article>
+
+@section('js')
+@include('component.cart')
+@endsection
 
 @endsection
