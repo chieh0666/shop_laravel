@@ -7,7 +7,7 @@
 <!-- cart list -->
 <div class="text-center">
   <h2 class="py-1875">
-    <span class="border-start border-top ps-2 pt-1 border-3">我的購物車</span>
+    <span class="border-start border-top ps-2 pt-1 border-3">{{ $pageTitle }}</span>
   </h2>
 </div>
 <article id="cart-list-page" class="mt-1875">
@@ -18,13 +18,16 @@
           <tr>
             <th scope="col"><span class="d-none">選取</span></th>
             <th class="col-7" scope="col">商品名稱</th>
-            <th class="col-2" scope="col">規格</th>
+            {{-- <th class="col-2" scope="col">規格</th> --}}
             <th class="col-1" scope="col">數量</th>
-            <th class="col-1" scope="col">小計</th>
-            <th class="col-1" scope="col">變更</th>
+            <th class="col-2" scope="col">小計</th>
+            <th class="col-2" scope="col">變更</th>
           </tr>
         </thead>
         <tbody>
+          @foreach($merchandises as $merchandise)
+          @foreach($cartItems as $cartItem)
+          @if($cartItem->merchandise_id == $merchandise->id)
           <tr>
             <!-- 選取 -->
             <td>
@@ -41,31 +44,31 @@
                 <div class="col-lg-3 col-md-4 me-3">
                   <img src="/images/product4.jpg" alt="商品圖">
                 </div>
-                <h3 class="text-916953 fs-6 text-start">華碩Vivobook 15</h3>
+                <h3 class="text-916953 fs-6 text-start">{{ $merchandise->name }}</h3>
               </a>
             </td>
             <!-- 規格 -->
-            <td class="align-middle">
+            {{-- <td class="align-middle">
               <select class="form-select border-0 border-bottom rounded-0 border-secondary-subtle bg-transparent" aria-label="select-list">
                 <option disabled="" selected="">請選擇</option>
                 <option value="1">A1</option>
                 <option value="2">A2</option>
                 <option value="3">A3</option>
               </select>
-            </td>
+            </td> --}}
             <!-- 數量 -->
             <td class="align-middle">
               <div class="d-flex align-items-center">
-                <select class="form-select border-0 border-bottom rounded-0 border-secondary-subtle bg-transparent" aria-label="select-list">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3" selected="">3</option>
+                <select class="form-select border-0 border-bottom rounded-0 border-secondary-subtle bg-transparent quantity-select" aria-label="select-list" data-price="{{ $merchandise->price }}">
+                  @for($i = 1; $i <= min(10, $merchandise->remain_count); $i++)
+                  <option value="{{ $i }}" @if($cartItem->quantity == $i) selected @endif>{{ $i }}</option>
+                  @endfor
                 </select>
               </div>
             </td>
             <!-- 小計 -->
             <td class="align-middle text-end cart-subtotal">
-              <span class="">800</span>
+              <span class="subtotal">{{ $merchandise->price * $cartItem->quantity}}</span>
             </td>
             <!-- 變更 -->
             <td class="align-middle">
@@ -79,6 +82,10 @@
               </button>
             </td>
           </tr>
+          @endif
+          @endforeach
+          @endforeach
+
           <tr>
             <!-- 選取 -->
             <td>
@@ -309,5 +316,41 @@
     </form>
   </div>
 </article>
+
+@section('js')
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const quantitySelects = document.querySelectorAll('.quantity-select');
+
+      quantitySelects.forEach(select => {
+          select.addEventListener('change', function() {
+              const quantity = parseInt(this.value);
+              const price = parseFloat(this.dataset.price);
+              const subtotal = price * quantity;
+
+              // 找到小計元素並更新
+              const subtotalElement = this.closest('tr').querySelector('.cart-subtotal .subtotal');
+              if (subtotalElement) {
+                  subtotalElement.textContent = subtotal.toFixed(0); // 更新小計顯示
+                  updateCartTotal(); //更新總計
+              }
+          });
+      });
+
+      function updateCartTotal(){
+          let total = 0;
+          const subtotalElements = document.querySelectorAll('.cart-subtotal .subtotal');
+          subtotalElements.forEach(element => {
+              total += parseFloat(element.textContent);
+          });
+          const cartTotalElement = document.getElementById('cart-total'); //需要事先在網頁中加入id為cart-total的元素。
+          if(cartTotalElement){
+              cartTotalElement.textContent = total.toFixed(0);
+          }
+      }
+      updateCartTotal(); //頁面加載時更新總計
+  });
+</script>
+@endsection
 
 @endsection

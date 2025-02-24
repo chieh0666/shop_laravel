@@ -13,9 +13,19 @@ class CartController extends Controller
 {
     public function CartListPage()
     {
+        if(session()->has('user')) {
+            $user_id = session()->get('user')->id;
+            $cartItems = Cart::where('user_id', $user_id)->orderBy('created_at', 'asc')->get();
+            $merchandises = Merchandise::all();
+        } else {
+            return redirect('/user/auth/signin');
+        }
+
         $blinding = [
             'title' => '我的購物車-',
             'pageTitle' => '我的購物車',
+            'cartItems' => $cartItems,
+            'merchandises' => $merchandises,
         ];
         return view('cart', $blinding);
     }
