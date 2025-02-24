@@ -53,14 +53,14 @@
                         </span>
                     </a>
                     <!-- 商品刪除 -->
-                    <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delMerchandise">
+                    <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delMerchandise{{ $merchandise->id }}">
                         <i class="bi bi-trash me-1"></i>
                         <span class="d-none d-xl-inline-block">
                             刪除
                         </span>
                     </button>
                     <!-- 商品刪除確認 -->
-                    <div class="modal fade" id="delMerchandise" tabindex="-1" aria-labelledby="delMerchandise" aria-hidden="true">
+                    <div class="modal fade" id="delMerchandise{{ $merchandise->id }}" tabindex="-1" aria-labelledby="delMerchandise" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <form action="/merchandise/{{ $merchandise->id }}/delete" method="POST">
