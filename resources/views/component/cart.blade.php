@@ -61,7 +61,7 @@ $(document).ready(function() {
         }
     })
     .catch(error => {
-        alert('發生錯誤:', error);
+        alert('發生錯誤');
     });
   }
   updateCartUI();//初始化購物車顯示數量。

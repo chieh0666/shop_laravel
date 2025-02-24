@@ -63,7 +63,9 @@
 </article>
 
 @section('js')
+@if(session()->has('user'))
 @include('component.cart')
+@endif
 @endsection
 
 @endsection

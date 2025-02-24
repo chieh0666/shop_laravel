@@ -9,7 +9,16 @@ class CategoryController extends Controller
 {
     public function CategoryManagePage()
     {
+        if (Category::all()->count() == 0) {
+            $default_category = [
+                'parent_id' => '0',
+                'name' => '未分類',
+            ];
+            Category::create($default_category);
+        }
+
         $categories = Category::orderBy('parent_id', 'asc')->get();
+        
         $blinding = [
             'title' => '類別管理-',
             'page_title' => '類別管理',

@@ -106,26 +106,6 @@
       </div>
     </div>
     <div class="card flex-w-25">
-      <img src="images/7.jpg" class="card-img-top" alt="最新消息圖片7">
-      <div class="card-body">
-        <h5 class="card-title font fw-bold">🎉 周年慶狂歡，全館優惠嗨翻天！ 🎉</h5>
-        <a href="#">感謝一路相伴，我們迎來了【X週年】🎂 這次要用 最震撼的優惠，回饋給所有支持我們的你！❤️<br>
-
-          🔥 限時好康，錯過再等一年！ 🔥<br>
-          ✨ 全館最低XX折，超值回饋<br>
-          🎁 滿額再送限量好禮<br>
-          💥 超殺限時優惠，每日驚喜不重樣！<br>
-
-          📅 活動時間：XX/XX - XX/XX
-          趕快加入我們，一起歡慶這個特別的日子！🎊 👉 [你的購物連結]
-
-          #周年慶 #限時優惠 #感謝有你 #超值回饋</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-body-secondary">發布時間:2025-05-11</small>
-      </div>
-    </div>
-    <div class="card flex-w-25">
       <img src="images/8.jpg" class="card-img-top" alt="最新消息圖片8">
       <div class="card-body">
         <h5 class="card-title font fw-bold">🔧 系統維護公告 🔧</h5>

@@ -53,6 +53,8 @@
   <div class="row row-cols-2 row-cols-md-3 row-cols-xxl-5 g-2">
 
     @foreach($hotMerchandises as $hotMerchandise)
+    @if($hotMerchandise->status == 'S')
+
     <div class="col mt-0">
       <div class="card h-100 border-0">
         <div class="position-relative overflow-hidden shadow-sm rounded-3">
@@ -90,11 +92,13 @@
           <p class="price card-text fst-italic">
             <span class="sale fs-4 px-1">{{ number_format($hotMerchandise->price, 2) }}</span>
             <span class=""><br/></span>
-            <span class="text-decoration-line-through px-1">10000</span>
+            {{-- <span class="text-decoration-line-through px-1">10000</span> --}}
           </p>
         </div>
       </div>
     </div>
+
+    @endif
     @endforeach
 
   </div>
@@ -111,6 +115,7 @@
   <div class="row row-cols-2 row-cols-md-3 row-cols-xxl-4 g-2">
     
     @foreach($newMerchandises as $newMerchandise)
+    @if($newMerchandise->status == 'S')
 
     <div class="col mt-0">
       <div class="card h-100 border-0">
@@ -149,12 +154,13 @@
           <p class="price card-text fst-italic">
             <span class="sale fs-4 px-1">{{ number_format($newMerchandise->price, 2) }}</span>
             <span class=""><br/></span>
-            <span class="text-decoration-line-through px-1">10000</span>
+            {{-- <span class="text-decoration-line-through px-1">10000</span> --}}
           </p>
         </div>
       </div>
     </div>
 
+    @endif
     @endforeach
 
   </div>
@@ -162,7 +168,9 @@
     
 @section('js')
 <script src="/js/banner-slide.js"></script>
+@if(session()->has('user'))
 @include('component.cart')
+@endif
 @endsection
 
 @endsection

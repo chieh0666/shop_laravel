@@ -81,7 +81,7 @@
             </tr>
             @empty
             <tr class="text-center">
-                <td colspan="5">
+                <td colspan="6">
                     沒有資料
                 </td>
             </tr>
