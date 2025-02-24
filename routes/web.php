@@ -55,7 +55,7 @@ Route::group(['prefix' => 'merchandise'], function(){
     Route::get(
         'manage',
         'App\Http\Controllers\MerchandiseController@MerchandiseManagePage'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::get(
         'create',
         'App\Http\Controllers\MerchandiseController@MerchandiseCreateProcess'
@@ -63,15 +63,15 @@ Route::group(['prefix' => 'merchandise'], function(){
     Route::get(
         '{merchandise_id}/edit',
         'App\Http\Controllers\MerchandiseController@MerchandiseEditPage'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::post(
         '{merchandise_id}/edit',
         'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::delete(
         '{merchandise_id}/delete',
         'App\Http\Controllers\MerchandiseController@MerchandiseDeleteProcess'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::get(
         'list',
         'App\Http\Controllers\MerchandiseController@MerchandiseListPage'
@@ -95,23 +95,23 @@ Route::group(['prefix' => 'category'], function(){
     Route::get(
         'manage',
         'App\Http\Controllers\CategoryController@CategoryManagePage'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::get(
         'create',
         'App\Http\Controllers\CategoryController@CategoryCreateProcess'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::get(
         '{category_id}/edit',
         'App\Http\Controllers\CategoryController@CategoryEditPage'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::post(
         '{category_id}/edit',
         'App\Http\Controllers\CategoryController@CategoryEditProcess'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::delete(
         '{category_id}/delete',
         'App\Http\Controllers\CategoryController@CategoryDeleteProcess'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
 });
 
 Route::group(['prefix' => 'cart'], function(){

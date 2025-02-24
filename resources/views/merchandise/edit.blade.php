@@ -15,7 +15,9 @@
       <div class="col-sm-10">
           <select class="form-select" id="category_id" name="category_id">
               @foreach($categories as $category)
-              <option value="{{ $category->id }}" @if($merchandise->category_id == $category->id) selected @endif>{{ $category->name }}</option>
+              @if($category->parent_id !== 0)
+              <option value="{{ $category->id }}" @if($merchandise->category_id == $category->id) selected @endif>{{ $category->name }}</option>              
+              @endif
               @endforeach
           </select>
       </div>

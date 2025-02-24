@@ -123,8 +123,8 @@ class MerchandiseController extends Controller
         return view('merchandise.new', $blinding);
     }
 
-    public function MerchandiseDetailPage($merchandise_id){
-
+    public function MerchandiseDetailPage($merchandise_id)
+    {
         $thisMerchandise = Merchandise::where('id', $merchandise_id)->first();
         $thisMerchandiseOfCat = Category::where('id', $thisMerchandise->category_id)->first();
         $thisMerchandiseOfRootCat = Category::where('id', $thisMerchandiseOfCat->parent_id)->first();
