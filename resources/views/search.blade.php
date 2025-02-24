@@ -23,7 +23,7 @@
           <div class="merchandise-img-box">
             <img src="/{{ $eachData->photo }}" class="card-img-top object-fit-cover h-100" alt="{{ $eachData->name }}">
           </div>
-          <span class="position-absolute top-0 end-0 bg-warning px-3 py-1 m-1 rounded-pill text-light fw-bold">NEW</span>
+          {{-- <span class="position-absolute top-0 end-0 bg-warning px-3 py-1 m-1 rounded-pill text-light fw-bold">NEW</span> --}}
           <!-- 收藏、加入購物車、連結詳情頁 -->
           <ul class="list-unstyled d-flex align-items-center justify-content-between mb-0 bg-light">
             <a class="col text-center" href="#" title="點擊加入喜歡清單">
@@ -32,13 +32,15 @@
                 <span class="d-none">加入喜歡清單</span>
               </li>
             </a>
-            <a class="border-start border-end border-light-subtle col-6 text-center" href="#" title="點擊加入購物車">
+
+            <button type="button" class="border-start border-end border-secondary border-opacity-75 col-6 text-center p-0 addToCartBtn" title="點擊加入購物車" data-id="{{ $eachData->id }}">
               <li class="py-1">
-                <i class="bi bi-plus-lg"></i>
-                <i class="bi bi-cart"></i>
+                <i class="bi bi-plus-lg text-light" style="color: #008B8B !important;"></i>
+                <i class="bi bi-cart text-light" style="color: #008B8B !important;"></i>
                 <span class="d-none">加入購物車</span>
               </li>
-            </a>
+            </button>
+
             <a class="col text-center" href="/merchandise/{{ $eachData->id }}/detail" title="點擊前往商品詳情">
               <li class="py-1">
                 <i class="bi bi-info-circle"></i>
@@ -50,9 +52,9 @@
         <div class="card-body text-center">
           <h3 class="card-title h4">{{ $eachData->name }}</h3>
           <p class="price card-text fst-italic">
-            <span class="sale fs-4 px-1">{{ number_format($eachData->price, 2) }}</span>
+            <span class="sale fs-4 px-1">{{ number_format($eachData->price, 0) }}</span>
             <span class=""><br/></span>
-            <span class="text-decoration-line-through px-1">10000</span>
+            {{-- <span class="text-decoration-line-through px-1">10000</span> --}}
           </p>
         </div>
       </div>
@@ -61,5 +63,11 @@
 
   </div>
 </article>
+
+@section('js')
+@if(session()->has('user'))
+@include('component.cart')
+@endif
+@endsection
 
 @endsection

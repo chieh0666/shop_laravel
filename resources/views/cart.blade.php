@@ -112,9 +112,15 @@
     function updateCartTotal() {
       let total = 0;
 
-      // 取得所有小計元素並加總
-      document.querySelectorAll(".cart-subtotal .subtotal").forEach(subtotalElement => {
-        total += parseFloat(subtotalElement.textContent.replace(/,/g, "").replace("$", ""));
+      // 取得所有已選取 (勾選) 的商品小計並加總
+      document.querySelectorAll(".form-check-input[name='cartCheck']:checked").forEach(checkbox => {
+        let cartRow = checkbox.closest("tr"); // 找到商品所在的 <tr>
+        if (cartRow) {
+          let subtotalElement = cartRow.querySelector(".cart-subtotal .subtotal");
+          if (subtotalElement) {
+            total += parseFloat(subtotalElement.textContent.replace(/,/g, "").replace("$", ""));
+          }
+        }
       });
 
       // 更新結帳金額
@@ -132,11 +138,12 @@
         let newSubtotal = price * quantity;
         subtotalElement.textContent = `$${newSubtotal.toLocaleString()}`;
 
-        // 重新計算結帳總金額
+        // 重新計算總金額
         updateCartTotal();
       });
     });
 
+    // 監聽刪除按鈕事件
     document.querySelectorAll(".delCartItem").forEach(button => {
       button.addEventListener("click", function () {
         let cartItem = this.closest("tr"); // 找到對應的商品行 (假設商品在 <tr> 內)
@@ -144,6 +151,13 @@
           cartItem.remove(); // 移除該行商品
           updateCartTotal(); // 重新計算總金額
         }
+      });
+    });
+
+    // 監聽所有核取方塊的變化
+    document.querySelectorAll(".form-check-input[name='cartCheck']").forEach(checkbox => {
+      checkbox.addEventListener("change", function () {
+        updateCartTotal(); // 更新結帳總金額
       });
     });
 
