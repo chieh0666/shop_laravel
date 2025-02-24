@@ -118,7 +118,7 @@ Route::group(['prefix' => 'cart'], function(){
     Route::get(
         'list',
         'App\Http\Controllers\CartController@CartListPage'
-    );
+    )->name('cart');;
     Route::post(
         'add',
         'App\Http\Controllers\CartController@addToCartProcess'

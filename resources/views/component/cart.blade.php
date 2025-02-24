@@ -68,3 +68,10 @@ $(document).ready(function() {
 
 });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      if (window.location.pathname === "/cart/list") {
+      document.querySelector(".cartItem").style.display = "none";
+      }
+  });
+</script>

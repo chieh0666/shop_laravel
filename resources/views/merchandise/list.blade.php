@@ -82,7 +82,7 @@
           <div class="card-body text-center">
             <h3 class="card-title h4">{{ $merchandise->name }}</h3>
             <p class="price card-text fst-italic">
-              <span class="sale fs-4 px-1">{{ number_format($merchandise->price, 2) }}</span>
+              <span class="sale fs-4 px-1">{{ number_format($merchandise->price, 0) }}</span>
               <span class=""><br/></span>
               {{-- <span class="text-decoration-line-through px-1">10000</span> --}}
             </p>

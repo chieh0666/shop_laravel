@@ -24,8 +24,8 @@
         <div class="small mb-1">SKU: {{ $thisMerchandiseOfRootCat->id }}{{ $thisMerchandiseOfCat->id }}{{ $thisMerchandise->id }}</div>
         <h1 class="display-5 fw-bolder">{{ $thisMerchandise->name }}</h1>
         <div class="fs-5 mb-5">
-          <span class="text-decoration-line-through">$45.00</span>
-          <span>${{ number_format($thisMerchandise->price, 2) }}</span>
+          {{-- <span class="text-decoration-line-through">$45.00</span> --}}
+          <span>${{ number_format($thisMerchandise->price, 0) }}</span>
         </div>
         <p class="lead">{{ $thisMerchandise->introduction }}</p>
         <form action="#" method="POST">
@@ -45,8 +45,8 @@
               @else
               <label class="form-label fw-bolder">數量</label>
               <select class="form-select border-0 border-bottom rounded-0 border-secondary-subtle bg-transparent" aria-label="select-list">
-                @for($i = 1; $i <= min(10, $thisMerchandise->remain_count); $i++)
-                <option value="{{ $i }}" @if($i === 1) selected @endif>{{ $i }}</option>
+                @for($i = 1; $i <= $thisMerchandise->remain_count; $i++)
+                <option value="{{ $i }}">{{ $i }}</option>
                 @endfor
               </select>
               @endif
