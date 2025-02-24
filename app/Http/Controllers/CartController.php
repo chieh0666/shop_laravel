@@ -15,7 +15,7 @@ class CartController extends Controller
     {
         if(session()->has('user')) {
             $user_id = session()->get('user')->id;
-            $cartItems = Cart::where('user_id', $user_id)->orderBy('created_at', 'asc')->get();
+            $cartItems = Cart::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
             $merchandises = Merchandise::all();
         } else {
             return redirect('/user/auth/signin');

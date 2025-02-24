@@ -26,8 +26,8 @@
         </thead>
         <tbody>
           
-          @foreach($merchandises as $merchandise)
           @foreach($cartItems as $cartItem)
+          @foreach($merchandises as $merchandise)
           @if($cartItem->merchandise_id == $merchandise->id)
           <tr>
             <!-- 選取 -->

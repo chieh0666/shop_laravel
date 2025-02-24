@@ -27,7 +27,7 @@
                         </span>
                     </a>
                     <!-- 類別刪除 -->
-                    <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delCategory{{ $category->id }}">
+                    <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delCategory{{ $category->id }}" @if($category->where('parent_id', $category->id)->count() !== 0) disabled @endif>
                         <i class="bi bi-trash me-1"></i>
                         <span class="d-none d-xl-inline-block">
                             刪除
