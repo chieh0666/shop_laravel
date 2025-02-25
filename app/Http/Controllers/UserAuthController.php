@@ -40,6 +40,8 @@ class UserAuthController extends Controller
             return redirect('/user/auth/signup')->witherrors(['此電子郵件地址已被註冊'])->withInput();
         } else if (empty($input['password'])) {
             return redirect('/user/auth/signup')->witherrors(['請輸入密碼'])->withInput();
+        } else if (strlen($input['password']) < 8 || strlen($input['password']) > 20) {
+            return redirect('/user/auth/signup')->witherrors(['密碼只能8-20字元'])->withInput();
         } else if ($input['password'] !== $password_confirm = $input['password_confirm']) {
             return redirect('/user/auth/signup')->witherrors(['密碼不一致'])->withInput();
         } else {
