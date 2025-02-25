@@ -3,9 +3,11 @@
   <div class="py-03125">
     <div class="container">
       <div class="d-flex align-items-center justify-content-end">
+        @if(session()->get('user')->account_type == 'A')
         <a class="p-1" href="/merchandise/manage" title="前往管理主頁">
           <span class="text-dark">商店管理</span>
         </a>
+        @endif
         <a class="p-1" href="/user/auth/signout" title="會員登出">
           <span class="text-dark">登出</span>
         </a>
