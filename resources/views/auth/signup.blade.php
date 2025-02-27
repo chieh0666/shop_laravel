@@ -24,15 +24,15 @@
       </div>
       <div class="col-lg-3 col-md-6 col-12 mb-3">
         <label for="nickname" class="form-label">暱稱(選填)</label>
-        <input type="text" class="form-control" name="nickname" id="nickname" placeholder="請輸入暱稱" value="{{ old('nickname') }}" required>
+        <input type="text" class="form-control" name="nickname" id="nickname" placeholder="請輸入暱稱" value="{{ old('nickname') }}">
       </div>
       <div class="col-lg-3 col-md-6 col-12 mb-3">
         <label for="gender" class="form-label d-block">性別(選填)</label>
-          <input type="radio" class="btn-check" name="gender" id="male" value="M" required>
+          <input type="radio" class="btn-check" name="gender" id="male" value="M">
           <label class="btn btn-outline-primary" for="male">男性</label>
-          <input type="radio" class="btn-check" name="gender" id="female" value="F" required>
+          <input type="radio" class="btn-check" name="gender" id="female" value="F">
           <label class="btn btn-outline-danger" for="female">女性</label>
-          <input type="radio" class="btn-check" name="gender" id="other" value="O" required>
+          <input type="radio" class="btn-check" name="gender" id="other" value="O">
           <label class="btn btn-outline-secondary" for="other">其他</label>
       </div>
       <div class="col-lg-6 col-12 mb-3">

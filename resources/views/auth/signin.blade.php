@@ -3,6 +3,7 @@
 @section('title', $title)
 
 @section('main-content')
+
 <div class="text-center">
   <h2 class="py-1875">
     <span class="border-start border-top ps-2 pt-1 border-3">{{ $pageTitle }}</span>
@@ -37,7 +38,7 @@
         <a href="#" class="text-secondary">忘記密碼?</a>
       </div>
       <div>
-        <a href="/user/auth/signup" class="text-916953">建立帳戶</a>
+        <a href="/user/auth/signup">建立帳戶</a>
       </div>
       <div class="position-relative">
         <hr/>
@@ -51,4 +52,5 @@
     </form>
   </div>
 </div>
+
 @endsection

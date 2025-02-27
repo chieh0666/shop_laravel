@@ -1,9 +1,9 @@
 <header class="mb-03125">
-  @if(session()->has('user'))
+  @if(isset($member))
   <div class="py-03125">
     <div class="container">
       <div class="d-flex align-items-center justify-content-end">
-        @if(session()->get('user')->account_type == 'A')
+        @if($member->account_type == 'A')
         <a class="p-1" href="/merchandise/manage" title="前往管理主頁">
           <span class="text-dark">商店管理</span>
         </a>
@@ -61,10 +61,10 @@
       <!-- user、cart button -->
       <div class="d-flex me-2 px-2 align-items-center justify-content-center fs-4">
         <div class="mx-3">
-          @if(session()->has('user'))
+          @if(isset($member))
           <a href="#" title="前往會員主頁">
             <i class="bi bi-person-circle"></i>
-            <span class="d-none d-md-inline-block">{{ session()->get('user')->nickname ? session()->get('user')->nickname : session()->get('user')->first_name }}</span>
+            <span class="d-none d-md-inline-block">{{ $member->nickname ? $member->nickname : $member->first_name }}</span>
           </a>
           @else
           <a href="/user/auth/signin" title="前往會員登入">
@@ -95,7 +95,7 @@
       <a class="nav-link" href="/merchandise/new" title="前往最新商品">最新商品</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/promotion" title="前往促銷活動">促銷活動</a>
+      <a class="nav-link" href="/promotion" title="前往促銷商品">促銷商品</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/news" title="前往最新消息">最新消息</a>
@@ -119,7 +119,7 @@
         <a class="nav-link" href="/merchandise/new" title="前往最新商品">最新商品</a>
       </li>
       <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
-        <a class="nav-link" href="/promotion" title="前往促銷活動">促銷活動</a>
+        <a class="nav-link" href="/promotion" title="前往促銷商品">促銷商品</a>
       </li>
       <li class="nav-item w-50 border-bottom border-2 rounded-start rounded-end">
         <a class="nav-link" href="/news" title="前往最新消息">最新消息</a>

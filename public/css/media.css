@@ -10,7 +10,7 @@
   #promotion .f-carousel__slide {
     width: calc(100% / 2);
   }
-  #product-sales .f-carousel__slide {
+  #merchandise-sales .f-carousel__slide {
     width: calc(100% / 2);
   }
   /* news頁面響應式布局 */
@@ -70,7 +70,7 @@
   }
 
   /* 促銷頁面商品輪播圖 */
-  #product-sales .f-carousel__slide {
+  #merchandise-sales .f-carousel__slide {
     width: calc(100% / 2);
   }
   

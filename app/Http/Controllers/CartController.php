@@ -13,9 +13,9 @@ class CartController extends Controller
 {
     public function CartListPage()
     {
-        if(session()->has('user')) {
-            $user_id = session()->get('user')->id;
-            $cartItems = Cart::where('user_id', $user_id)->orderBy('created_at', 'desc')->get();
+        if(session()->has('member_id')) {
+            $member_id = session()->get('member_id');
+            $cartItems = Cart::where('user_id', $member_id)->orderBy('created_at', 'desc')->get();
             $merchandises = Merchandise::all();
         } else {
             return redirect('/user/auth/signin');
@@ -36,9 +36,9 @@ class CartController extends Controller
 
         $merchandise = Merchandise::findOrFail($toCartItemId);
         
-        $userId = session()->get('user')->id;
+        $member_id = session()->get('member_id');
         
-        $cartItem = Cart::where('user_id',  $userId)
+        $cartItem = Cart::where('user_id',  $member_id)
         ->where('merchandise_id', $toCartItemId)
         ->first();
         
@@ -47,7 +47,7 @@ class CartController extends Controller
             $cartItem->save();
         } else {
             Cart::create([
-                'user_id' => $userId,
+                'user_id' => $member_id,
                 'merchandise_id' => $toCartItemId,
                 'quantity' => 1,
             ]);
@@ -62,9 +62,9 @@ class CartController extends Controller
 
     public function getCartData()
     {
-        $userId = session()->get('user')->id;
+        $member_id = session()->get('member_id');
 
-        $cartItemCount = Cart::where('user_id',  $userId)->sum('quantity');
+        $cartItemCount = Cart::where('user_id',  $member_id)->sum('quantity');
 
         return response()->json([
             'status' => 1,

@@ -45,7 +45,7 @@
                 <div class="col-lg-3 col-md-4 me-3">
                   <img src="/{{ $merchandise->photo }}" alt="商品圖">
                 </div>
-                <h3 class="text-916953 fs-6 text-start">{{ $merchandise->name }}</h3>
+                <h3 class="fs-6 text-start">{{ $merchandise->name }}</h3>
               </a>
             </td>
             <!-- 規格 -->
@@ -103,7 +103,7 @@
 </article>
 
 @push('scripts')
-@if(session()->has('user'))
+@if(session()->has('member_id'))
 @include('component.cart')
 @endif
 

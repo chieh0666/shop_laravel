@@ -4,10 +4,10 @@
 
 @section('main-content')
 
-<!-- product detail -->
-<article id="product-detail-page" class="py-1875">
+<!-- merchandise detail -->
+<article id="merchandise-detail-page" class="py-1875">
   <nav aria-label="breadcrumb" class="p-125">
-    <ol class="breadcrumb text-916953">
+    <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="/">首頁</a></li>
       <li class="breadcrumb-item"><a href="#">{{ $thisMerchandiseOfRootCat->name }}</a></li>
       <li class="breadcrumb-item"><a href="#">{{ $thisMerchandiseOfCat->name }}</a></li>

@@ -43,8 +43,8 @@
     </div>
   </div>
 </article>
-<!-- hot-product -->
-<article id="hot-product" class="mt-625">
+<!-- hot-merchandise -->
+<article id="hot-merchandise" class="mt-625">
   <div class="text-center py-3">
     <h2>
       <span class="border-start border-top ps-2 pt-1 border-3">熱銷商品</span>
@@ -59,29 +59,29 @@
       <div class="card h-100 border-0">
         <div class="position-relative overflow-hidden shadow-sm rounded-3">
           <div class="merchandise-img-box">
-            <img src="/{{ $hotMerchandise->photo }}" class="card-img-top rounded-3 object-fit-cover h-100" alt="{{ $hotMerchandise->name }}">
+            <img src="/{{ $hotMerchandise->photo }}" class="card-img-top object-fit-cover h-100" alt="{{ $hotMerchandise->name }}">
           </div>
           <span class="position-absolute top-0 end-0 bg-danger px-3 py-1 m-1 rounded-pill text-light fw-bold">HOT</span>
           <!-- 收藏、加入購物車、連結詳情頁 -->
-          <ul class="list-unstyled d-flex align-items-center justify-content-between position-absolute start-0 end-0 mt -3 ms-3 me-3 bg-dark bg-opacity-75 rounded-start-pill rounded-end-pill overflow-hidden">
+          <ul class="list-unstyled d-flex align-items-center justify-content-between mb-0 bg-light">
             <a class="col text-center" href="#" title="點擊加入喜歡清單">
               <li class="py-1">
-                <i class="bi bi-heart text-light"></i>
+                <i class="bi bi-heart"></i>
                 <span class="d-none">加入喜歡清單</span>
               </li>
             </a>
 
             <button type="button" class="border-start border-end border-secondary border-opacity-75 col-6 text-center p-0 addToCartBtn" title="點擊加入購物車" data-id="{{ $hotMerchandise->id }}">
               <li class="py-1">
-                <i class="bi bi-plus-lg text-light"></i>
-                <i class="bi bi-cart-fill text-light"></i>
+                <i class="bi bi-plus-lg text-light" style="color: #008B8B !important;"></i>
+                <i class="bi bi-cart text-light" style="color: #008B8B !important;"></i>
                 <span class="d-none">加入購物車</span>
               </li>
             </button>
 
             <a class="col text-center" href="/merchandise/{{ $hotMerchandise->id }}/detail" title="點擊前往商品詳情">
               <li class="py-1">
-                <i class="bi bi-info-circle-fill text-light"></i>
+                <i class="bi bi-info-circle"></i>
                 <span class="d-none">商品詳情</span>
               </li>
             </a>
@@ -104,8 +104,8 @@
   </div>
 </article>
 
-<!-- new-product -->
-<article id="new-product" class="mt-625">
+<!-- new-merchandise -->
+<article id="new-merchandise" class="mt-625">
   <div class="d-flex justify-content-between align-items-center py-3">
     <h2>
       <span class="border-start border-top ps-2 pt-1 border-3">最新商品</span>
@@ -121,29 +121,29 @@
       <div class="card h-100 border-0">
         <div class="position-relative overflow-hidden shadow-sm rounded-3">
           <div class="merchandise-img-box">
-            <img src="/{{ $newMerchandise->photo }}" class="card-img-top rounded-3 object-fit-cover h-100" alt="{{ $newMerchandise->name }}">
+            <img src="/{{ $newMerchandise->photo }}" class="card-img-top object-fit-cover h-100" alt="{{ $newMerchandise->name }}">
           </div>
           <span class="position-absolute top-0 end-0 bg-warning px-3 py-1 m-1 rounded-pill text-light fw-bold">NEW</span>
           <!-- 收藏、加入購物車、連結詳情頁 -->
-          <ul class="list-unstyled d-flex align-items-center justify-content-between position-absolute start-0 end-0 mt -3 ms-3 me-3 bg-dark bg-opacity-75 rounded-start-pill rounded-end-pill overflow-hidden">
+          <ul class="list-unstyled d-flex align-items-center justify-content-between mb-0 bg-light">
             <a class="col text-center" href="#" title="點擊加入喜歡清單">
               <li class="py-1">
-                <i class="bi bi-heart text-light"></i>
+                <i class="bi bi-heart"></i>
                 <span class="d-none">加入喜歡清單</span>
               </li>
             </a>
 
             <button type="button" class="border-start border-end border-secondary border-opacity-75 col-6 text-center p-0 addToCartBtn" title="點擊加入購物車" data-id="{{ $newMerchandise->id }}">
               <li class="py-1">
-                <i class="bi bi-plus-lg text-light"></i>
-                <i class="bi bi-cart-fill text-light"></i>
+                <i class="bi bi-plus-lg text-light" style="color: #008B8B !important;"></i>
+                <i class="bi bi-cart text-light" style="color: #008B8B !important;"></i>
                 <span class="d-none">加入購物車</span>
               </li>
             </button>
 
             <a class="col text-center" href="/merchandise/{{ $newMerchandise->id }}/detail" title="點擊前往商品詳情">
               <li class="py-1">
-                <i class="bi bi-info-circle-fill text-light"></i>
+                <i class="bi bi-info-circle"></i>
                 <span class="d-none">商品詳情</span>
               </li>
             </a>
@@ -168,7 +168,7 @@
     
 @push('scripts')
 <script src="/js/banner-slide.js"></script>
-@if(session()->has('user'))
+@if(session()->has('member_id'))
 @include('component.cart')
 @endif
 @endpush

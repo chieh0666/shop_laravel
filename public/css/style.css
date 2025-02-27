@@ -97,36 +97,36 @@ p:not(.price) {
 }
 
 /* 商品列表 */
-#hot-product .card ul,
-#new-product .card ul,
+#hot-merchandise .card ul,
+#new-merchandise .card ul,
 #merchandise .card ul {
   bottom: -60px;
   transition: 0.3s;
 }
-#hot-product .card:hover ul,
-#new-product .card:hover ul,
+#hot-merchandise .card:hover ul,
+#new-merchandise .card:hover ul,
 #merchandise .card:hover ul {
   bottom: 0;
 }
-#hot-product .card ul li:hover,
-#new-product .card ul li:hover,
+#hot-merchandise .card ul li:hover,
+#new-merchandise .card ul li:hover,
 #merchandise .card ul li:hover {
   background-color: #d3d3d32f;
 }
-#hot-product .card-text span:nth-of-type(1)::before,
-#hot-product .card-text span:nth-of-type(3)::before,
-#new-product .card-text span:nth-of-type(1)::before,
-#new-product .card-text span:nth-of-type(3)::before,
+#hot-merchandise .card-text span:nth-of-type(1)::before,
+#hot-merchandise .card-text span:nth-of-type(3)::before,
+#new-merchandise .card-text span:nth-of-type(1)::before,
+#new-merchandise .card-text span:nth-of-type(3)::before,
 #merchandise .card-text span:nth-of-type(1)::before,
 #merchandise .card-text span:nth-of-type(3)::before,
 #search-page .card-text span:nth-of-type(1)::before,
 #search-page .card-text span:nth-of-type(3)::before {
   content: "NT$ ";
 }
-#hot-product .card-text span:nth-of-type(1)::after,
-#hot-product .card-text span:nth-of-type(3)::after,
-#new-product .card-text span:nth-of-type(1)::after,
-#new-product .card-text span:nth-of-type(3)::after,
+#hot-merchandise .card-text span:nth-of-type(1)::after,
+#hot-merchandise .card-text span:nth-of-type(3)::after,
+#new-merchandise .card-text span:nth-of-type(1)::after,
+#new-merchandise .card-text span:nth-of-type(3)::after,
 #merchandise .card-text span:nth-of-type(1)::after,
 #merchandise .card-text span:nth-of-type(3)::after,
 #search-page .card-text span:nth-of-type(1)::after,
@@ -167,92 +167,6 @@ body .notify:not(#home .notify) {
 /* m-menu 選單 */
 #m-menu li:last-of-type {
   border-bottom: none !important;
-}
-
-/* 促銷頁輪播圖 */
-#promotion .f-carousel__slide {
-  width: 100%;
-}
-/* #promotion .f-carousel {
-  --f-carousel-spacing: 8px;
-  --f-carousel-slide-width: calc((100% - 16px) / 2);
-} */
-#product-sales .card {
-  height: 500px; /* 卡片高度 因為內容長短會改變卡片高度 導致卡片高度不一 */
-  margin: 10px;
-}
-#product-sales .card-img-top {
-  height: 250px; /* 固定圖片高度 */
-  object-fit: contain;
-  padding: 10px;
-  background: #f8f9fa;
-}
-#product-sales .card-body {
-  flex: 1;
-  padding: 1rem;
-  overflow: hidden; /* 多餘內容影藏 */
-}
-#product-sales .f-carousel__dots {
-  display: none;
-}
-#product-sales .f-button.is-next {
-  border-radius: 50%;
-  background-color: lightgray;
-  margin-right: 1rem;
-}
-#product-sales .f-button.is-prev {
-  border-radius: 50%;
-  background-color: lightgray;
-  margin-left: 1rem;
-}
-
-/* news頁面布局 */
-#news-page .d-flex {
-  display: flex;
-}
-#news-page .flex-wrap {
-  flex-wrap: wrap;
-}
-#news-page .flex-nowrap {
-  flex-wrap: nowrap;
-}
-#news-page .flex-w-25{
-  flex: 0 0 23%;
-  width: 23%;
-  margin-bottom: 2rem;  
-  margin-top: 1rem;
-  margin: 0.5rem;
-}
-#news-page.news-box {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-#news-page .card-img-wrapper {
-  width: 100%;
-  height: 200px;  
-  overflow: hidden;  /* 超出部分隱藏 */
-  position: relative;
-}
-
-/* 卡片圖片樣式 */
-#news-page .card-img-top {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;  /* 圖片自適應覆蓋 */
-  object-position: center;  /* 圖片居中顯示 */
-}
-#news-page .card {
-  padding: 0;  /* 移除卡片的內邊距 */
-}
-#news-page .card-body a {
-  color:black;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-#news-page .card-body a:hover {
-  color:rgb(103, 114, 182);
-  text-decoration: none;
 }
 
 /* 輪播圖下面點點 */
