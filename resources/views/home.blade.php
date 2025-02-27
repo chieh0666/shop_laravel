@@ -166,11 +166,11 @@
   </div>
 </article>
     
-@section('js')
+@push('scripts')
 <script src="/js/banner-slide.js"></script>
 @if(session()->has('user'))
 @include('component.cart')
 @endif
-@endsection
+@endpush
 
 @endsection

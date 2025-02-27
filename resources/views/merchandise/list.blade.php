@@ -95,10 +95,10 @@
   </div>
 </article>
 
-@section('js')
+@push('scripts')
 @if(session()->has('user'))
 @include('component.cart')
 @endif
-@endsection
+@endpush
 
 @endsection

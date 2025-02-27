@@ -99,9 +99,9 @@
   </div>
 </article>
 
-@section('js')
+@push('scripts')
 <script src="/js/banner-slide.js"></script>
 <script src="/js/sales-slide.js"></script>
-@endsection
+@endpush
 
 @endsection
