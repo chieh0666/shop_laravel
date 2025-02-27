@@ -10,7 +10,7 @@
     <span class="border-start border-top ps-2 pt-1 border-3">{{ $pageTitle }}</span>
   </h2>
 </div>
-<article id="cart-list-page" class="mt-1875">
+<article id="cart-list" class="mt-1875">
   <div class="col-xl-10 mx-auto">
     <form action="#" method="POST" id="cart-list-form">
       <table class="table text-center">
@@ -61,7 +61,7 @@
             <td class="align-middle">
               <div class="d-flex align-items-center">
                 <select class="form-select border-0 border-bottom rounded-0 border-secondary-subtle bg-transparent quantity-select" aria-label="select-list" data-price="{{ $merchandise->price }}">
-                  @for($i = 1; $i <= $merchandise->remain_count; $i++)
+                  @for($i = 1; $i <= min(10, $merchandise->remain_count); $i++)
                   <option value="{{ $i }}" @if($cartItem->quantity == $i) selected @endif>{{ $i }}</option>
                   @endfor
                 </select>

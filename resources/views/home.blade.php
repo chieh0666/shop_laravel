@@ -8,7 +8,7 @@
     <!-- 商品分類側邊欄 -->
     <div class="col-lg-3 col-md-12 shadow p-3 d-none d-xl-inline-block rounded-start">
       <ul class="list-group list-group-flush p-3">
-        <span class="fs-5 mb-3">
+        <span class="fs-5 mb-3 fw-bolder">
           <i class="bi bi-bookmarks"></i>
           商品分類
         </span>
