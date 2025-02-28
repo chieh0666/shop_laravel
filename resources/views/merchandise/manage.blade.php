@@ -47,15 +47,15 @@
                 </td>
                 <td>
                     <a href="/merchandise/{{ $merchandise->id }}/edit" class="btn btn-secondary py-1">
-                        <i class="bi bi-pencil me-1"></i>
-                        <span class="d-none d-xl-inline-block">
+                        <i class="bi bi-pencil"></i>
+                        <span class="d-none d-xl-inline-block ms-1">
                             管理
                         </span>
                     </a>
                     <!-- 商品刪除 -->
                     <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delMerchandise{{ $merchandise->id }}">
-                        <i class="bi bi-trash me-1"></i>
-                        <span class="d-none d-xl-inline-block">
+                        <i class="bi bi-trash"></i>
+                        <span class="d-none d-xl-inline-block ms-1">
                             刪除
                         </span>
                     </button>

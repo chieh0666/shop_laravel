@@ -21,15 +21,15 @@
                 <span class="fw-bolder">{{ $category->name }}({{ $category->where('parent_id', $category->id)->count() }})</span>
                 <div>
                     <a href="/category/{{ $category->id }}/edit" class="btn btn-secondary py-1">
-                        <i class="bi bi-pencil me-1"></i>
-                        <span class="d-none d-xl-inline-block">
+                        <i class="bi bi-pencil"></i>
+                        <span class="d-none d-xl-inline-block ms-1">
                             管理
                         </span>
                     </a>
                     <!-- 類別刪除 -->
                     <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delCategory{{ $category->id }}" @if($category->where('parent_id', $category->id)->count() !== 0) disabled @endif>
-                        <i class="bi bi-trash me-1"></i>
-                        <span class="d-none d-xl-inline-block">
+                        <i class="bi bi-trash"></i>
+                        <span class="d-none d-xl-inline-block ms-1">
                             刪除
                         </span>
                     </button>
@@ -59,15 +59,15 @@
                 <i class="bi bi-arrow-return-right">&nbsp;{{ $subcategory->name }}</i>
                 <div>
                     <a href="/category/{{ $subcategory->id }}/edit" class="btn btn-secondary py-1">
-                        <i class="bi bi-pencil me-1"></i>
-                        <span class="d-none d-xl-inline-block">
+                        <i class="bi bi-pencil"></i>
+                        <span class="d-none d-xl-inline-block ms-1">
                             管理
                         </span>
                     </a>
                     <!-- 類別刪除 -->
                     <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delCategory{{ $subcategory->id }}">
-                        <i class="bi bi-trash me-1"></i>
-                        <span class="d-none d-xl-inline-block">
+                        <i class="bi bi-trash"></i>
+                        <span class="d-none d-xl-inline-block ms-1">
                             刪除
                         </span>
                     </button>
