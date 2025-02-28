@@ -78,7 +78,6 @@
                 <i class="bi bi-heart"></i>
                 <span class="d-none">收藏</span>
               </button>
-              <meta name="csrf-token" content="{{ csrf_token() }}">
               <button class="btn delCartItem" type="button" title="刪除商品" data-id="{{ $cartItem->id }}">
                 <i class="bi bi-trash-fill"></i>
                 <span class="d-none">刪除</span>
@@ -104,13 +103,11 @@
     @else
     <div class="text-center">
       <h2 class="py-1875">
-        <span class="text-secondary fs-4">
+        <span class="d-block text-secondary fs-3">
           購物車沒有商品
         </span>
-      </h2>
-      <div class="fs-4">
         <a class="btn btn-light" href="/">再逛逛</a>
-      </div>
+      </h2>
     </div>
     @endif
   </div>
@@ -121,101 +118,6 @@
 @if(session()->has('user_id'))
 @include('component.cart')
 @endif
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    function updateCartTotal() {
-      let total = 0;
-
-      // 取得所有已選取 (勾選) 的商品小計並加總
-      document.querySelectorAll(".form-check-input[name='cartCheck']:checked").forEach(checkbox => {
-        let cartRow = checkbox.closest("tr"); // 找到商品所在的 <tr>
-        if (cartRow) {
-          let subtotalElement = cartRow.querySelector(".cart-subtotal .subtotal");
-          if (subtotalElement) {
-            total += parseFloat(subtotalElement.textContent.replace(/,/g, "").replace("$", ""));
-          }
-        }
-      });
-
-      // 更新結帳金額
-      document.getElementById("cart-total").textContent = total.toLocaleString();
-    }
-
-    // 監聽數量選擇變更事件
-    document.querySelectorAll(".quantity-select").forEach(select => {
-      select.addEventListener("change", function () {
-        let price = parseFloat(this.getAttribute("data-price")); // 取得商品單價
-        let quantity = parseInt(this.value); // 取得當前選擇的數量
-        let subtotalElement = this.closest("td").nextElementSibling.querySelector(".subtotal"); // 找到對應小計元素
-
-        // 計算新的小計並更新
-        let newSubtotal = price * quantity;
-        subtotalElement.textContent = `$${newSubtotal.toLocaleString()}`;
-
-        // 重新計算總金額
-        updateCartTotal();
-      });
-    });
-
-    // 監聽刪除按鈕事件
-    document.querySelectorAll(".delCartItem").forEach(button => {
-      button.addEventListener("click", function () {
-        let cartId = this.dataset.id;
-        let csrfToken = document.querySelector('meta[name="csrf-token"]').content; // 獲取 CSRF token
-
-        if (!cartId) {
-                console.error('無效的 cartId');
-                return;
-        }
-
-        this.disabled = true;
-
-        fetch(`/cart/${cartId}/delete`, {
-            method: 'DELETE', // 請求方法
-            headers: {
-                'X-CSRF-TOKEN': csrfToken
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json(); // 解析回應為 JSON
-        })
-        .then(data => {
-            console.log('成功:', data); // 處理成功的資料
-            let cartItem = this.closest("tr"); // 找到對應的商品行 (假設商品在 <tr> 內)
-            if (cartItem) {
-                  cartItem.style.transition = 'opacity 0.3s'; // 添加淡出效果
-                  cartItem.style.opacity = '0';
-                  setTimeout(() => {
-                    cartItem.remove(); // 移除該行商品
-                    updateCartTotal(); // 重新計算總金額
-                  }, 300);
-              }
-        })
-        .catch(error => {
-            console.log('錯誤:', error); // 處理錯誤
-            alert('刪除失敗，請稍後再試');
-        })
-        .finally(() => {
-            this.disabled = false;
-        });
-      });
-    });
-
-    // 監聽所有核取方塊的變化
-    document.querySelectorAll(".form-check-input[name='cartCheck']").forEach(checkbox => {
-      checkbox.addEventListener("change", function () {
-        updateCartTotal(); // 更新結帳總金額
-      });
-    });
-
-    // 頁面載入時先計算一次總金額
-    updateCartTotal();
-  });
-</script>
 
 @endpush
 

@@ -54,7 +54,6 @@ class CartController extends Controller
         }
 
         return response()->json([
-            'status' => 1,
             'msg' => '商品已加入購物車！',
             'toCartItemId' => $toCartItemId,
         ]);
@@ -77,8 +76,6 @@ class CartController extends Controller
         $cartItemCount = Cart::where('user_id',  $user_id)->sum('quantity');
 
         return response()->json([
-            'status' => 1,
-            'msg' => '購物車資料',
             'cartItemCount' => $cartItemCount,
         ]);
     }
