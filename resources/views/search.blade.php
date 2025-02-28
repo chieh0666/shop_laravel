@@ -7,9 +7,13 @@
 <!-- search page -->
 <div class="text-center">
   <h2 class="py-1875">
-    <span>
-      @if($merchandiseData->count() == 0) <span class="text-secondary">沒有任何結果適用於&nbsp;{{ $searchTerm }}</span>  @else {{ $pageTitle }}{{ $searchTerm }} @endif
+    @if($merchandiseData->count() == 0)
+    <span class="text-secondary">
+      沒有任何結果適用於&nbsp;{{ $searchTerm }}
     </span>
+    @else
+    {{ $pageTitle }}{{ $searchTerm }}
+    @endif
   </h2>
 </div>
 

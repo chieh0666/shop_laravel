@@ -101,6 +101,17 @@
         </div>
       </div>
     </form>
+    @else
+    <div class="text-center">
+      <h2 class="py-1875">
+        <span class="text-secondary fs-4">
+          購物車沒有商品
+        </span>
+      </h2>
+      <div class="fs-4">
+        <a class="btn btn-light" href="/">再逛逛</a>
+      </div>
+    </div>
     @endif
   </div>
 </article>
