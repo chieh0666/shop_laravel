@@ -27,12 +27,6 @@
           <label for="password">密碼</label>
         </div>
       </div>
-      <div class="form-check mb-3">
-        <input class="form-check-input " type="checkbox" name="rememberMe" id="rememberMe">
-        <label class="form-check-label" for="rememberMe">
-          保持登入
-        </label>
-      </div>
       <button type="submit" class="col-12 btn btn-primary mb-3">登入</button>
       <div>
         <a href="#" class="text-secondary">忘記密碼?</a>

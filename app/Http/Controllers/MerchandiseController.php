@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Merchandise;
-use App\Models\Category;
+use App\Shop\Models\Merchandise;
+use App\Shop\Models\Category;
 
 class MerchandiseController extends Controller
 {
@@ -12,7 +12,7 @@ class MerchandiseController extends Controller
     {
         $merchandises = Merchandise::orderBy('created_at', 'desc')->get();
         $blinding = [
-            'title' => '商品管理-',
+            'title' => '商品管理 - ',
             'page_title' => '商品管理',
             'merchandises' => $merchandises,
         ];
@@ -55,7 +55,7 @@ class MerchandiseController extends Controller
             $merchandise = $merchandise->first();
 
             $blinding = [
-                'title' => '編輯商品-',
+                'title' => '編輯商品 - ',
                 'page_title' => '編輯商品',
                 'merchandise' => $merchandise,
                 'categories' => Category::all(),
@@ -103,7 +103,7 @@ class MerchandiseController extends Controller
         $blinding = [
             'categories' => $categories,
             'merchandises' => $merchandises,
-            'title' => '所有商品-',
+            'title' => '所有商品 - ',
             'pageTitle' => '所有商品',
         ];
         return view('merchandise.list', $blinding);
@@ -116,7 +116,7 @@ class MerchandiseController extends Controller
 
         $blinding = [
             'newMerchandises' => $newMerchandises,
-            'title' => '最新商品-',
+            'title' => '最新商品 - ',
             'pageTitle' => '最新商品',
         ];
         
@@ -132,7 +132,7 @@ class MerchandiseController extends Controller
             'thisMerchandise' => $thisMerchandise,
             'thisMerchandiseOfCat' => $thisMerchandiseOfCat,
             'thisMerchandiseOfRootCat' => $thisMerchandiseOfRootCat,
-            'title' => $thisMerchandise->name . '-'
+            'title' => $thisMerchandise->name . ' - '
         ];
 
         return view('merchandise.detail', $blinding);

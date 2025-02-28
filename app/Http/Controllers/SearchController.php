@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Merchandise;
+use App\Shop\Models\Category;
+use App\Shop\Models\Merchandise;
 
 class SearchController extends Controller
 {
@@ -28,7 +28,7 @@ class SearchController extends Controller
         $categoryData = Category::all();
 
         $blinding = [
-            'title' => $q . '-',
+            'title' => $q . ' - ',
             'pageTitle' => '搜尋關鍵字：',
             'searchTerm' => $q,
             'merchandiseData' => $merchandiseData,

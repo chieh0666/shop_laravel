@@ -1,9 +1,9 @@
 <header class="mb-03125">
-  @if(isset($member))
+  @if(isset($user))
   <div class="py-03125">
     <div class="container">
       <div class="d-flex align-items-center justify-content-end">
-        @if($member->account_type == 'A')
+        @if($user->account_type == 'A')
         <a class="p-1" href="/merchandise/manage" title="前往管理主頁">
           <span class="text-dark">商店管理</span>
         </a>
@@ -61,10 +61,10 @@
       <!-- user、cart button -->
       <div class="d-flex me-2 px-2 align-items-center justify-content-center fs-4">
         <div class="mx-3">
-          @if(isset($member))
+          @if(isset($user))
           <a href="#" title="前往會員主頁">
             <i class="bi bi-person-circle"></i>
-            <span class="d-none d-md-inline-block">{{ $member->nickname ? $member->nickname : $member->first_name }}</span>
+            <span class="d-none d-md-inline-block">{{ $user->nickname ? $user->nickname : $user->first_name }}</span>
           </a>
           @else
           <a href="/user/auth/signin" title="前往會員登入">

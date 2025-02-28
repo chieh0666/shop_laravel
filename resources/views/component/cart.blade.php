@@ -68,6 +68,7 @@ $(document).ready(function() {
 
 });
 </script>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
       if (window.location.pathname === "/cart/list") {

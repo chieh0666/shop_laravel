@@ -73,8 +73,8 @@
 
             <button type="button" class="border-start border-end border-secondary border-opacity-75 col-6 text-center p-0 addToCartBtn" title="點擊加入購物車" data-id="{{ $hotMerchandise->id }}">
               <li class="py-1">
-                <i class="bi bi-plus-lg text-light" style="color: #008B8B !important;"></i>
-                <i class="bi bi-cart text-light" style="color: #008B8B !important;"></i>
+                <i class="bi bi-plus-lg" style="color: #008B8B !important;"></i>
+                <i class="bi bi-cart" style="color: #008B8B !important;"></i>
                 <span class="d-none">加入購物車</span>
               </li>
             </button>
@@ -92,7 +92,7 @@
           <p class="price card-text fst-italic">
             <span class="sale fs-4 px-1">{{ number_format($hotMerchandise->price, 0) }}</span>
             <span class=""><br/></span>
-            {{-- <span class="text-decoration-line-through px-1">10000</span> --}}
+            <span class="text-decoration-line-through px-1">10000</span>
           </p>
         </div>
       </div>
@@ -135,8 +135,8 @@
 
             <button type="button" class="border-start border-end border-secondary border-opacity-75 col-6 text-center p-0 addToCartBtn" title="點擊加入購物車" data-id="{{ $newMerchandise->id }}">
               <li class="py-1">
-                <i class="bi bi-plus-lg text-light" style="color: #008B8B !important;"></i>
-                <i class="bi bi-cart text-light" style="color: #008B8B !important;"></i>
+                <i class="bi bi-plus-lg" style="color: #008B8B !important;"></i>
+                <i class="bi bi-cart" style="color: #008B8B !important;"></i>
                 <span class="d-none">加入購物車</span>
               </li>
             </button>
@@ -154,7 +154,7 @@
           <p class="price card-text fst-italic">
             <span class="sale fs-4 px-1">{{ number_format($newMerchandise->price, 0) }}</span>
             <span class=""><br/></span>
-            {{-- <span class="text-decoration-line-through px-1">10000</span> --}}
+            <span class="text-decoration-line-through px-1">10000</span>
           </p>
         </div>
       </div>
@@ -168,7 +168,7 @@
     
 @push('scripts')
 <script src="/js/banner-slide.js"></script>
-@if(session()->has('member_id'))
+@if(session()->has('user_id'))
 @include('component.cart')
 @endif
 @endpush

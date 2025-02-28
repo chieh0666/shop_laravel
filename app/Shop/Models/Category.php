@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Models;
+namespace App\Shop\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cart extends Model
+class Category extends Model
 {
     // 資料表名稱
-    protected $table = 'carts';
+    protected $table = 'categories';
     // 主鍵名稱
     protected $primaryKey = 'id';
     // 可以大量指定異動的欄位（Mass Assignment）
     protected $fillable = [
-        'user_id',
-        'merchandise_id',
-        'quantity', 
+        'parent_id',
+        'name',
+        'description', 
     ];
 }

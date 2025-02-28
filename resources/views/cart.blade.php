@@ -12,6 +12,7 @@
 </div>
 <article id="cart-list" class="mt-1875">
   <div class="col-xl-10 mx-auto">
+    @if($cartItems->where('user_id', session()->get('user_id'))->count() !== 0)
     <form action="#" method="POST" id="cart-list-form">
       <table class="table text-center">
         <thead>
@@ -77,7 +78,8 @@
                 <i class="bi bi-heart"></i>
                 <span class="d-none">收藏</span>
               </button>
-              <button class="btn delCartItem" type="button" title="刪除商品">
+              <meta name="csrf-token" content="{{ csrf_token() }}">
+              <button class="btn delCartItem" type="button" title="刪除商品" data-id="{{ $cartItem->id }}">
                 <i class="bi bi-trash-fill"></i>
                 <span class="d-none">刪除</span>
               </button>
@@ -99,11 +101,13 @@
         </div>
       </div>
     </form>
+    @endif
   </div>
 </article>
 
 @push('scripts')
-@if(session()->has('member_id'))
+
+@if(session()->has('user_id'))
 @include('component.cart')
 @endif
 
@@ -146,11 +150,47 @@
     // 監聽刪除按鈕事件
     document.querySelectorAll(".delCartItem").forEach(button => {
       button.addEventListener("click", function () {
-        let cartItem = this.closest("tr"); // 找到對應的商品行 (假設商品在 <tr> 內)
-        if (cartItem) {
-          cartItem.remove(); // 移除該行商品
-          updateCartTotal(); // 重新計算總金額
+        let cartId = this.dataset.id;
+        let csrfToken = document.querySelector('meta[name="csrf-token"]').content; // 獲取 CSRF token
+
+        if (!cartId) {
+                console.error('無效的 cartId');
+                return;
         }
+
+        this.disabled = true;
+
+        fetch(`/cart/${cartId}/delete`, {
+            method: 'DELETE', // 請求方法
+            headers: {
+                'X-CSRF-TOKEN': csrfToken
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json(); // 解析回應為 JSON
+        })
+        .then(data => {
+            console.log('成功:', data); // 處理成功的資料
+            let cartItem = this.closest("tr"); // 找到對應的商品行 (假設商品在 <tr> 內)
+            if (cartItem) {
+                  cartItem.style.transition = 'opacity 0.3s'; // 添加淡出效果
+                  cartItem.style.opacity = '0';
+                  setTimeout(() => {
+                    cartItem.remove(); // 移除該行商品
+                    updateCartTotal(); // 重新計算總金額
+                  }, 300);
+              }
+        })
+        .catch(error => {
+            console.log('錯誤:', error); // 處理錯誤
+            alert('刪除失敗，請稍後再試');
+        })
+        .finally(() => {
+            this.disabled = false;
+        });
       });
     });
 

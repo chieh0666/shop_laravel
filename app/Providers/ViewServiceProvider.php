@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-use App\Models\Member;
+use App\Shop\Models\User;
 
 class ViewServiceProvider extends ServiceProvider
 {
@@ -22,14 +22,14 @@ class ViewServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::composer('layout.header', function ($view) {
-            $member = null;
+            $user = null;
 
-            if (session()->has('member_id')) {
-                $member = Member::find(session('member_id'));
+            if (session()->has('user_id')) {
+                $user = User::find(session('user_id'));
             }
 
             // 將會員資料傳遞到 View
-            $view->with('member', $member);
+            $view->with('user', $user);
         });
     }
 }

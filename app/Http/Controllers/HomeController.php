@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Merchandise;
-use App\Models\Category;
+use App\Shop\Models\Merchandise;
+use App\Shop\Models\Category;
 
 class HomeController extends Controller
 {
