@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   const Toast = Swal.mixin({
     toast: true,
-    position: "top-end",
+    position: "top",
     showConfirmButton: false,
     timer: 1800,
     timerProgressBar: true,
