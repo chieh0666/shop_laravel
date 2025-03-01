@@ -95,7 +95,7 @@ class MerchandiseController extends Controller
     }
 
     // 所有商品
-    public function MerchandiseListPage()
+    public function MerchandisePage()
     {
         $categories = Category::all();
         $merchandises = Merchandise::all();

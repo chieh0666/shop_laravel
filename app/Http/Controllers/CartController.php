@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function CartListPage()
+    public function CartPage()
     {
         if(session()->has('user_id')) {
             $user_id = session()->get('user_id');

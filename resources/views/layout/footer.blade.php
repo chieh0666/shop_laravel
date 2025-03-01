@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="footer-bottom my-0625 text-center">
-      <small>&copy;2025 YUJ 網頁設計</small>
+      <small>&copy;2025 YUJ IT Studio</small>
     </div>
   </div>
 </footer>

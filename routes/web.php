@@ -73,8 +73,8 @@ Route::group(['prefix' => 'merchandise'], function(){
         'App\Http\Controllers\MerchandiseController@MerchandiseDeleteProcess'
     )->middleware(AuthUserAdminMiddleware::class);
     Route::get(
-        'list',
-        'App\Http\Controllers\MerchandiseController@MerchandiseListPage'
+        'all',
+        'App\Http\Controllers\MerchandiseController@MerchandisePage'
     );
     Route::get(
         'new',
@@ -117,7 +117,7 @@ Route::group(['prefix' => 'category'], function(){
 Route::group(['prefix' => 'cart'], function(){
     Route::get(
         'list',
-        'App\Http\Controllers\CartController@CartListPage'
+        'App\Http\Controllers\CartController@CartPage'
     )->name('cart');
     Route::post(
         'add',
@@ -132,6 +132,12 @@ Route::group(['prefix' => 'cart'], function(){
         'App\Http\Controllers\CartController@CartDeleteProcess'
     );
 });
+
+
+Route::post(
+    '/checkout',
+    'App\Http\Controllers\CheckOutController@OrderPage'
+);
 
 // google auth 登入
 Route::get('/google/auth',
