@@ -10,19 +10,21 @@
     <span class="border-start border-top ps-2 pt-1 border-3">{{ $pageTitle }}</span>
   </h2>
 </div>
+
 <article id="cart-list" class="mt-1875">
   <div class="col-xl-10 mx-auto">
     @if($cartItems->where('user_id', session()->get('user_id'))->count() !== 0)
-    <form action="#" method="POST" id="cart-list-form">
+    <form action="/checkout" method="POST" id="cart-list-form">
+      @csrf
       <table class="table text-center">
         <thead>
           <tr>
             <th scope="col"><span class="d-none">選取</span></th>
-            <th class="col-7" scope="col">商品名稱</th>
-            {{-- <th class="col-2" scope="col">規格</th> --}}
+            <th class="col-6" scope="col">商品名稱</th>
+            <th class="col-1" scope="col">單價</th>
             <th class="col-1" scope="col">數量</th>
             <th class="col-2" scope="col">小計</th>
-            <th class="col-2" scope="col">變更</th>
+            <th class="col-2" scope="col">功能</th>
           </tr>
         </thead>
         <tbody>
@@ -34,34 +36,29 @@
             <!-- 選取 -->
             <td>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="{{ $merchandise->id }}" name="cartCheck" id="cartCheck" @if($merchandise->id) checked @endif>
-                <label class="form-check-label" for="cartCheck">
+                <input class="form-check-input" type="checkbox" value="{{ $cartItem->merchandise_id }}" name="cartCheck[]" id="cartCheck_{{ $cartItem->merchandise_id }}" @if($cartItem->merchandise_id) checked @endif>
+                <label class="form-check-label" for="cartCheck_{{ $cartItem->merchandise_id }}">
                   <span class="d-none">選取</span>
                 </label>
               </div>
             </td>
             <!-- 商品圖與品名 -->
             <td class="align-middle">
-              <a class="d-flex align-items-center" href="/merchandise/{{ $merchandise->id }}/detail" title="前往商品詳細說明頁">
+              <a class="d-flex align-items-center" href="/merchandise/{{ $cartItem->merchandise_id }}/detail" title="前往商品詳細說明頁">
                 <div class="col-lg-3 col-md-4 me-3">
                   <img src="/{{ $merchandise->photo }}" alt="商品圖">
                 </div>
                 <h3 class="fs-6 text-start">{{ $merchandise->name }}</h3>
               </a>
             </td>
-            <!-- 規格 -->
-            {{-- <td class="align-middle">
-              <select class="form-select border-0 border-bottom rounded-0 border-secondary-subtle bg-transparent" aria-label="select-list">
-                <option disabled="" selected="">請選擇</option>
-                <option value="1">A1</option>
-                <option value="2">A2</option>
-                <option value="3">A3</option>
-              </select>
-            </td> --}}
+            <!-- 單價 -->
+            <td class="align-middle text-end">
+              <span class="price" data-price="{{ $merchandise->price }}">${{ number_format($merchandise->price, 0) }}</span>
+            </td>
             <!-- 數量 -->
             <td class="align-middle">
               <div class="d-flex align-items-center">
-                <select class="form-select border-0 border-bottom rounded-0 border-secondary-subtle bg-transparent quantity-select" aria-label="select-list" data-price="{{ $merchandise->price }}">
+                <select class="form-select border-0 border-bottom rounded-0 border-secondary-subtle bg-transparent quantity-select" name="quantity[]" data-id="{{ $cartItem->id }}">
                   @for($i = 1; $i <= min(10, $merchandise->remain_count); $i++)
                   <option value="{{ $i }}" @if($cartItem->quantity == $i) selected @endif>{{ $i }}</option>
                   @endfor
@@ -72,7 +69,7 @@
             <td class="align-middle text-end cart-subtotal">
               <span class="subtotal">${{ number_format($merchandise->price * $cartItem->quantity, 0) }}</span>
             </td>
-            <!-- 變更 -->
+            <!-- 功能 -->
             <td class="align-middle">
               <button class="btn" type="button" title="加入收藏商品">
                 <i class="bi bi-heart"></i>

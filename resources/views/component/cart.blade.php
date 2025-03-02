@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let total = 0;
 
     // 取得所有已選取 (勾選) 的商品小計並加總
-    document.querySelectorAll(".form-check-input[name='cartCheck']:checked").forEach(checkbox => {
+    document.querySelectorAll(".form-check-input[name='cartCheck[]']:checked").forEach(checkbox => {
       let cartRow = checkbox.closest("tr"); // 找到商品所在的 <tr>
       if (cartRow) {
         let subtotalElement = cartRow.querySelector(".cart-subtotal .subtotal");
@@ -112,9 +112,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // 監聽數量選擇變更事件
   document.querySelectorAll(".quantity-select").forEach(select => {
     select.addEventListener("change", function () {
-      let price = parseFloat(this.getAttribute("data-price")); // 取得商品單價
+      let itemId = this.getAttribute('data-id');
+      let price = parseFloat(this.closest('tr').querySelector('.price').getAttribute('data-price')); // 從當前行獲取單價
       let quantity = parseInt(this.value); // 取得當前選擇的數量
       let subtotalElement = this.closest("td").nextElementSibling.querySelector(".subtotal"); // 找到對應小計元素
+      let csrfToken = '{{ csrf_token() }}';
+
+      fetch(`/cart/${itemId}/edit`, {
+        method: 'PUT', // 請求方法
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-TOKEN': csrfToken
+        },
+        body: JSON.stringify({ // 要傳送的資料
+          quantity: quantity
+        })
+      });
 
       // 計算新的小計並更新
       let newSubtotal = price * quantity;
@@ -171,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // 監聽所有核取方塊的變化
-  document.querySelectorAll(".form-check-input[name='cartCheck']").forEach(checkbox => {
+  document.querySelectorAll(".form-check-input[name='cartCheck[]']").forEach(checkbox => {
     checkbox.addEventListener("change", function () {
       updateCartTotal(); // 更新結帳總金額
     });

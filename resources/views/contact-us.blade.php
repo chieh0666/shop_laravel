@@ -2,13 +2,13 @@
 
 @section('main-content')
 
-
 <!-- contacts us -->
 <div class="text-center">
   <h2 class="py-1875">
     <span class="border-start border-top ps-2 pt-1 border-3">聯絡我們</span>
   </h2>
 </div>
+
 <!-- contact form -->
 <article class="mt-1875">
   <div class="row">

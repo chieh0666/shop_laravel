@@ -22,11 +22,12 @@ class CartController extends Controller
         }
 
         $blinding = [
-            'title' => '我的購物車 - ',
+            'title' => '購物車 - ',
             'pageTitle' => '購物車內容',
             'cartItems' => $cartItems,
             'merchandises' => $merchandises,
         ];
+
         return view('cart', $blinding);
     }
 
@@ -77,6 +78,20 @@ class CartController extends Controller
 
         return response()->json([
             'cartItemCount' => $cartItemCount,
+        ]);
+    }
+
+    public function CartContentEditProcess($cart_id)
+    {
+        $cartItem = Cart::find($cart_id);
+        $quantity = request()->input('quantity');
+
+        $cartItem->update([
+            'quantity' => $quantity
+        ]);
+
+        return response()->json([
+            'status' => 1,
         ]);
     }
 }
