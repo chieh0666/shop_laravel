@@ -186,6 +186,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // 監聽所有核取方塊的變化
   document.querySelectorAll(".form-check-input[name='cartCheck[]']").forEach(checkbox => {
     checkbox.addEventListener("change", function () {
+      const quantitySelect = this.closest('tr').querySelector('.quantity-select'); // 找到對應行的 quantity-select
+      if (this.checked) {
+          quantitySelect.setAttribute('name', 'quantity[]'); // 選取時恢復 name
+      } else {
+          quantitySelect.removeAttribute('name'); // 未選取時移除 name
+      }
       updateCartTotal(); // 更新結帳總金額
     });
   });
