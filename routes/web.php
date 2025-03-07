@@ -131,15 +131,27 @@ Route::group(['prefix' => 'cart'], function(){
         '{cart_id}/delete',
         'App\Http\Controllers\CartController@CartDeleteProcess'
     );
-    Route::post(
+    Route::put(
         '{cart_id}/edit',
         'App\Http\Controllers\CartController@CartContentEditProcess'
     );
 });
 
-Route::post(
-    '/checkout',
-    'App\Http\Controllers\OrderController@CheckOutPage'
+
+Route::group(['prefix' => 'checkout'], function(){
+    Route::post(
+        '/confirm',
+        'App\Http\Controllers\OrderController@CheckOutPage'
+    );
+    Route::post(
+        '/',
+        'App\Http\Controllers\OrderController@CheckOutProcess'
+    );
+});
+
+Route::get(
+    'buy',
+    'App\Http\Controllers\CheckoutController@sendOrder'
 );
 
 // google auth 登入

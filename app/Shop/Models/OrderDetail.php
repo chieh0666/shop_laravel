@@ -4,22 +4,17 @@ namespace App\Shop\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Merchandise extends Model
+class OrderDetail extends Model
 {
     // 資料表名稱
-    protected $table = 'merchandise';
+    protected $table = 'order_details';
     // 主鍵名稱
     protected $primaryKey = 'id';
     // 可以大量指定異動的欄位（Mass Assignment）
     protected $fillable = [
-        'category_id',
-        'status',
-        'name',
-        'name_en',
-        'introduction',
-        'introduction_en',
-        'photo',
+        'order_id',
+        'merchandise_id',
+        'quantity',
         'price',
-        'remain_count',
     ];
 }

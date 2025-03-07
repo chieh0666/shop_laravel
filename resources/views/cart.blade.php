@@ -14,7 +14,7 @@
 <article id="cart-list" class="mt-1875">
   <div class="col-xl-10 mx-auto">
     @if($cartItems->where('user_id', session()->get('user_id'))->count() !== 0)
-    <form action="/checkout" method="POST" id="cart-list-form">
+    <form action="/checkout/confirm" method="POST" id="cart-list-form">
       @csrf
       <table class="table text-center">
         <thead>
@@ -89,11 +89,11 @@
       </table>
       <!-- 結帳 -->
       <div class="check-out text-end bg-white p-2 sticky-bottom bg-opacity-50 rounded-3">
-        <span>結帳金額：</span>
+        <span>總金額：</span>
         $<span id="cart-total">0</span>
         <!-- 結帳btn -->
         <div class="text-end mt-2">
-          <button type="submit" class="btn btn-primary text-light px-5">結帳</button>
+          <button type="submit" class="btn btn-primary text-light px-5 py-3">結帳</button>
         </div>
       </div>
     </form>

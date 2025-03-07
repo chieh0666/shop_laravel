@@ -29,7 +29,7 @@ class SearchController extends Controller
 
         $blinding = [
             'title' => $q . ' - ',
-            'pageTitle' => '搜尋關鍵字：',
+            'pageTitle' => '的搜尋結果',
             'searchTerm' => $q,
             'merchandiseData' => $merchandiseData,
             'categoryData' => $categoryData,

@@ -9,10 +9,10 @@
   <h2 class="py-1875">
     @if($merchandiseData->count() == 0)
     <span class="text-secondary">
-      沒有任何結果適用於&nbsp;{{ $searchTerm }}
+      沒有任何結果適用於{{ $searchTerm }}
     </span>
     @else
-    {{ $pageTitle }}{{ $searchTerm }}
+    {{ $searchTerm }}{{ $pageTitle }}
     @endif
   </h2>
 </div>
