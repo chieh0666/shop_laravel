@@ -106,7 +106,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 更新結帳金額
-    document.getElementById("cart-total").textContent = total.toLocaleString();
+    if (total !== 0) {
+      document.getElementById("cart-total").textContent = total.toLocaleString();
+    }
   }
 
   // 監聽數量選擇變更事件

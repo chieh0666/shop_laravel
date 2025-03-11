@@ -159,3 +159,4 @@ Route::get('/google/auth',
     'App\Http\Controllers\SocialiteController@redirectToProvider');
 Route::get('/google/auth/callback',
     'App\Http\Controllers\SocialiteController@handleProviderCallback');
+    
