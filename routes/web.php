@@ -137,20 +137,25 @@ Route::group(['prefix' => 'cart'], function(){
     );
 });
 
+Route::group(['prefix' => 'order'], function(){
+    Route::get(
+        'manage',
+        'App\Http\Controllers\OrderController@OrderManagePage'
+    )->middleware(AuthUserAdminMiddleware::class);
+});
 
 Route::group(['prefix' => 'checkout'], function(){
     Route::post(
         '/confirm',
-        'App\Http\Controllers\OrderController@CheckOutPage'
+        'App\Http\Controllers\CheckoutController@CheckOutPage'
     );
     Route::post(
         '/',
-        'App\Http\Controllers\OrderController@CheckOutProcess'
+        'App\Http\Controllers\CheckoutController@CheckOutProcess'
     );
 });
-
 Route::get(
-    'buy',
+    'pay',
     'App\Http\Controllers\CheckoutController@sendOrder'
 );
 

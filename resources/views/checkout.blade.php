@@ -106,7 +106,17 @@
             <div class="row">
               <div class="col-12">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="payment_method" id="pay_on_site" value="pay_on_site" checked>
+                  <input class="form-check-input" type="radio" name="payment_method" id="credit_card" value="credit_card" checked>
+                  <label class="form-check-label" for="credit_card">
+                    信用卡
+                  </label>
+                  <div class="d-none bg-light p-3 rounded-3 payment_info" data-target="credit_card">
+                    <p class="mb-1">卡號末四碼: ****-1234</p>
+                    <p>到期日: 12/2026</p>
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="payment_method" id="pay_on_site" value="pay_on_site">
                   <label class="form-check-label" for="pay_on_site">
                     來店現場付款
                   </label>
@@ -123,16 +133,6 @@
                     LINE Pay
                   </label>
                 </div>
-                {{-- <div class="form-check">
-                  <input class="form-check-input" type="radio" name="payment_method" id="credit_card" value="credit_card">
-                  <label class="form-check-label" for="credit_card">
-                    信用卡
-                  </label>
-                  <div class="d-none bg-light p-3 rounded-3 payment_info" data-target="credit_card">
-                    <p class="mb-1">卡號末四碼: ****-1234</p>
-                    <p>到期日: 12/2026</p>
-                  </div>
-                </div> --}}
               </div>
             </div>
           </div>
