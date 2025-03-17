@@ -33,9 +33,10 @@ class OrderController extends Controller
     $merchandises = Merchandise::select('id', 'name', 'price')->get();
     
     $blinding = [
-      'title' => $user->last_name . $user->first_name . '的訂單內容 - ',
-      'page_title' => $user->last_name . $user->first_name . '的訂單內容',
+      'title' => '訂單內容 - ',
+      'page_title' => '訂單內容',
       'order' => $order,
+      'user' => $user,
       'order_details' => $order_details,
       'merchandises' => $merchandises,
     ];

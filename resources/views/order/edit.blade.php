@@ -6,11 +6,13 @@
 
 @include('component.success')
 
+<h1 class="mt-4 border-bottom border-3">{{ $page_title }}</h1>
+
 <form action="/order/{{ $order->id }}/edit" method="POST">
   @csrf
   <div class="mt-4 card">
     <div class="card-header bg-light text-center">
-        <h1 class="mb-0 h2">{{ $page_title }}</h1>
+        <h1 class="mb-0 h2">{{ $user->last_name }}{{ $user->first_name }}</h1>
     </div>
     <div class="card-body">
         <table class="table table-bordered">
