@@ -142,6 +142,14 @@ Route::group(['prefix' => 'order'], function(){
         'manage',
         'App\Http\Controllers\OrderController@OrderManagePage'
     )->middleware(AuthUserAdminMiddleware::class);
+    Route::get(
+        '{order_id}/edit',
+        'App\Http\Controllers\OrderController@OrderEditPage'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::post(
+        '{order_id}/edit',
+        'App\Http\Controllers\OrderController@OrderEditProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
 });
 
 Route::group(['prefix' => 'checkout'], function(){

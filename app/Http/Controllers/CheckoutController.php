@@ -94,7 +94,7 @@ class CheckoutController extends Controller
             'payment_method' => $input['payment_method'],
             'shipping_method' => $input['shipping_method'],
             'company_name' => $input['invoice_type'] === 'company' ? $input['company_name'] : null,
-            'notes' => htmlspecialchars($input['notes']),
+            'notes' => htmlspecialchars($input['notes']) ? htmlspecialchars($input['notes']) : '—',
             'invoice_type' => $input['invoice_type'],
             'invoice_carrier' => $input['invoice_carrier'],
         ]);

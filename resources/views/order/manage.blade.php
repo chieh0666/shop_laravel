@@ -12,52 +12,56 @@
     <a class="btn btn-primary" href="#"><i class="bi bi-plus-lg me-1"></i>新增訂單</a>
 </div>
 
-<div class="row g-2">
-  @foreach($orders as $order)
-  <div class="col-md-6 col-12">
-    <div class="card">
-      <div class="card-header"><span><i class="bi bi-hash"></i></span>{{ $order->order_number }}</div>
-      <div class="card-body">
-        <h2 class="card-title h5">@foreach($users as $user) @if($order->user_id == $user->id) {{ $user->last_name }}{{ $user->first_name }} @endif @endforeach</h2>
-        <h3 class="card-subtitle mb-2 text-body-secondary h6">{{ $order->order_status }}</h3>
-        <ul class="list-group list-group-flush">
-          @foreach($order_details as $order_detail)
-          @if($order->id == $order_detail->order_id)
-          <li class="list-group-item list-group-item-light d-flex justify-content-between align-items-center">
-            <div>
-              <span><i class="bi bi-dash"></i></span>
-              @foreach($merchandises as $merchandise)
-              @if($order_detail->merchandise_id == $merchandise->id)
-                {{ $merchandise->name }}
-              @endif
-              @endforeach
-            </div>
-            <div>
-              {{ number_format($order_detail->price, 0) }}
-              <span><i class="bi bi-x"></i></span>
-              {{ $order_detail->quantity }}
-              <span class="mx-1">=</span>
-              {{ number_format($order_detail->quantity*$order_detail->price, 0) }}
-            </div>
-          </li>
-          @endif
-          @endforeach
-        </ul>
-        <p class="card-text"><span>備註：</span>{{ $order->notes }}</p>
-        <a href="#" class="card-link">詳細內容</a>
-        <div class="text-end fw-bolder d-flex justify-content-between align-items-center mt-2">
-          <div class="text-secondary">
-            {{ $order->created_at->format('Y-m-d') }}
-          </div>
-          <div>
-            <span>總計：</span>
-            {{ number_format($order->total_amount, 0) }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  @endforeach
+<div>
+  <table class="table table-striped table-hover">
+      <thead>
+          <tr>
+              <td class="col-2">訂單</td>
+              <td class="col-2">日期</td>
+              <td class="col-2">狀態</td>
+              <td class="col-3 d-none d-lg-table-cell">運送至</td>
+              <td class="col-1 d-none d-lg-table-cell">總計</td>
+              <td class="col-2">功能</td>
+          </tr>
+      </thead>
+      <tbody>
+          @forelse($orders as $order)
+          <tr>
+              <td>
+                <a href="/order/{{ $order->id }}/edit">
+                  <div>#{{ $order->order_number }}</div>
+                  <div>@foreach($users as $user) @if($order->user_id == $user->id) {{ $user->last_name }}&nbsp;{{ $user->first_name }} @endif @endforeach</div>
+                </a>
+              </td>
+              <td>
+                {{ $order->created_at->format('m/d, Y') }}
+              </td>
+              <td>
+                @if($order->order_status == 'pending') <span class="badge text-bg-primary">待確認</span> @endif
+                @if($order->order_status == 'processing') <span class="badge text-bg-warning">處理中</span> @endif
+                @if($order->order_status == 'completed') <span class="badge text-bg-success">已完成</span> @endif
+                @if($order->order_status == 'cancelled') <span class="badge text-bg-secondary">已取消</span> @endif
+              </td>
+              <td class="d-none d-lg-table-cell">
+                <div>{{ $order->shipping_address }}</div>
+                <div class="text-secondary">{{ $order->shipping_method }}</div>
+              </td>
+              <td class="d-none d-lg-table-cell">
+                  ${{ number_format($order->total_amount, 0) }}
+              </td>
+              <td>
+                <a href="#">列印收據</a>
+              </td>
+          </tr>
+          @empty
+          <tr class="text-center">
+              <td colspan="6">
+                  沒有訂單
+              </td>
+          </tr>
+          @endforelse
+      </tbody>
+  </table>
 </div>
 
 @endsection

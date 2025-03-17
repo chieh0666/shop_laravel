@@ -83,7 +83,6 @@ class MerchandiseController extends Controller
         Merchandise::where('id', $merchandise_id)->update($input);
         if (is_null(Merchandise::find($merchandise_id))) {
             return redirect('/merchandise/' . $merchandise_id . '/edit')->with('error', '商品更新失敗');
-
         }
         return redirect('/merchandise/' . $merchandise_id . '/edit')->with('success', '商品更新成功');
     }
