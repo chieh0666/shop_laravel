@@ -12,7 +12,7 @@ class UserAuthController extends Controller
 {
     public function SignUpPage()
     {
-        if (session()->has('user')) {
+        if (session()->has('user_id')) {
             return redirect('/');
         }
 
@@ -26,7 +26,7 @@ class UserAuthController extends Controller
 
     public function SigninPage()
     {
-        if (session()->has('user')) {
+        if (session()->has('user_id')) {
             return redirect('/');
         }
         
