@@ -47,10 +47,10 @@
                 <div class="text-secondary">{{ $order->shipping_method }}</div>
               </td>
               <td class="d-none d-lg-table-cell">
-                  ${{ number_format($order->total_amount, 0) }}
+                ${{ number_format($order->total_amount, 0) }}
               </td>
               <td>
-                <a href="#">列印收據</a>
+                <a href="#" title="列印收據">列印收據</a>
               </td>
           </tr>
           @empty

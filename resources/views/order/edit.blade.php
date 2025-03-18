@@ -36,10 +36,10 @@
                 <tr>
                     <th scope="row" class="w-25 bg-secondary bg-gradient bg-opacity-10">付款狀態</th>
                     <td>
-                      <select class="form-select">
-                        <option value="Unpaid">未付款</option>
-                        <option value="no_payment_requested">未請款</option>
-                        <option value="paid">已付款</option>
+                      <select name="payment_status" class="form-select">
+                        <option value="unpaid" @if($order->payment_status == 'unpaid') selected @endif>未付款</option>
+                        <option value="no_payment_requested" @if($order->payment_status == 'no_payment_requested') selected @endif>未請款</option>
+                        <option value="paid" @if($order->payment_status == 'paid') selected @endif>已付款</option>
                       </select>
                     </td>
                 </tr>
@@ -50,10 +50,12 @@
                 <tr>
                     <th scope="row" class="w-25 bg-secondary bg-gradient bg-opacity-10">運送狀態</th>
                     <td>
-                      <select class="form-select">
-                        <option value="processing">揀貨中</option>
-                        <option value="shipped">已出貨</option>
-                        <option value="arrived">已送達</option>
+                      <select name="shipping_status" class="form-select">
+                        <option value="not_shipped" @if($order->shipping_status == 'not_shipped') selected @endif>未出貨</option>
+                        <option value="tallying" @if($order->shipping_status == 'tallying') selected @endif>理貨</option>
+                        <option value="processing" @if($order->shipping_status == 'processing') selected @endif>揀貨</option>
+                        <option value="shipped" @if($order->shipping_status == 'shipped') selected @endif>已出貨</option>
+                        <option value="arrived" @if($order->shipping_status == 'arrived') selected @endif>已送達</option>
                       </select>
                     </td>
                 </tr>
@@ -70,7 +72,21 @@
                 </tr>
                 <tr>
                     <th scope="row" class="w-25 bg-secondary bg-gradient bg-opacity-10">備註</th>
-                    <td>{{ $order->notes }}</td>
+                    <td class="@if($order->note == null) text-secondary @endif">{{ $order->note ? $order->note : '-'}}</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="w-25 bg-secondary bg-gradient bg-opacity-10">發票類型</th>
+                    <td>{{ $order->invoice_type }}</td>
+                </tr>
+                @if($order->invoice_type == 'company')
+                <tr>
+                    <th scope="row" class="w-25 bg-secondary bg-gradient bg-opacity-10"> 公司抬頭 </th>
+                    <td>{{ $order->company_name }}</td>
+                </tr>
+                @endif
+                <tr>
+                    <th scope="row" class="w-25 bg-secondary bg-gradient bg-opacity-10">@if($order->invoice_type == 'personal') 手機載具 @endif @if($order->invoice_type == 'company') 統一編號 @endif</th>
+                    <td>{{ $order->invoice_carrier }}</td>
                 </tr>
             </tbody>
         </table>

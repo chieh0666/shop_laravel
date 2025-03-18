@@ -11,6 +11,8 @@
   </h2>
 </div>
 
+@include('component.errors')
+
 <article id="checkout-page" class="mt-1875">
   <div class="col-xl-10 mx-auto">
     <form action="/checkout" method="POST">
@@ -188,7 +190,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-12">
-                <input type="text" class="form-control" name="notes" id="notes" placeholder="特別註記">
+                <input type="text" class="form-control" name="note" id="note" placeholder="例：門牌號碼、幾號出入口、放保管室">
               </div>
             </div>
           </div>
@@ -214,6 +216,13 @@
   // 購物車隱藏
   if (window.location.pathname === "/checkout/confirm") {
     document.querySelector(".cartItem").style.display = "none";
+  }
+</script>
+
+<script>
+  if (window.performance && window.performance.navigation.type === 2) {
+    // 從瀏覽器歷史記錄導航返回
+    window.location.replace('/'); // 跳轉到首頁
   }
 </script>
 
@@ -291,6 +300,7 @@ function updateInvoiceInfo() {
     if (targetInfo) {
       targetInfo.classList.remove('d-none');
       targetCarrier.setAttribute('name', 'invoice_carrier');
+      targetCarrier.setAttribute('required', '');
     }
   }
 }
