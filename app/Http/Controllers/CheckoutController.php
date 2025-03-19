@@ -52,7 +52,7 @@ class CheckoutController extends Controller
 
         $blinding = [
             'title' => '結帳 - ',
-            'pageTitle' => '結帳',
+            'page_title' => '結帳',
             'checkoutData' => $checkoutData,
             'totalAmount' => array_sum(array_column($checkoutData, 'subtotal'))
         ];

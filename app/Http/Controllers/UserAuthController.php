@@ -18,7 +18,7 @@ class UserAuthController extends Controller
 
         $blinding = [
             'title' => '註冊 - ',
-            'pageTitle' => '建立帳戶'
+            'page_title' => '建立帳戶'
         ];
 
         return view('auth.signup', $blinding);
@@ -32,7 +32,7 @@ class UserAuthController extends Controller
         
         $blinding = [
             'title' => '登入 - ',
-            'pageTitle' => '登入帳號'
+            'page_title' => '登入帳號'
         ];
 
         return view('auth.signin', $blinding);

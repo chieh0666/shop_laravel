@@ -140,7 +140,7 @@
         <small>如有問題，請聯繫客服：support@example.com</small>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary mt-3">儲存並更新</button>
+  <button type="submit" class="btn btn-primary mt-2">儲存並更新</button>
 </form>
 
 @endsection

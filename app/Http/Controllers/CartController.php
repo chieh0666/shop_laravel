@@ -23,7 +23,7 @@ class CartController extends Controller
 
         $blinding = [
             'title' => '購物車 - ',
-            'pageTitle' => '購物車內容',
+            'page_title' => '購物車內容',
             'cartItems' => $cartItems,
             'merchandises' => $merchandises,
         ];

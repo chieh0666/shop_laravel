@@ -21,7 +21,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/order/manage"><i class="bi bi-list-ul me-1"></i>訂單管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/merchandise/manage"><i class="bi bi-boxes me-1"></i>商品管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/category/manage"><i class="bi bi-bookmarks me-1"></i>類別管理</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/announcement/manage"><i class="bi bi-megaphone me-1"></i>公告與通知管理</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/announcement/manage"><i class="bi bi-megaphone me-1"></i>公告管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-brush me-1"></i>文宣管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-newspaper me-1"></i>新聞管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-people me-1"></i>會員管理</a>
@@ -32,7 +32,7 @@
                 <!-- Top navigation-->
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                     <div class="container-fluid">
-                        <button class="btn btn-outline-dark fs-5" id="sidebarToggle"><i class="bi bi-list"></i></button>
+                        <button class="btn btn-outline-secondary fs-5" id="sidebarToggle"><i class="bi bi-list"></i></button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                                 <li class="nav-item"><a class="nav-link" href="/">回首頁<i class="bi bi-chevron-right"></i></a></li>

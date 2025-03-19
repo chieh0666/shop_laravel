@@ -7,7 +7,7 @@
 <!-- cart list -->
 <div class="text-center">
   <h2 class="py-1875">
-    <span class="border-start border-top ps-2 pt-1 border-3">{{ $pageTitle }}</span>
+    <span class="border-start border-top ps-2 pt-1 border-3">{{ $page_title }}</span>
   </h2>
 </div>
 

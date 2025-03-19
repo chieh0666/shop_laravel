@@ -8,7 +8,7 @@
 
 <h1 class="mt-4 border-bottom border-3">{{ $page_title }}</h1>
 
-<form action="/category/{{ $thisCategory->id }}/edit" method="POST" enctype="multipart/form-data">
+<form action="/category/{{ $thisCategory->id }}/edit" method="POST">
     @csrf
     <div class="form-group row mb-2">
         <label for="name" class="col-sm-2 col-form-label">類別名稱</label>

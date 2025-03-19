@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AuthUserAdminMiddleware;
 
 Route::get('/',
-    'App\Http\Controllers\HomeController@needForHome')->name('home');
+    'App\Http\Controllers\HomeController@home')->name('home');
 
 Route::get('/search',
     'App\Http\Controllers\SearchController@index');
@@ -122,6 +122,18 @@ Route::group(['prefix' => 'announcement'], function(){
     Route::get(
         'manage',
         'App\Http\Controllers\AnnouncementController@AnnouncementManagePage'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::get(
+        'create',
+        'App\Http\Controllers\AnnouncementController@AnnouncementCreateProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::get(
+        '{announcement_id}/edit',
+        'App\Http\Controllers\AnnouncementController@AnnouncementEditPage'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::post(
+        '{announcement_id}/edit',
+        'App\Http\Controllers\AnnouncementController@AnnouncementEditProcess'
     )->middleware(AuthUserAdminMiddleware::class);
 });
 

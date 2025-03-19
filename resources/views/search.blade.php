@@ -12,7 +12,7 @@
       沒有任何結果適用於{{ $searchTerm }}
     </span>
     @else
-    {{ $searchTerm }}{{ $pageTitle }}
+    {{ $searchTerm }}{{ $page_title }}
     @endif
   </h2>
 </div>

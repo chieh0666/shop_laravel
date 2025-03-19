@@ -103,7 +103,7 @@ class MerchandiseController extends Controller
             'categories' => $categories,
             'merchandises' => $merchandises,
             'title' => '所有商品 - ',
-            'pageTitle' => '所有商品',
+            'page_title' => '所有商品',
         ];
         return view('merchandise.list', $blinding);
     }
@@ -116,7 +116,7 @@ class MerchandiseController extends Controller
         $blinding = [
             'newMerchandises' => $newMerchandises,
             'title' => '最新商品 - ',
-            'pageTitle' => '最新商品',
+            'page_title' => '最新商品',
         ];
         
         return view('merchandise.new', $blinding);

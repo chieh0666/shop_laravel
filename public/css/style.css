@@ -52,34 +52,39 @@ p:not(.price) {
 }
 
 /* 外距 */
-/* 5px */
+/* 5px-bottom */
 .mb-03125 {
   margin-bottom: 0.3125rem;
 }
-/* 10px */
+/* 10px-top and bottom */
 .my-0625 {
   margin-top: 0.625rem;
   margin-bottom: 0.625rem;
 }
-/* 30px */
+/* 30px-top */
 .mt-1875 {
   margin-top: 1.875rem;
 }
-/* 100px */
+/* 100px-top */
 .mt-625 {
   margin-top: 6.25rem;
 }
 
 /* 內距 */
-/* 5px */
+/* 5px-top and bottom */
 .py-03125 {
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
 }
-/* 30px */
+/* 30px-top and bottom */
 .py-1875 {
   padding-top: 1.875rem;
   padding-bottom: 1.875rem;
+}
+/* 25px-top and bottom */
+.py-15625 {
+  padding-top: 1.5625rem;
+  padding-bottom: 1.5625rem;
 }
 /* 20px */
 .p-125 {
