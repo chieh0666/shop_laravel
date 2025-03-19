@@ -53,6 +53,31 @@
                 管理
               </span>
             </a>
+            <!-- 公告刪除按鈕 -->
+            <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delAnnouncement{{ $announcement->id }}">
+              <i class="bi bi-trash"></i>
+              <span class="d-none d-xl-inline-block ms-1">
+                  刪除
+              </span>
+            </button>
+            <!-- 公告刪除確認 -->
+            <div class="modal fade" id="delAnnouncement{{ $announcement->id }}" tabindex="-1" aria-labelledby="delAnnouncement" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form action="/announcement/{{ $announcement->id }}/delete" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <div class="modal-body fs-3 text-center">
+                                刪除[{{ $announcement->title }}]嗎？
+                            </div>
+                            <div class="modal-footer border-0">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                <button type="submit" class="btn btn-danger">刪除</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
           </td>
       </tr>
       @empty

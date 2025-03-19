@@ -41,7 +41,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <div class="modal-body fs-3 text-center">
-                                        刪除{{ $category->name }}嗎？
+                                        刪除[{{ $category->name }}]嗎？
                                     </div>
                                     <div class="modal-footer border-0">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
@@ -79,7 +79,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <div class="modal-body fs-3 text-center">
-                                        刪除{{ $subcategory->name }}嗎？
+                                        刪除[{{ $subcategory->name }}]嗎？
                                     </div>
                                     <div class="modal-footer border-0">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>

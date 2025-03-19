@@ -135,6 +135,10 @@ Route::group(['prefix' => 'announcement'], function(){
         '{announcement_id}/edit',
         'App\Http\Controllers\AnnouncementController@AnnouncementEditProcess'
     )->middleware(AuthUserAdminMiddleware::class);
+    Route::delete(
+        '{announcement_id}/delete',
+        'App\Http\Controllers\AnnouncementController@AnnouncementDeleteProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
 });
 
 // 購物車

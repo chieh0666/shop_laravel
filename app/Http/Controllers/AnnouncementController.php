@@ -54,4 +54,12 @@ class AnnouncementController extends Controller
 
         return redirect('/announcement/' . $announcement->id . '/edit')->with('success', '公告更新成功');
     }
+
+    public function AnnouncementDeleteProcess($announcement_id)
+    {
+        $announcement = Announcement::findOrFail($announcement_id);
+        $announcement->delete();
+
+        return redirect('/announcement/manage')->with('success', '公告刪除成功');
+    }
 }
