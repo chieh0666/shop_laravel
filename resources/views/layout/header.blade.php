@@ -135,5 +135,5 @@
 </div>
 <!-- 廣告或重要事項通知時顯示 -->
 <div class="notify text-center text-danger py-03125 fs-5">
-  <span>公告訊息</span>
+  <span class="fw-bolder">公告訊息</span>
 </div>

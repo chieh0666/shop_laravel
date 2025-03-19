@@ -21,7 +21,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/order/manage"><i class="bi bi-list-ul me-1"></i>訂單管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/merchandise/manage"><i class="bi bi-boxes me-1"></i>商品管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/category/manage"><i class="bi bi-bookmarks me-1"></i>類別管理</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-megaphone me-1"></i>公告與通知管理</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/announcement/manage"><i class="bi bi-megaphone me-1"></i>公告與通知管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-brush me-1"></i>文宣管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-newspaper me-1"></i>新聞管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-people me-1"></i>會員管理</a>

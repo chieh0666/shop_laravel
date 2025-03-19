@@ -26,6 +26,7 @@ Route::get('/contact-us', function(){
     return view('contact-us');
 });
 
+// 使用者
 Route::group(['prefix' => 'user'], function(){
     Route::group(['prefix' => 'auth'], function(){
         Route::get(
@@ -51,6 +52,7 @@ Route::group(['prefix' => 'user'], function(){
     });
 });
 
+// 商品
 Route::group(['prefix' => 'merchandise'], function(){
     Route::get(
         'manage',
@@ -91,6 +93,7 @@ Route::group(['prefix' => 'merchandise'], function(){
     );
 });
 
+// 分類
 Route::group(['prefix' => 'category'], function(){
     Route::get(
         'manage',
@@ -114,6 +117,15 @@ Route::group(['prefix' => 'category'], function(){
     )->middleware(AuthUserAdminMiddleware::class);
 });
 
+// 公告
+Route::group(['prefix' => 'announcement'], function(){
+    Route::get(
+        'manage',
+        'App\Http\Controllers\AnnouncementController@AnnouncementManagePage'
+    )->middleware(AuthUserAdminMiddleware::class);
+});
+
+// 購物車
 Route::group(['prefix' => 'cart'], function(){
     Route::get(
         'list',
@@ -137,6 +149,7 @@ Route::group(['prefix' => 'cart'], function(){
     );
 });
 
+// 訂單
 Route::group(['prefix' => 'order'], function(){
     Route::get(
         'manage',
@@ -152,6 +165,7 @@ Route::group(['prefix' => 'order'], function(){
     )->middleware(AuthUserAdminMiddleware::class);
 });
 
+// 結帳
 Route::group(['prefix' => 'checkout'], function(){
     Route::post(
         '/confirm',
