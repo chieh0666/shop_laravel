@@ -15,10 +15,10 @@
 <table class="table table-striped table-hover">
   <thead>
       <tr>
-          <td class="col-5">標題</td>
-          <td class="col-1">使用狀態</td>
-          <td class="col-2">開始日期</td>
-          <td class="col-2">結束日期</td>
+          <td class="col-7 col-xl-5">標題</td>
+          <td class="col-3 col-xl-1">使用狀態</td>
+          <td class="col-2 d-none d-xl-table-cell">開始日期</td>
+          <td class="col-2 d-none d-xl-table-cell">結束日期</td>
           <td class="col-2">功能</td>
       </tr>
   </thead>
@@ -40,10 +40,10 @@
             </span>
             @endif
           </td>
-          <td>
+          <td class="d-none d-xl-table-cell">
             {{ date('m/d, Y', strtotime($announcement->start_date)) }}
           </td>
-          <td>
+          <td class="d-none d-xl-table-cell">
             {{ date('m/d, Y', strtotime($announcement->end_date)) }}
           </td>
           <td>
