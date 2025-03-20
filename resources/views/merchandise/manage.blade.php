@@ -16,10 +16,10 @@
         <thead>
             <tr>
                 <td class="col-2">照片</td>
-                <td class="col-4 col-md-5">品名</td>
+                <td class="col-4">品名</td>
                 <td class="col-1 d-none d-md-table-cell">類別</td>
                 <td class="col-2 col-md-1">狀態</td>
-                <td class="col-2 col-md-1">庫存</td>
+                <td class="col-2 d-none d-md-table-cell">剩餘數量</td>
                 <td class="col-2">功能</td>
             </tr>
         </thead>
@@ -36,44 +36,48 @@
                 <td>
                     {{ $merchandise->name }}
                 </td>
-                <td class=" d-none d-md-table-cell">
+                <td class="d-none d-md-table-cell">
                     {{ $merchandise->category_id }}
                 </td>
                 <td>
                     {{ $merchandise->status }}
                 </td>
-                <td>
+                <td class="d-none d-md-table-cell">
                     {{ $merchandise->remain_count }}
                 </td>
                 <td>
-                    <a href="/merchandise/{{ $merchandise->id }}/edit" class="btn btn-secondary py-1">
-                        <i class="bi bi-pencil"></i>
-                        <span class="d-none d-xl-inline-block ms-1">
-                            管理
-                        </span>
-                    </a>
-                    <!-- 商品刪除 -->
-                    <button type="button" class="btn btn-danger py-1" data-bs-toggle="modal" data-bs-target="#delMerchandise{{ $merchandise->id }}">
-                        <i class="bi bi-trash"></i>
-                        <span class="d-none d-xl-inline-block ms-1">
-                            刪除
-                        </span>
-                    </button>
-                    <!-- 商品刪除確認 -->
-                    <div class="modal fade" id="delMerchandise{{ $merchandise->id }}" tabindex="-1" aria-labelledby="delMerchandise" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <form action="/merchandise/{{ $merchandise->id }}/delete" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <div class="modal-body fs-3 text-center">
-                                        刪除[{{ $merchandise->name }}]嗎？
-                                    </div>
-                                    <div class="modal-footer border-0">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                                        <button type="submit" class="btn btn-danger">刪除</button>
-                                    </div>
-                                </form>
+                    <div class="my-1">
+                        <a href="/merchandise/{{ $merchandise->id }}/edit" class="btn btn-secondary">
+                            <i class="bi bi-pencil"></i>
+                            <span class="d-none d-xl-inline-block ms-1">
+                                管理
+                            </span>
+                        </a>
+                    </div>
+                    <div class="my-1">
+                        <!-- 商品刪除 -->
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delMerchandise{{ $merchandise->id }}">
+                            <i class="bi bi-trash"></i>
+                            <span class="d-none d-xl-inline-block ms-1">
+                                刪除
+                            </span>
+                        </button>
+                        <!-- 商品刪除確認 -->
+                        <div class="modal fade" id="delMerchandise{{ $merchandise->id }}" tabindex="-1" aria-labelledby="delMerchandise" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <form action="/merchandise/{{ $merchandise->id }}/delete" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <div class="modal-body fs-3 text-center">
+                                            刪除[{{ $merchandise->name }}]嗎？
+                                        </div>
+                                        <div class="modal-footer border-0">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                                            <button type="submit" class="btn btn-danger">刪除</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
