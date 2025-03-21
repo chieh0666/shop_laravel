@@ -15,8 +15,8 @@
 <table class="table table-striped table-hover">
   <thead>
       <tr>
-          <td class="col-7 col-xl-5">標題</td>
-          <td class="col-3 col-xl-1">使用狀態</td>
+          <td class="col-6 col-xl-4">標題</td>
+          <td class="col-4 col-xl-2">使用狀態</td>
           <td class="col-2 d-none d-xl-table-cell">開始日期</td>
           <td class="col-2 d-none d-xl-table-cell">結束日期</td>
           <td class="col-2">功能</td>
@@ -30,14 +30,25 @@
           </td>
           <td>
             @if( $announcement->is_active == 1 )
-            <span class="fs-4 text-success">
+            <div class="fs-4 text-success">
               <i class="bi bi-check-circle"></i>
-            </span>
+            </div>
             @endif
+
+            @if(date('Y-m-d') < $announcement->start_date)
+            <div class="fs-6 text-secondary">
+              @if(date('Y-m-d', strtotime('+1 day')) == $announcement->start_date)
+              (明天開始公告)
+              @else
+              (已排程未公告)
+              @endif
+            </div>
+            @endif
+
             @if( $announcement->is_active == 0 )
-            <span class="fs-4 text-danger">
+            <div class="fs-4 text-danger">
               <i class="bi bi-ban"></i>
-            </span>
+            </div>
             @endif
           </td>
           <td class="d-none d-xl-table-cell">
