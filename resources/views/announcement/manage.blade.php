@@ -32,9 +32,10 @@
             @if( $announcement->is_active == 1 )
             <div class="fs-4 text-success">
               <i class="bi bi-check-circle"></i>
+              @if(date('Y-m-d') < $announcement->start_date)
+              <i class="bi bi-calendar3"></i>
+              @endif
             </div>
-            @endif
-
             @if(date('Y-m-d') < $announcement->start_date)
             <div class="fs-6 text-secondary">
               @if(date('Y-m-d', strtotime('+1 day')) == $announcement->start_date)
@@ -43,6 +44,7 @@
               (已排程未公告)
               @endif
             </div>
+            @endif
             @endif
 
             @if( $announcement->is_active == 0 )

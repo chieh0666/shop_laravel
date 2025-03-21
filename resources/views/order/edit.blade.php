@@ -6,7 +6,17 @@
 
 @include('component.success')
 
-<h1 class="mt-4 border-bottom border-3">{{ $page_title }}</h1>
+<div class="d-flex justify-content-between align-items-center border-bottom border-3 mt-4">
+  <div class="fs-4">
+      <a href="/order/manage"><i class="bi bi-chevron-left"></i>訂單管理</a>
+  </div>
+  <h1>
+      {{ $page_title }}
+  </h1>
+  <div class="fs-4">
+      
+  </div>
+</div>
 
 <form action="/order/{{ $order->id }}/edit" method="POST">
   @csrf
