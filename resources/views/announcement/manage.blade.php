@@ -39,10 +39,18 @@
             @if(date('Y-m-d') < $announcement->start_date)
             <div class="fs-6 text-secondary">
               @if(date('Y-m-d', strtotime('+1 day')) == $announcement->start_date)
+              <div class="fs-6 text-success">
               (明天開始公告)
+              </div>
               @else
+              <div class="fs-6 text-secondary">
               (已排程未公告)
+              </div>
               @endif
+            @endif
+            @if(date('Y-m-d') > $announcement->end_date)
+            <div class="fs-6 text-danger">
+            (公告已結束)
             </div>
             @endif
             @endif
