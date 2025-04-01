@@ -71,11 +71,13 @@ class MerchandiseController extends Controller
         unset($input['_token']);
 
         $merchandise = Merchandise::findOrFail($merchandise_id);
-        $photoPath = public_path($merchandise->photo);
 
         if (isset($input['photo'])) {
-            if ($photoPath) {
-                unlink($photoPath);
+            if ($merchandise->photo) {
+                $photoPath = public_path($merchandise->photo);
+                if (file_exists($photoPath)) {
+                    unlink($photoPath);
+                }
             }
             $photo = $input['photo'];
             $file_extension = $photo->getClientOriginalExtension();
@@ -96,7 +98,15 @@ class MerchandiseController extends Controller
 
     public function MerchandiseDeleteProcess($merchandise_id)
     {
+        $merchandise = Merchandise::findOrFail($merchandise_id);
+        if ($merchandise->photo) {
+            $photoPath = public_path($merchandise->photo);
+            if (file_exists($photoPath)) {
+                unlink($photoPath);
+            }
+        }
         Merchandise::destroy($merchandise_id);
+        
         return redirect('/merchandise/manage')->with('success', '商品刪除成功');;
     }
 

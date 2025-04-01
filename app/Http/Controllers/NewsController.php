@@ -39,7 +39,7 @@ class NewsController extends Controller
 
     public function NewsEditPage($news_id)
     {
-        $news = News::findOrFail($news_id)->first();
+        $news = News::findOrFail($news_id);
 
         $blinding = [
             'title' => '編輯新聞 - ',
@@ -57,11 +57,13 @@ class NewsController extends Controller
         unset($input['_token']);
 
         $news = News::findOrFail($news_id);
-        $imgPath = public_path($news->image);
 
         if (isset($input['image'])) {
-            if ($imgPath) {
-                unlink($imgPath);
+            if ($news->image) {
+                $imgPath = public_path($news->image);
+                if (file_exists($imgPath)) {
+                    unlink($imgPath);
+                }
             }
             $image = $input['image'];
             $file_extension = $image->getClientOriginalExtension();
@@ -77,8 +79,20 @@ class NewsController extends Controller
         return redirect('/news/' . $news_id . '/edit')->with('success', '編輯成功');
     }
 
-    public function NewsDeleteProcess()
+    public function NewsDeleteProcess($news_id)
     {
-        
+        if (is_null(News::findOrFail($news_id))) {
+            return redirect('/news/manage')->with('error', '新聞刪除失敗');
+        }
+        $news = News::findOrFail($news_id);
+        if ($news->image) {
+            $imgPath = public_path($news->image);
+            if (file_exists($imgPath)) {
+                unlink($imgPath);
+            }
+        }
+        News::destroy($news_id);
+
+        return redirect('/news/manage')->with('success', '新聞刪除成功');
     }
 }
