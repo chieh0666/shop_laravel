@@ -70,7 +70,13 @@ class MerchandiseController extends Controller
         
         unset($input['_token']);
 
+        $merchandise = Merchandise::findOrFail($merchandise_id);
+        $photoPath = public_path($merchandise->photo);
+
         if (isset($input['photo'])) {
+            if ($photoPath) {
+                unlink($photoPath);
+            }
             $photo = $input['photo'];
             $file_extension = $photo->getClientOriginalExtension();
             $file_name = uniqid() . '.' . $file_extension;
@@ -80,7 +86,8 @@ class MerchandiseController extends Controller
             $input['photo'] = $file_relative_path;
         }
 
-        Merchandise::where('id', $merchandise_id)->update($input);
+        $merchandise->update($input);
+
         if (is_null(Merchandise::find($merchandise_id))) {
             return redirect('/merchandise/' . $merchandise_id . '/edit')->with('error', '商品更新失敗');
         }

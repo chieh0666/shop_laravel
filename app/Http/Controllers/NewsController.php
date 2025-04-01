@@ -1,0 +1,84 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Shop\Models\News;
+
+class NewsController extends Controller
+{
+    public function NewsManagePage(){
+        $newses = News::orderBy('created_at', 'desc')->get();
+
+        $blinding = [
+            'title' => '新聞管理 - ',
+            'page_title' => '新聞管理',
+            'newses' => $newses,
+        ];
+
+        return view('news.manage', $blinding);
+    }
+
+    public function NewsCreateProcess()
+    {
+        $default_data = [
+            'title' => '新聞標題',
+            'content' => '',
+            'image' => '',
+        ];
+
+        $news = News::create($default_data);
+
+        if ($news) {
+            $news->link = 'news/detail/' . $news->id;
+            $news->save();
+        }
+        
+        return redirect('/news/' . $news->id . '/edit');
+    }
+
+    public function NewsEditPage($news_id)
+    {
+        $news = News::findOrFail($news_id)->first();
+
+        $blinding = [
+            'title' => '編輯新聞 - ',
+            'page_title' => '編輯新聞',
+            'news' => $news,
+        ];
+
+        return view('news.edit', $blinding);
+    }
+
+    public function NewsEditProcess($news_id)
+    {
+        $input = request()->all();
+
+        unset($input['_token']);
+
+        $news = News::findOrFail($news_id);
+        $imgPath = public_path($news->image);
+
+        if (isset($input['image'])) {
+            if ($imgPath) {
+                unlink($imgPath);
+            }
+            $image = $input['image'];
+            $file_extension = $image->getClientOriginalExtension();
+            $file_name = uniqid() . '.' . $file_extension;
+            $file_relative_path = 'images/news/' . $file_name;
+            $file_path = public_path($file_relative_path);
+            $input['image']->move('images/news/', $file_name);
+            $input['image'] = $file_relative_path;
+        }
+        
+        $news->update($input);
+
+        return redirect('/news/' . $news_id . '/edit')->with('success', '編輯成功');
+    }
+
+    public function NewsDeleteProcess()
+    {
+        
+    }
+}

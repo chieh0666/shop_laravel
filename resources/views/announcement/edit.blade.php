@@ -22,7 +22,7 @@
   <form action="/announcement/{{ $announcement->id }}/edit" method="POST">
       @csrf
       <div class="form-group row mb-2">
-          <label for="name" class="col-sm-2 col-form-label">使用狀態</label>
+          <label for="is_active" class="col-sm-2 col-form-label">使用狀態</label>
           <div class="col-sm-10">
             <input type="radio" class="btn-check" name="is_active" id="active" value="1" @if($announcement->is_active == 1) checked @endif>
             <label class="btn btn-outline-success" for="active"><i class="bi bi-check-circle me-1"></i>使用</label>

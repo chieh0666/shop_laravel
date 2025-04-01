@@ -141,6 +141,30 @@ Route::group(['prefix' => 'announcement'], function(){
     )->middleware(AuthUserAdminMiddleware::class);
 });
 
+// 新聞、最新消息
+Route::group(['prefix' => 'news'], function(){
+    Route::get(
+        'manage',
+        'App\Http\Controllers\NewsController@NewsManagePage'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::get(
+        'create',
+        'App\Http\Controllers\NewsController@NewsCreateProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::get(
+        '{news_id}/edit',
+        'App\Http\Controllers\NewsController@NewsEditPage'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::post(
+        '{news_id}/edit',
+        'App\Http\Controllers\NewsController@NewsEditProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::delete(
+        '{news_id}/delete',
+        'App\Http\Controllers\NewsController@NewsDeleteProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
+});
+
 // 購物車
 Route::group(['prefix' => 'cart'], function(){
     Route::get(
