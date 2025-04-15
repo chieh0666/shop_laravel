@@ -25,6 +25,9 @@ img,
 iframe {
   width: 100%;
 }
+.img-box {
+  height: 300px;
+}
 ul,
 ol {
   list-style: none;
@@ -213,11 +216,6 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 .clear-btn:hover {
   color: #e74c3c;
-}
-
-/* 前台主頁商品照片 */
-.merchandise-img-box {
-  height: 300px;
 }
 
 /* nav 背景 */

@@ -50,7 +50,7 @@
       <div class="col mt-0">
         <div class="card h-100 border-0">
           <div class="position-relative overflow-hidden shadow-sm rounded-3">
-            <div class="merchandise-img-box">
+            <div class="img-box">
               <img src="/{{ $merchandise->photo }}" class="card-img-top object-fit-cover h-100" alt="{{ $merchandise->name }}">
             </div>
             <span class="position-absolute top-0 end-0 bg-danger px-3 py-1 m-1 rounded-pill text-light fw-bold">HOT</span>

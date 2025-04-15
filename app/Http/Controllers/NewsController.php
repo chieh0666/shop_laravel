@@ -95,4 +95,30 @@ class NewsController extends Controller
 
         return redirect('/news/manage')->with('success', '新聞刪除成功');
     }
+
+    public function NewsPage()
+    {
+        $newses = News::orderBy('created_at', 'desc')->get();
+        
+        $blinding = [
+            'title' => '最新消息 - ',
+            'page_title' => '最新消息',
+            'newses' => $newses,
+        ];
+
+        return view('news.list', $blinding);
+    }
+
+    public function NewsDetailPage($news_id)
+    {
+        $news = News::findOrFail($news_id);
+
+        $blinding = [
+            'title' => $news->title . ' - ',
+            'page_title' => $news->title,
+            'news' => $news,
+        ];
+        
+        return view('news.detail', $blinding);
+    }
 }

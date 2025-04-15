@@ -14,10 +14,6 @@ Route::get('/promotion', function(){
     return view('promotion');
 });
 
-Route::get('/news', function(){
-    return view('news');
-});
-
 Route::get('/about', function(){
     return view('about');
 });
@@ -163,6 +159,14 @@ Route::group(['prefix' => 'news'], function(){
         '{news_id}/delete',
         'App\Http\Controllers\NewsController@NewsDeleteProcess'
     )->middleware(AuthUserAdminMiddleware::class);
+    Route::get(
+        '/',
+        'App\Http\Controllers\NewsController@NewsPage'
+    );
+    Route::get(
+        'detail/{news_id}',
+        'App\Http\Controllers\NewsController@NewsDetailPage'
+    );
 });
 
 // 購物車
