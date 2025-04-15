@@ -51,9 +51,9 @@
             </div>
         </div>
         <div class="form-group row mb-2">
-            <label for="content" class="col-sm-2 col-form-label">連結</label>
+            <label for="link" class="col-sm-2 col-form-label">連結</label>
             <div class="col-sm-10">
-              <input class="form-control" type="text" value="{{ $news->link }}" aria-label="news-link" readonly>
+              <input type="text" class="form-control" value="{{ $news->link }}" aria-label="news-link" readonly>
             </div>
         </div>
         <div class="form-group row mb-2">
