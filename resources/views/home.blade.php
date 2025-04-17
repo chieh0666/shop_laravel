@@ -36,9 +36,15 @@
     <div class="col-lg-9 col-md-12 shadow">
       <!-- 行銷圖banner -->
       <div class="f-carousel" id="mainCarousel">
-        <div class="f-carousel__slide"><img src="./images/banner1.jpg" alt="行銷圖"></div>
-        <div class="f-carousel__slide"><img src="./images/banner2.jpg" alt="行銷圖"></div>
-        <div class="f-carousel__slide"><img src="./images/banner3.jpg" alt="行銷圖"></div>
+        @foreach($newses as $news)
+        @if($news->is_active == 1)
+          <div class="f-carousel__slide">
+            <a href="/{{$news->link}}" title="點擊前往{{$news->title}}[另開新視窗]" target="_blank">
+              <img src="/{{$news->image}}" alt="{{$news->title}}">
+            </a>
+          </div>
+        @endif
+        @endforeach
       </div>
     </div>
   </div>
