@@ -14,6 +14,7 @@
   <div class="row row-cols-1 row-cols-lg-3 g-4">
 
     @foreach($newses as $news)
+    @if($news->is_active == 1)
     <div class="col">
       <a class="text-916953" href="/{{ $news->link }}" title="前往{{ $news->title }}[另開新視窗]" target="_blank">
         <div class="card h-100 bg-transparent">
@@ -33,6 +34,7 @@
         </div>
       </a>
     </div>
+    @endif
     @endforeach
 
   </div>
