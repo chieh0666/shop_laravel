@@ -24,7 +24,7 @@
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/announcement/manage"><i class="bi bi-megaphone me-1"></i>公告管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-brush me-1"></i>文宣管理</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/news/manage"><i class="bi bi-newspaper me-1"></i>新聞管理</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#"><i class="bi bi-people me-1"></i>會員管理</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/user/manage"><i class="bi bi-people me-1"></i>會員管理</a>
                 </div>
             </div>
             <!-- Page content wrapper-->

@@ -24,6 +24,10 @@ Route::get('/contact-us', function(){
 
 // 使用者
 Route::group(['prefix' => 'user'], function(){
+    Route::get(
+        'manage',
+        'App\Http\Controllers\UserController@UserManagePage'
+    );
     Route::group(['prefix' => 'auth'], function(){
         Route::get(
             'signup',
