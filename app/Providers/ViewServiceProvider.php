@@ -28,7 +28,7 @@ class ViewServiceProvider extends ServiceProvider
                 $user = User::find(session('user_id'));
             }
 
-            // 將會員資料傳遞到 View
+            // 將使用者資料傳遞到 View
             $view->with('user', $user);
         });
     }

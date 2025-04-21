@@ -28,6 +28,10 @@ Route::group(['prefix' => 'user'], function(){
         'manage',
         'App\Http\Controllers\UserController@UserManagePage'
     );
+    Route::get(
+        '{user_id}/edit',
+        'App\Http\Controllers\UserController@UserEditPage'
+    );
     Route::group(['prefix' => 'auth'], function(){
         Route::get(
             'signup',

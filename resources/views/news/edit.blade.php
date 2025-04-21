@@ -35,7 +35,7 @@
           <div class="col-sm-10">
               <small>使用解析度:1920*1080</small>
               <input type="file" class="form-control" id="image" name="image">
-              <img class="mt-1" src="/{{ $news->image }}" alt="{{ $news->image }}" width="200px">
+              <img class="mt-1" src="/{{ $news->image }}" alt="{{ $news->title }}" width="200px">
           </div>
         </div>
         <div class="form-group row mb-2">
