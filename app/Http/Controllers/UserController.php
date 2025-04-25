@@ -75,7 +75,7 @@ class UserController extends Controller
     public function UserCreateProcess()
     {
         $user_data = [
-            'email' => 'new_person@mail.com',
+            'email' => uniqid('user_') . '@mail.com',
             'password' => Hash::make('12345678'),
             'last_name' => '姓氏',
             'first_name' => '名字',
