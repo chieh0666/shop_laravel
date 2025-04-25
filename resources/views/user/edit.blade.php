@@ -25,9 +25,9 @@
           <label for="photo" class="col-sm-2 col-form-label">照片</label>
           <div class="col-sm-10">
             @if($user->photo)
-            <img src="/{{ $user->photo }}" alt="{{ $user->first_name }}" width="200px" height="200px">
+            <img src="/{{ $user->photo }}" alt="{{ $user->first_name }}" width="100px" height="100px">
             @else
-            <img src="{{ asset('images/user/default_user_img.jpg') }}" alt="{{ $user->first_name }}" width="200px" height="200px">
+            <img src="{{ asset('images/user/default_user_img.jpg') }}" alt="{{ $user->first_name }}" width="100px" height="100px">
             @endif
           </div>
         </div>
@@ -82,11 +82,55 @@
           </div>
         </div>
         <div class="form-group row mb-2">
+            <label for="password" class="col-sm-2 col-form-label">新密碼</label>
+            <div class="col-sm-10">
+              <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePassword" aria-expanded="false" aria-controls="collapsePassword">
+                設定新密碼
+              </button>
+              <div class="collapse" id="collapsePassword">
+                <div class="card card-body border-0 ps-0">
+                  <input type="text" class="form-control" id="password" name="password" placeholder="請輸入新密碼(8-20碼)" minlength="8" maxlength="20">
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="form-group row mb-2">
+            <label for="created_at" class="col-sm-2 col-form-label">帳號始於</label>
+            <div class="col-sm-10">
+              <input type="text" readonly class="form-control-plaintext" id="created_at" value="{{ $user->created_at->format('Y/m/d') }}">
+            </div>
+        </div>
+        <div class="form-group row mb-2">
             <div class="col-sm-10 offset-sm-2">
               <button type="submit" class="btn btn-primary">儲存並更新</button>
+              <!-- 使用者刪除按鈕 -->
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delUser">
+                <span>
+                  <i class="bi bi-trash-fill"></i>
+                  刪除此使用者
+                </span>
+              </button>
             </div>
         </div>
     </form>
+    <!-- 使用者刪除確認 -->
+    <div class="modal fade" id="delUser" tabindex="-1" aria-labelledby="delUser" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <form action="/user/{{ $user->id }}/delete" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <div class="modal-body fs-3 text-center">
+                      刪除[{{ $user->last_name }}&nbsp;{{ $user->first_name }}]使用者嗎？
+                  </div>
+                  <div class="modal-footer border-0">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                      <button type="submit" class="btn btn-danger">刪除</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+    </div>
 </div>
 
 @endsection

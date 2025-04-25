@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Shop\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -31,5 +32,43 @@ class UserController extends Controller
         ];
 
         return view('user.edit', $blinding);
+    }
+
+    public function UserEditProcess($user_id)
+    {
+        $input = request()->all();
+        $user = User::findOrFail($user_id);
+
+        if ($input['password']) {
+            $user->password = Hash::make($input['password']);
+            $user->save();
+        }
+
+        $user->first_name = $input['first_name'];
+        $user->last_name = $input['last_name'];
+        $user->email = $input['email'];
+        $user->account_type = $input['account_type'];
+        $user->nickname = $input['nickname'];
+        $user->phone = $input['phone'];
+        $user->gender = $input['gender'];
+        $user->save();
+        
+        return redirect('/user/' . $user_id . '/edit')->with('success', '使用者更新成功');
+    }
+
+    public function UserDeleteProcess($user_id)
+    {
+        $user = User::findOrFail($user_id);
+
+        if ($user->photo) {
+            $photoPath = public_path($user->photo);
+            if (file_exists($photoPath)) {
+                unlink($photoPath);
+            }
+        }
+
+        User::destroy($user_id);
+        
+        return redirect('/users/manage')->with('success', '使用者已刪除');
     }
 }

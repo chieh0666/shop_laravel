@@ -27,11 +27,19 @@ Route::group(['prefix' => 'user'], function(){
     Route::get(
         'manage',
         'App\Http\Controllers\UserController@UserManagePage'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::get(
         '{user_id}/edit',
         'App\Http\Controllers\UserController@UserEditPage'
-    );
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::post(
+        '{user_id}/edit',
+        'App\Http\Controllers\UserController@UserEditProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::delete(
+        '{user_id}/delete',
+        'App\Http\Controllers\UserController@UserDeleteProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
     Route::group(['prefix' => 'auth'], function(){
         Route::get(
             'signup',
