@@ -9,7 +9,7 @@
 <h1 class="mt-4 border-bottom border-3">{{ $page_title }}</h1>
 
 <div class="my-3">
-    <a class="btn btn-primary" href="#"><i class="bi bi-plus-lg me-1"></i>新增使用者</a>
+    <a class="btn btn-primary" href="/user/create"><i class="bi bi-plus-lg me-1"></i>新增使用者</a>
 </div>
 
 <div>

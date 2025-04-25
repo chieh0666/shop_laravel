@@ -29,6 +29,10 @@ Route::group(['prefix' => 'user'], function(){
         'App\Http\Controllers\UserController@UserManagePage'
     )->middleware(AuthUserAdminMiddleware::class);
     Route::get(
+        'create',
+        'App\Http\Controllers\UserController@UserCreateProcess'
+    )->middleware(AuthUserAdminMiddleware::class);
+    Route::get(
         '{user_id}/edit',
         'App\Http\Controllers\UserController@UserEditPage'
     )->middleware(AuthUserAdminMiddleware::class);

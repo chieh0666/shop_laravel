@@ -69,6 +69,25 @@ class UserController extends Controller
 
         User::destroy($user_id);
         
-        return redirect('/users/manage')->with('success', '使用者已刪除');
+        return redirect('/user/manage')->with('success', '使用者已刪除');
+    }
+
+    public function UserCreateProcess()
+    {
+        $user_data = [
+            'email' => 'new_person@mail.com',
+            'password' => Hash::make('12345678'),
+            'last_name' => '姓氏',
+            'first_name' => '名字',
+            'account_type' => 'U',
+        ];
+
+        $user = User::create($user_data);
+
+        if (is_null(User::find($user->id))) {
+            return redirect('/user/manage')->with('error', '使用者新增失敗');
+        } else {
+            return redirect('/user/' . $user->id . '/edit');
+        }
     }
 }
