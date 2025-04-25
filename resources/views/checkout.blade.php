@@ -88,8 +88,11 @@
                     專車配送
                   </label>
                   <div class="bg-light p-3 rounded-3 shipping_info" data-target="us_delivery">
-                    <p class="mb-1"><span class="me-1">張小明</span><span class="ms-1">0912-345-678</span></p>
-                    <input class="form-control" type="text" name="shipping_address"  id="shipping_address" value="台北市中山區南京東路三段123號">
+                    <p class="mb-1">
+                      <span class="me-1">{{ $user->last_name }}&nbsp;{{ $user->first_name }}</span>
+                      <span class="ms-1">{{ substr($user->phone, 0, 4) . '-' . substr($user->phone, 4, 3) . '-' . substr($user->phone, 7) }}</span>
+                    </p>
+                    <input class="form-control" type="text" name="shipping_address"  id="shipping_address" placeholder="例：台北市中山區南京東路三段123號">
                   </div>
                 </div>
               </div>

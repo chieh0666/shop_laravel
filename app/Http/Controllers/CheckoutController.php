@@ -8,6 +8,7 @@ use App\Shop\Models\Merchandise;
 use App\Shop\Models\Order;
 use App\Shop\Models\OrderDetail;
 use TsaiYiHua\ECPay\Checkout;
+use App\Shop\Models\User;
 
 class CheckoutController extends Controller
 {
@@ -22,6 +23,7 @@ class CheckoutController extends Controller
     {
         if (session()->has('user_id')) {
             $user_id = session()->get('user_id');
+            $user = User::findOrFail($user_id);
         } else {
             return redirect('/user/auth/signin');
         }
@@ -54,7 +56,8 @@ class CheckoutController extends Controller
             'title' => '結帳 - ',
             'page_title' => '結帳',
             'checkoutData' => $checkoutData,
-            'totalAmount' => array_sum(array_column($checkoutData, 'subtotal'))
+            'totalAmount' => array_sum(array_column($checkoutData, 'subtotal')),
+            'user' => $user,
         ];
 
         return view('checkout', $blinding);
