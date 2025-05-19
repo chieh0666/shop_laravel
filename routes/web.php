@@ -44,6 +44,10 @@ Route::group(['prefix' => 'user'], function(){
         '{user_id}/delete',
         'App\Http\Controllers\UserController@UserDeleteProcess'
     )->middleware(AuthUserAdminMiddleware::class);
+    Route::get(
+        'profile',
+        'App\Http\Controllers\UserController@UserProfilePage'
+    );
     Route::group(['prefix' => 'auth'], function(){
         Route::get(
             'signup',

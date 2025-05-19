@@ -8,9 +8,6 @@
           <span class="text-dark">商店管理</span>
         </a>
         @endif
-        <a class="p-1" href="/user/auth/signout" title="使用者登出">
-          <span class="text-dark">登出</span>
-        </a>
       </div>
     </div>
   </div>
@@ -62,7 +59,7 @@
       <div class="d-flex me-2 px-2 align-items-center justify-content-center fs-4">
         <div class="mx-3">
           @if(isset($user))
-          <a href="#" title="前往使用者主頁">
+          <a href="/user/profile" title="前往使用者主頁">
             <i class="bi bi-person-circle"></i>
             <span class="d-none d-md-inline-block">{{ $user->nickname ? $user->nickname : $user->first_name }}</span>
           </a>

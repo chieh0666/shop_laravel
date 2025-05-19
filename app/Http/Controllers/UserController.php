@@ -90,4 +90,21 @@ class UserController extends Controller
             return redirect('/user/' . $user->id . '/edit');
         }
     }
+
+    public function UserProfilePage()
+    {
+        if(session()->get('user_id')) {
+            $user = User::find(session()->get('user_id'));
+        } else {
+            return redirect('user/auth/signin');
+        }
+
+        $blinding = [
+            'title' => '我的帳戶 - ',
+            'page_title' => '我的帳戶',
+            'user' => $user,
+        ];
+
+        return view('user.profile', $blinding);
+    }
 }
