@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="col-md-7 col-12 mx-auto shadow-sm rounded-3">
-      123123
+      @yield('content')
     </div>
   </div>
 </article>

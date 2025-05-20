@@ -105,6 +105,6 @@ class UserController extends Controller
             'user' => $user,
         ];
 
-        return view('user.profile', $blinding);
+        return view('user.info', $blinding);
     }
 }
